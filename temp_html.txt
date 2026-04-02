@@ -1,0 +1,2189 @@
+<!doctype html>
+<html lang="es-AR">
+    <head>
+                            <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta id="csrf-token" name="csrf-token" content="erMNien0qmrdQqLgGHd1f2rQxmm0eQ5Qze6RSLXG">
+<meta id="event_id" name="event_id" content="1950641775062454">
+
+
+
+
+<meta name="author" content="Brokian">
+
+
+
+
+            <title>Propiedades</title>
+                <link rel="canonical" href="https://paulamendez.com.ar/propiedades" />
+    
+        <meta name="keywords" content="inmobiliaria, Departamentos, casas, lotes, terrenos, propiedades, countries, barrios cerrados, nordelta, zona norte, palabras claves nuevas, Villanueva, Escobar, Bancalari, Benavidez, Compra, Alquiler, Tigre, Oficina, Laguna, Unido nordelta, Bahia de nordelta, Local comercial, Puertos del lago, caba, Edificio, Condominio, Santa Barbara, Santa Maria de tigre, Servicios inmobiliarios">
+            <meta name="description" content="Encontrá la propiedad ideal en Nordelta, Villanueva, Zona Norte. Compra o alquiler. Servicio inmobiliario boutique. Posicionamiento estratégico de propiedades y análisis del mercado en la zona.">
+    <meta property="og:description"        content="Encontrá la propiedad ideal en Nordelta, Villanueva, Zona Norte. Compra o alquiler. Servicio inmobiliario boutique. Posicionamiento estratégico de propiedades y análisis del mercado en la zona." />
+        <meta property="og:url"                content="http://paulamendez.com.ar/propiedades" />
+    <meta property="og:type"               content="page" />
+    <meta property="og:title"              content="Paula Mendez Negocios Inmobiliarios" />
+        <meta property="og:image"              content="https://d1v2p1s05qqabi.cloudfront.net/https://d1v2p1s05qqabi.cloudfront.net/sites/296/media/1683942267793.svg?v=4" />
+        
+
+
+
+
+
+<script type="application/ld+json">
+    {"@context":"http://schema.org","@type":"WebSite","name":"Paula Mendez Negocios Inmobiliarios","url":"http://paulamendez.com.ar","publisher":{"@id":"http://paulamendez.com.ar/#organization"}}
+</script>
+
+<script type="application/ld+json">
+    {"@context":"http://schema.org","@type":"RealEstateAgent","@id":"http://paulamendez.com.ar/#organization","name":"Paula Mendez Negocios Inmobiliarios","url":"https://paulamendez.com.ar/propiedades","logo":"https://d1v2p1s05qqabi.cloudfront.net/sites/296/media/1683942267793.svg?v=4","image":"https://d1v2p1s05qqabi.cloudfront.net/sites/296/media/1683942267793.svg?v=4","sameAs":["https://www.facebook.com/paulamendez.inmobiliaria","https://www.instagram.com/paulamendez.inmobiliaria/","https://www.youtube.com/@paulamendeznegociosinmobil2996","https://www.linkedin.com/in/paula-mendez-negocios-inmobiliarios-609ab991/"]}
+</script>
+
+        
+                <link rel="preconnect" href="https://d1v2p1s05qqabi.cloudfront.net">
+        
+        <link rel="shortcut icon" href="https://d1v2p1s05qqabi.cloudfront.net/sites/296/media/1686340677766.png?v=7" type="image/x-icon">
+        <link rel="apple-touch-icon" href="https://d1v2p1s05qqabi.cloudfront.net/sites/296/media/1686340677766.png?v=7">
+
+
+        <link rel="preload" as="image" href="https://d1v2p1s05qqabi.cloudfront.net/sites/296/media/1683942336511.svg?v=4" />
+        <link rel="preload" as="image" href="https://d1v2p1s05qqabi.cloudfront.net/sites/296/media/1683942267793.svg?v=4" />
+        <link rel="preload" href="https://d1v2p1s05qqabi.cloudfront.net/sites/296/css/laf.css?v=83" as="style" onload="this.rel='stylesheet'">
+
+
+                <style>
+        body {
+            opacity: 1;
+        }
+        </style>
+
+        
+                        <link rel="stylesheet" href="https://d1v2p1s05qqabi.cloudfront.net/vendor/fontawesome/css/all.min.css?v=83">
+        
+        
+        
+                    <link rel="stylesheet" type="text/css" href="/css/filters.css">
+    <link rel="stylesheet" href="https://d1v2p1s05qqabi.cloudfront.net/templates/101/property_list.css?v=83">
+<link rel="stylesheet" type="text/css" href="https://d1v2p1s05qqabi.cloudfront.net/templates/101/listing.css?v=83">
+                    <style>body.homepage #header.header-top { position: static; background-color: #fff !important; } body.homepage #header.header-top .nav-link { color: #000 !important; } body.homepage #header.header-top #logo_dark { display: block; } body.homepage #header.header-top #logo_light { display: none; } #header .nav-link { text-transform: none; font-size: 16px; font-weight: 600; letter-spacing: 1px; } #header .nav-link.special { border-radius: 50px; position: relative; border: 1px solid; padding: 8px 10px; padding-left: 15px; margin-left: 40px; display: flex; align-items: center; gap: 15px; overflow: hidden; } #header .nav-link.special span, #header .nav-link.special i { position: relative; z-index: 2; } #header .nav-link.special:before { content: ''; position: absolute; width: 35px; height: 35px; background-color: #CFBC8F; right: 10px; z-index: 1; border-radius: 50%; top: 50%; transform: translate(0%, -50%); transition: all ease-in-out 300ms; } #header .nav-link.special:hover:before { width: 100%; height: 100%; right: 0; border-radius: 50px; } #header .navbar { padding: 30px 0; } #header .navbar-nav { align-items: center; } #header .nav-link.special i { display: flex; align-items: center; height: 34px; border-radius: 50%; aspect-ratio: 1; width: auto; align-items: center; justify-content: center; background-color: #CFBC8F; } @media(max-width: 1200px) { .navbar-light .navbar-toggler { border-color: rgba(0, 0, 0, 1); filter: invert(1); } #header .navbar-toggler { filter: invert(0); } } @media(max-width: 992px) { body:not(.listing) #header.header-top { position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; z-index: 1001 !important; } #header .nav-link.special { margin-left: 0; } } body.listing header, header.otherHeader { border-bottom: 1px solid #dedede; } footer { padding: 50px 0 10px 0 !important; } footer #topMessage { display: none; } footer .footer_social_widget i { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background-color: #fff; border-radius: 6px; font-size: 18px; border-radius: 50%; color: #171717 !important; transition: all ease-in-out 200ms; } footer .footer_social_widget a:hover i { background-color: #CFBC8F; color: #171717 !important; } footer .copyright { padding: 15px 10px; border-top: 1px solid rgba(0,0,0,0.4) !important; margin-top: 50px; } footer h4 { margin-bottom: 30px; font-size: 20px; color: #fff; margin-top: 25px; } footer .footer-item img { width: 70% !important; margin-top: 25px; max-height: 200px; object-fit: contain; object-position: left center; } footer p { color: #fff; } footer ul li { margin-bottom: 10px; transition: all .2s ease-in-out; } footer .quick-links ul li:hover { margin-left: 15px; } footer .footer_contact_widget i:before{ width: 30px; height: 30px; display: flex; align-items: center; margin-right: 5px; justify-content: center; border: 1px solid #fff; border-radius: 50%; } footer ul li a { background: transparent !important; font-size: 14px; font-weight: 400; } footer .footer_social_widget li { padding: 0; } p { letter-spacing: 0px; } @media(max-width: 768px){ h2 { font-size: 28px !important ; } p { font-size: 16px !important; } } .property-item h5 a { color: #000; font-weight: 600; } .property-item .description small { font-size: 90%; } body.property-page .main-banner { background-attachment: fixed !important; } .property-item .property-badges .promoted { background-color: #BEAA7C!important; color: #ffffff; text-transform: uppercase; font-size: 12px; font-weight: 400!important; } .property-item .property-badges i { display: none; } .property-item .price h6 { font-weight: 700; } .property-item .price h6 small, .property-item .price h6 br { display: none; } .properties-page .property-list-header .btn-outline-primary { font-weight: bold; } .properties-page .section-header { letter-spacing: 0; } .page-contact-us .row h3 { letter-spacing: 0; font-weight: 600; text-transform: uppercase; } .page-contact-us .row .social-networks .social_links a { background-color: #BEAA7C!important; color: #ffffff; } body.property-page h2.title, body.property-page .card-price h4 span.text-primary { font-weight: 600; color: #000 !important; } body.property-page .image-gallery-tabs ul li a { color: #171717 !important; display: flex; align-items: center; } body.property-page .image-gallery-tabs ul li a i { width: 30px; height: 30px; background-color: #171717; color: #fff !important; display: flex; align-items: center; justify-content: center; border-radius: 50%; } .property-item .card-body .details.show-responsible .responsible-info img { background: transparent !important; } .property-item .card-body .details.show-responsible .responsible-info img, #ownerModal .modal-dialog .owner-picture img { border-radius: 0 !important; } body.property-page .contact .card a.btn-outline-success { margin-top: 15px !important; } body.property-page .contact .card { margin-bottom: 15px; } body.property-page .contact .card p { margin-bottom: 5px !important; } body.listing .property-list-header .btn-outline-primary { color: #000 !important; border: 1px solid #dedede !important; background-color: #fff !important; } body.listing nav ul.pagination li a { height: 40px; aspect-ratio: 1; width: auto; display: flex; align-items: center; justify-content: center; } body.listing nav ul.pagination li a { color: #171717 !important; } @media(max-width: 1200px) { body.property-page .contact .card p { font-size: 14px; } body.property-page .contact .card .info-branch a { font-size: 14px; } body.listing .property-item .card-body .row .image-container { height: 300px; } body.property-page .main-banner { background-attachment: unset !important; } }</style>
+            
+                                    </head>
+    <body class="admin-menu listing  ">
+                            
+                
+                    
+            <header id="header" class="header-4 header-top front.properties  static transparent  otherHeader  ">
+    <div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light  text-md-right">
+                <a id="logo" class="navbar-brand" href="/">
+            <img id="logo_dark"  width="100%" height="auto" alt="logo" src="https://d1v2p1s05qqabi.cloudfront.net/sites/296/media/1683942267793.svg?v=4" />
+    
+            <img id="logo_light" width="100%" height="auto" alt="logo" src="https://d1v2p1s05qqabi.cloudfront.net/sites/296/media/1683942336511.svg?v=4" />
+    </a>
+                                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="menu-container ml-md-auto">
+                        <div class="menu-contact-info ml-auto text-md-right">
+                            <div class="contact ml-auto d-none d-lg-block">
+    <ul>
+                                                                    </ul>
+</div>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto" >
+                    <li class="nav-item ">
+                <a href="/" class="nav-link  "   data-toggle="">
+                    Inicio
+                </a>
+                            </li>
+                    <li class="nav-item ">
+                <a href="/propiedades" class="nav-link  "   data-toggle="">
+                    Propiedades
+                </a>
+                            </li>
+                    <li class="nav-item ">
+                <a href="/propiedades?tag=lux" class="nav-link  "   data-toggle="">
+                    Luxury
+                </a>
+                            </li>
+                    <li class="nav-item ">
+                <a href="/emprendimientos" class="nav-link  "   data-toggle="">
+                    Desarrollos
+                </a>
+                            </li>
+                    <li class="nav-item ">
+                <a href="/tasaciones" class="nav-link  "   data-toggle="">
+                    Tasación
+                </a>
+                            </li>
+                    <li class="nav-item ">
+                <a href="/nosotros" class="nav-link  "   data-toggle="">
+                    Nosotros
+                </a>
+                            </li>
+                    <li class="nav-item ">
+                <a href="/contacto" class="nav-link special "   data-toggle="">
+                    <span>Contacto</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                            </li>
+        
+                            
+                
+            </ul>
+</div>
+                        </div>
+                            </nav>
+        </div>
+    </div>
+</header>
+<style>
+    .header-scrolled{
+        background-color: #ffffff; 
+        color: #000000 !important; 
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    .header-scrolled a {
+        color: #000000 !important; 
+    }
+    .header-top {
+        background-color: #ffffff; 
+        color: #000000 !important; 
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    .header-top a {
+        color: #000000 !important; 
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    header .dropdown-menu {
+        background-color: #ffffff; 
+        color: #000000 !important; 
+    }
+    header .dropdown-menu a,
+    header .dropdown-menu a:hover {
+        background: transparent;
+    }
+    #top-header, #top-header a{
+        background-color: #607DD1; 
+        color: #fff !important; 
+    }
+    #top-header a {
+        background: transparent;
+    }
+</style>
+
+
+
+
+
+                
+<div class="properties-page listing">
+    <div class="container">
+    <div class="row">
+                    <div class="col-md-3">
+                <div class="filters-container">
+                <div class="card filters">
+    <div class="card-body">
+                
+        
+                                    <form method="GET" action="https://paulamendez.com.ar/propiedades" accept-charset="UTF-8" style="display:inline" id="search-form">
+
+<a href="#" class="btn-close" id="btn-close-filters"><span style="display: none;">Close filters</span><i class="fa fa-times"></i></a>
+
+
+
+<div class="order d-none">
+        <input id="order" name="order" type="hidden" value="1">
+</div>
+
+
+<div class="message"></div>
+
+
+<input name="SW_LAT" type="hidden">
+<input name="SW_LON" type="hidden">
+<input name="NE_LAT" type="hidden">
+<input name="NE_LON" type="hidden">
+<input name="fg" type="hidden">
+<input name="in_country" type="hidden">
+
+
+
+
+    <input name="ctype" type="hidden">
+
+    <input name="company" type="hidden">
+
+    <input name="branch" type="hidden">
+    <input name="agent" type="hidden">
+    <input name="workgroup" type="hidden">
+
+    <input name="tag" type="hidden">
+
+<input name="map" type="hidden">
+
+
+
+<div class="d-none">
+    {"summary":{"enable":"1","open":"1"},"location":{"enable":"1","open":"1"},"operation":{"enable":"1","open":"1"},"type":{"enable":"1","open":"1"},"ctype":{"enable":0,"open":0},"city":{"enable":0,"open":0},"neighborhood":{"enable":0,"open":0},"price":{"enable":"1","open":"1"},"area":{"enable":"1","open":"1"},"bedroom_ranges":{"enable":"1","open":"1"},"environment_amount":{"enable":0,"open":0},"unc_area":{"enable":0,"open":0},"sc_area":{"enable":0,"open":0},"cov_area":{"enable":0,"open":0},"g_width":{"enable":0,"open":0},"g_large":{"enable":0,"open":0},"g_area":{"enable":0,"open":0},"bathroom_ranges":{"enable":"1","open":"1"},"garages":{"enable":0,"open":0},"garage_coverage":{"enable":0,"open":0},"floor_type":{"enable":0,"open":0},"ceiling_type":{"enable":0,"open":0},"floors":{"enable":0,"open":0},"property_status":{"enable":0,"open":0},"orientation":{"enable":0,"open":0},"luminosity":{"enable":0,"open":0},"antiquity_ranges":{"enable":"1","open":"1"},"has_investment":{"enable":0,"open":0},"others":{"enable":"1","open":"1"},"code":{"enable":0,"open":0},"address":{"enable":0,"open":0},"polygon_zone":{"enable":0,"open":0},"zone":{"enable":0,"open":0},"investment_type":{"enable":0,"open":0},"construction_status":{"enable":0,"open":0},"with_garage":{"enable":"1","open":0},"buttonlist":{"enable":"1","open":0},"buttonmap":{"enable":"1","open":0}}
+</div>
+            <div id="wordsFieldset">
+    <div class="form-group">
+        <label for="summary" class="control-label">Palabras clave</label>
+        <input class="form-control" name="summary" type="text" id="summary">
+    </div>
+</div>
+                <div class="fieldset">
+    <h3 class="section-header" data-toggle="collapse" href="#filterLocationCollapse" role="button" aria-expanded="true" aria-controls="filterLocationCollapse">Ubicación</h3>
+    <div class="clearfix"></div>
+        <div class="row collapse submit-on-click in show" id="filterLocationCollapse">
+                    <div class="form-check col-sm-12">
+                <label class="form-check-label location" title="Argentina">
+                    <input name="location[]" type="checkbox" value="Argentina">
+                    <span class="filter-truncate">Argentina</span>
+                    <small>( 354 )</small>
+                </label>
+            </div>
+                    <div class="form-check col-sm-12">
+                <label class="form-check-label location" title="Uruguay">
+                    <input name="location[]" type="checkbox" value="Uruguay">
+                    <span class="filter-truncate">Uruguay</span>
+                    <small>( 9 )</small>
+                </label>
+            </div>
+            </div>
+                    <div>
+            <a href="https://paulamendez.com.ar/propiedades/mapa?" class="btn btn-sm btn-order btn-block btn-primary">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span>Ver mapa</span>
+            </a>
+        </div>
+        <br>
+        </div>
+                            <div class="fieldset ">
+        <h3 class="section-header" data-toggle="collapse" href="#filterOperationCollapse" role="button"
+            aria-expanded="true"
+            aria-controls="filterOperationCollapse">Tipo de operación</h3>
+        <div class="clearfix"></div>
+        <div class="row collapse show in  submit-on-click"
+            id="filterOperationCollapse">
+                            <div class="form-check col-sm-12 ">
+                    <label class="form-check-label">
+                        <input name="operation[]" type="checkbox" value="1">
+                        Venta
+                                                    <small>( 326 )</small>
+                                            </label>
+                </div>
+                            <div class="form-check col-sm-12 ">
+                    <label class="form-check-label">
+                        <input name="operation[]" type="checkbox" value="2">
+                        Alquiler
+                                                    <small>( 60 )</small>
+                                            </label>
+                </div>
+                            <div class="form-check col-sm-12 ">
+                    <label class="form-check-label">
+                        <input name="operation[]" type="checkbox" value="3">
+                        Alquiler Temporal
+                                                    <small>( 17 )</small>
+                                            </label>
+                </div>
+                            <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label">
+                        <input name="operation[]" type="checkbox" value="4">
+                        Traspaso
+                                            </label>
+                </div>
+                    </div>
+    </div>
+
+
+                <div class="fieldset ">
+    <h3 class="section-header" data-toggle="collapse" href="#filterTypeCollapse" role="button" aria-expanded="true" aria-controls="filterTypeCollapse">Tipo de propiedad</h3>
+    <div class="clearfix"></div>
+    <div class="row collapse  show in  submit-on-click" id="filterTypeCollapse">
+        
+                
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Casa">
+                        <input name="type[]" type="checkbox" value="1">
+                        Casa
+                                                    <small>( 112 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Departamento">
+                        <input name="type[]" type="checkbox" value="2">
+                        Departamento
+                                                    <small>( 140 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Departamento de Pasillo">
+                        <input name="type[]" type="checkbox" value="3">
+                        Departamento de Pasillo
+                                                    <small>( 1 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Monoambiente">
+                        <input name="type[]" type="checkbox" value="4">
+                        Monoambiente
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Local Comercial">
+                        <input name="type[]" type="checkbox" value="5">
+                        Local Comercial
+                                                    <small>( 4 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Oficina">
+                        <input name="type[]" type="checkbox" value="6">
+                        Oficina
+                                                    <small>( 16 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Consultorio">
+                        <input name="type[]" type="checkbox" value="7">
+                        Consultorio
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Cochera">
+                        <input name="type[]" type="checkbox" value="8">
+                        Cochera
+                                                    <small>( 2 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Edificio Comercial">
+                        <input name="type[]" type="checkbox" value="9">
+                        Edificio Comercial
+                                                    <small>( 1 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Terreno o Lote">
+                        <input name="type[]" type="checkbox" value="10">
+                        Terreno o Lote
+                                                    <small>( 106 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Countries y Barrios Cerrados">
+                        <input name="type[]" type="checkbox" value="11">
+                        Countries y Barrios Cerrados
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Negocio o Fondo de Comercio">
+                        <input name="type[]" type="checkbox" value="12">
+                        Negocio o Fondo de Comercio
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Campo">
+                        <input name="type[]" type="checkbox" value="13">
+                        Campo
+                                                    <small>( 2 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="PH">
+                        <input name="type[]" type="checkbox" value="14">
+                        PH
+                                                    <small>( 3 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Edificio en Block">
+                        <input name="type[]" type="checkbox" value="15">
+                        Edificio en Block
+                                                    <small>( 1 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Quinta">
+                        <input name="type[]" type="checkbox" value="16">
+                        Quinta
+                                                    <small>( 4 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Bóvedas, Nichos o Parcelas">
+                        <input name="type[]" type="checkbox" value="17">
+                        Bóvedas, Nichos o Parcelas
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Cama Náutica">
+                        <input name="type[]" type="checkbox" value="18">
+                        Cama Náutica
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Otro">
+                        <input name="type[]" type="checkbox" value="19">
+                        Otro
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Bodega">
+                        <input name="type[]" type="checkbox" value="20">
+                        Bodega
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Viñedo">
+                        <input name="type[]" type="checkbox" value="21">
+                        Viñedo
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Hotel">
+                        <input name="type[]" type="checkbox" value="22">
+                        Hotel
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Galpón">
+                        <input name="type[]" type="checkbox" value="23">
+                        Galpón
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Depósito">
+                        <input name="type[]" type="checkbox" value="24">
+                        Depósito
+                                                    <small>( 4 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Nave Industrial">
+                        <input name="type[]" type="checkbox" value="25">
+                        Nave Industrial
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Isla">
+                        <input name="type[]" type="checkbox" value="26">
+                        Isla
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Amarre">
+                        <input name="type[]" type="checkbox" value="27">
+                        Amarre
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Baulera">
+                        <input name="type[]" type="checkbox" value="28">
+                        Baulera
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Habitación">
+                        <input name="type[]" type="checkbox" value="29">
+                        Habitación
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Casa de Campo">
+                        <input name="type[]" type="checkbox" value="30">
+                        Casa de Campo
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Casa de Playa">
+                        <input name="type[]" type="checkbox" value="31">
+                        Casa de Playa
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Turístico">
+                        <input name="type[]" type="checkbox" value="32">
+                        Turístico
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Trastero">
+                        <input name="type[]" type="checkbox" value="33">
+                        Trastero
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Edificio">
+                        <input name="type[]" type="checkbox" value="34">
+                        Edificio
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Chacra">
+                        <input name="type[]" type="checkbox" value="35">
+                        Chacra
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Emp. Rural">
+                        <input name="type[]" type="checkbox" value="36">
+                        Emp. Rural
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Fraccion">
+                        <input name="type[]" type="checkbox" value="37">
+                        Fraccion
+                                                    <small>( 1 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Parcela">
+                        <input name="type[]" type="checkbox" value="38">
+                        Parcela
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12 ">
+                    <label class="form-check-label" title="Duplex">
+                        <input name="type[]" type="checkbox" value="39">
+                        Duplex
+                                                    <small>( 6 )</small>
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Casa antigua de estilo">
+                        <input name="type[]" type="checkbox" value="40">
+                        Casa antigua de estilo
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Casa premium">
+                        <input name="type[]" type="checkbox" value="41">
+                        Casa premium
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Finca">
+                        <input name="type[]" type="checkbox" value="42">
+                        Finca
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Casa con local">
+                        <input name="type[]" type="checkbox" value="43">
+                        Casa con local
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Triplex">
+                        <input name="type[]" type="checkbox" value="44">
+                        Triplex
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Chalet">
+                        <input name="type[]" type="checkbox" value="45">
+                        Chalet
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Lote de playa">
+                        <input name="type[]" type="checkbox" value="46">
+                        Lote de playa
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Hostal">
+                        <input name="type[]" type="checkbox" value="47">
+                        Hostal
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Condominio">
+                        <input name="type[]" type="checkbox" value="48">
+                        Condominio
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Penthouse">
+                        <input name="type[]" type="checkbox" value="49">
+                        Penthouse
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Bungalow">
+                        <input name="type[]" type="checkbox" value="50">
+                        Bungalow
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Cortijo">
+                        <input name="type[]" type="checkbox" value="51">
+                        Cortijo
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Cabaña">
+                        <input name="type[]" type="checkbox" value="52">
+                        Cabaña
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Terreno Industrial">
+                        <input name="type[]" type="checkbox" value="53">
+                        Terreno Industrial
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Terreno comercial">
+                        <input name="type[]" type="checkbox" value="54">
+                        Terreno comercial
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Terraza">
+                        <input name="type[]" type="checkbox" value="55">
+                        Terraza
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Otros">
+                        <input name="type[]" type="checkbox" value="not_house_apart_ground">
+                        Otros
+                                            </label>
+                </div>
+                        <div class="form-check col-sm-12  d-none ">
+                    <label class="form-check-label" title="Campos, chacras y viñedos">
+                        <input name="type[]" type="checkbox" value="farms_acreages_vineyards">
+                        Campos, chacras y viñedos
+                                            </label>
+                </div>
+            </div>
+</div>
+                                                                <div class="fieldset">
+    <h3 class="section-header" data-toggle="collapse" href="#filterPriceCollapse" role="button" aria-expanded="true" aria-controls="filterPriceCollapse">Precio</h3>
+    <div class="clearfix"></div>
+    <div class="row collapse show in filter-with-apply" id="filterPriceCollapse">
+        
+                <div class="col-4 col-sm-4 pr">
+            <div class="form-group">
+                <select class="form-control" name="currency"><option value="1" selected="selected">USD</option><option value="2">ARS</option></select>
+            </div>
+        </div>
+        
+                
+        <div class="col-4 col-md-4 pr  pl">
+            <div class="form-group">
+                <input class="form-control" placeholder="Desde" name="price_from" type="text">
+            </div>
+        </div>
+        <div class="col-4 col-md-4 pl">
+            <div class="form-group">
+                <input class="form-control" placeholder="Hasta" name="price_to" type="text">
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary btn-submit btn-block">Aplicar</button>
+        </div>
+    </div>
+</div>
+
+                <div class="fieldset">
+    <h3 class="section-header" data-toggle="collapse" href="#filterAreaCollapse" role="button" aria-expanded="true" aria-controls="filterAreaCollapse">Superficie total</h3>
+    <div class="clearfix"></div>
+    <div class="row collapse show in filter-with-apply" id="filterAreaCollapse">
+        <div class="col-6 col-sm-6 pr">
+            <div class="form-group">
+                <label for="area_from" class="control-label">Area desde</label>
+                <input class="form-control" name="area_from" type="text" id="area_from">
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 pl">
+            <div class="form-group">
+                <label for="area_to" class="control-label">Area hasta</label>
+                <input class="form-control" name="area_to" type="text" id="area_to">
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary btn-submit btn-block">Aplicar</button>
+        </div>
+    </div>
+</div>
+
+                <div class="fieldset">
+    <h3 class="section-header" data-toggle="collapse" href="#filterBedroomsCollapse" role="button" aria-expanded="true" aria-controls="filterBedroomsCollapse">Dormitorios</h3>
+    <div class="clearfix"></div>
+    <div class="row collapse show in submit-on-click" id="filterBedroomsCollapse">
+        <div class="col-12 col-xs-12">
+                            <label class="range-option btn btn-primary btn-sm  switch  disabled ">
+                    <input name="bedroom_ranges[]" type="checkbox" value="0">
+                    0
+                </label>
+                            <label class="range-option btn btn-primary btn-sm  switch ">
+                    <input name="bedroom_ranges[]" type="checkbox" value="1">
+                    1
+                </label>
+                            <label class="range-option btn btn-primary btn-sm  switch ">
+                    <input name="bedroom_ranges[]" type="checkbox" value="2">
+                    2
+                </label>
+                            <label class="range-option btn btn-primary btn-sm  switch ">
+                    <input name="bedroom_ranges[]" type="checkbox" value="3">
+                    3
+                </label>
+                            <label class="range-option btn btn-primary btn-sm  switch ">
+                    <input name="bedroom_ranges[]" type="checkbox" value="4">
+                    4+
+                </label>
+                    </div>
+    </div>
+</div>
+                                                                                                                                <div class="fieldset">
+    <h3 class="section-header" data-toggle="collapse" href="#filterBathroomsCollapse" role="button" aria-expanded="true" aria-controls="filterBathroomsCollapse">Baños</h3>
+    <div class="clearfix"></div>
+    <div class="row collapse show in submit-on-click" id="filterBathroomsCollapse">
+        <div class="col-12 col-xs-12">
+                                        <label class="range-option btn btn-primary btn-sm  switch  disabled ">
+                    <input name="bathroom_amount[]" type="checkbox" value="0">
+                    0
+                </label>
+                            <label class="range-option btn btn-primary btn-sm  switch ">
+                    <input name="bathroom_amount[]" type="checkbox" value="1">
+                    1
+                </label>
+                            <label class="range-option btn btn-primary btn-sm  switch ">
+                    <input name="bathroom_amount[]" type="checkbox" value="2">
+                    2
+                </label>
+                            <label class="range-option btn btn-primary btn-sm  switch ">
+                    <input name="bathroom_amount[]" type="checkbox" value="3">
+                    3+
+                </label>
+                    </div>
+    </div>
+</div>
+                                                                                                                                                <div class="fieldset">
+    <h3 class="section-header" data-toggle="collapse" href="#filterAntiquityCollapse" role="button" aria-expanded="true" aria-controls="filterAntiquityCollapse">Antigüedad</h3>
+    <div class="clearfix"></div>
+    
+    <div class="row collapse show in submit-on-click" id="filterAntiquityCollapse">
+                                                                        <div class="form-check col-sm-12">
+                    <label class="form-check-label switch">
+                        <input name="antiquity_ranges[]" type="checkbox" value="0">
+                        A estrenar
+                        <small>( 7 )</small>
+                    </label>
+                </div>
+                                                                <div class="form-check col-sm-12">
+                    <label class="form-check-label switch">
+                        <input name="antiquity_ranges[]" type="checkbox" value="1">
+                        Hasta 5 años
+                        <small>( 32 )</small>
+                    </label>
+                </div>
+                                                                <div class="form-check col-sm-12">
+                    <label class="form-check-label switch">
+                        <input name="antiquity_ranges[]" type="checkbox" value="2">
+                        Entre 5 y 10 años
+                        <small>( 51 )</small>
+                    </label>
+                </div>
+                                                                <div class="form-check col-sm-12">
+                    <label class="form-check-label switch">
+                        <input name="antiquity_ranges[]" type="checkbox" value="3">
+                        Entre 10 y 20 años
+                        <small>( 42 )</small>
+                    </label>
+                </div>
+                                                                <div class="form-check col-sm-12">
+                    <label class="form-check-label switch">
+                        <input name="antiquity_ranges[]" type="checkbox" value="4">
+                        Entre 20 y 50 años
+                        <small>( 18 )</small>
+                    </label>
+                </div>
+                                                                <div class="form-check col-sm-12">
+                    <label class="form-check-label switch">
+                        <input name="antiquity_ranges[]" type="checkbox" value="5">
+                        Más de 50 años
+                        <small>( 1 )</small>
+                    </label>
+                </div>
+                        </div>
+</div>
+                                <div class="fieldset">
+    <h3 class="section-header" data-toggle="collapse" href="#filterOthersCollapse" role="button" aria-expanded="true" aria-controls="filterOthersCollapse">Otros</h3>
+    <div class="clearfix"></div>
+    <div class="row collapse show in submit-on-click" id="filterOthersCollapse">
+                <div class="form-check col-sm-12">
+            <label class="form-check-label switch">
+                <input name="with_garage" type="checkbox" value="1">
+                <span class="filter-truncate">Con cochera</span>
+                <small>( 203 )</small>
+            </label>
+        </div>
+        
+                            <div class="form-check col-sm-12">
+                <label class="form-check-label switch">
+                    <input name="suitable_for_credit" type="checkbox" value="1">
+                    <span class="filter-truncate">Apto crédito</span>
+                    <small>( 81 )</small>
+                </label>
+            </div>
+                
+                    <div class="form-check col-sm-12">
+                <label class="form-check-label switch">
+                    <input name="commercial_use" type="checkbox" value="1">
+                    <span class="filter-truncate">Uso comercial</span>
+                    <small>( 28 )</small>
+                </label>
+            </div>
+                            <div class="form-check col-sm-12 filter-oportunity">
+                <label class="form-check-label switch">
+                    
+                    
+                    <input name="oportunity" type="checkbox" value="1">
+                    <span class="filter-truncate">Oportunidades</span>
+                    <small>( 9 )</small>
+                </label>
+            </div>
+            </div>
+</div>
+                                                                                                    
+
+</form>
+
+
+
+                        </div>
+</div>
+
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row property-list-header">
+    <div class="col-12">
+        <h1>
+            Propiedades
+        </h1>
+    </div>
+    <div class="col-6 col-md-8">
+                            <span class="result-counter"> 1 a 10 de 403 Propiedades </span>
+            </div>
+    <div class="col-6 col-md-4 text-right">
+                    <span class="result-counter d-none d-md-inline">Ordenar por: </span>
+            <div class="btn-group">
+    <a href="#" class="btn btn-outline-primary btn-sm btn-order dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+        <i class="fa fa-sort-alpha-desc" aria-hidden="true"></i> Recientes
+    </a>
+    <div class="dropdown-menu dropdown-menu-right order-dropdown">
+                    <a class="dropdown-item" href="#" data-order="1">Recientes</a>
+                    <a class="dropdown-item" href="#" data-order="2">Más baratos</a>
+                    <a class="dropdown-item" href="#" data-order="3">Mayor valor</a>
+                    <a class="dropdown-item" href="#" data-order="4">Amplios (más m2)</a>
+                    <a class="dropdown-item" href="#" data-order="5">Pequeños (menos m2)</a>
+                    <a class="dropdown-item" href="#" data-order="6">Más antiguos</a>
+                    <a class="dropdown-item" href="#" data-order="7">Más nuevos</a>
+                    <a class="dropdown-item" href="#" data-order="8">Más habitaciones</a>
+                    <a class="dropdown-item" href="#" data-order="9">Menos habitaciones</a>
+                    <a class="dropdown-item" href="#" data-order="17">Relevantes</a>
+            </div>
+</div>
+
+            </div>
+</div>
+
+            <div class="card property-item list" data-tags="" data-id="4607044" data-type="Departamento">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-4 image-container">
+                <ul class="property-badges">
+                                                                                                </ul>
+                                <ul class="has-media">
+                                                        </ul>
+                <a target="_blank" href="/propiedad/departamento-en-venta-en-nunez-capital-federal-buenos-aires--4607044"><img width="100%" height="auto" alt="Departamento  en Venta en Núñez, Capital Federal, Buenos Aires" src="https://d1v2p1s05qqabi.cloudfront.net/22418765/conversions/1774812013-thumbnail.webp" /></a>
+            </div>
+            
+            
+
+
+            <div class="col-12 col-md-8 details show-responsible">
+                <h4 class="d-none"></h4>
+                                    <div class="price d-none d-md-block" data-price="150000" data-currency="1">
+                        <h5 class="d-none"></h5>
+                        <h6>
+                            <small>Precio de venta</small><br>USD 150.000                         </h6>
+                                                <p class="expenses"><small>Expensas: $ 250.000</small></p>
+                                            </div>
+                
+                 
+                                            <h5><a target="_blank" href="/propiedad/departamento-en-venta-en-nunez-capital-federal-buenos-aires--4607044">Departamento  en Venta en Núñez, Capital Federal, Buenos Aires</a></h5>
+                                                    
+                                                             <p class="address-to-show">Av. Cabildo 4100</p>
+                                    
+                                                                                                                        <p class="description"><small>Hermoso departamento de 3 ambientes  
+Ubicado sobre Av.Cabildo 
+Acceso a todas las lineas de colectivos 
+a 7 cuadras de Puente Saavedra 
+Negocios 
+Res...</small></p>
+                                                                                        
+                <ul>
+                                                                                                                                                                                                                                                                                                    <li>1 Baño</li>
+                                                                                                                                                                     
+                                                                                                <li>Sup. Total 62 m<sup>2</sup></li>
+                                                                                                                        </ul>
+                <div class="row">
+                                                                        <div class="col-12 col-md-6 responsible-info" data-type="property" data-id="4607044" data-responsible-type="branch" data-responsible="3338">
+                                <img alt="responsible" loading="lazy" class="responsible-placeholder" src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/images/people-thumb.svg?v=83" />
+                            </div>
+                                            
+                    <div class="col-6 col-md-6 d-none d-md-block text-right">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/departamento-en-venta-en-nunez-capital-federal-buenos-aires--4607044" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                        
+                        <a href="/propiedad/departamento-en-venta-en-nunez-capital-federal-buenos-aires--4607044" target="_blank" target="_blank" class="btn btn-primary btn-sm btn-more">Más detalles</a>
+                    </div>
+
+                    <div class="col-5 col-md-6 price d-block d-md-none" data-price="150000" data-currency="1">
+                        <h6>
+                            <small>Precio de venta</small><br>USD 150.000                         </h6>
+                                                <p class="expenses"><small>Expensas: $ 250.000</small></p>
+                                            </div>
+
+                    <div class="col-7 col-md-6 d-block d-md-none text-right text-md-left">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/departamento-en-venta-en-nunez-capital-federal-buenos-aires--4607044" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                                                <a href="/propiedad/departamento-en-venta-en-nunez-capital-federal-buenos-aires--4607044" target="_blank" class="btn btn-primary btn-sm btn-more">Ver más <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "name": "Departamento  en Venta en Núñez, Capital Federal, Buenos Aires",
+                "image": "https://d1v2p1s05qqabi.cloudfront.net/22418765/conversions/1774812013-thumbnail.webp",
+                "description": "Hermoso departamento de 3 ambientes  Ubicado sobre AvCabildo Acceso a todas las lineas de colectivos a 7 cuadras de Puente Saavedra Negocios Restaurantes Colegios Ideal no solo para vivienda sino también como Inversión dos habitaciones Baño CocinaLivingComedor Dos ascensores Seguridad 24 hs Encargado 24 hsAPTO CRÉDITOTodas las operaciones son a cargo del Martillero y Corredor responsable Paula Mendez CMCPSI 6263 CUCICBA 7579Toda la información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra empresa Los gastos expresados (expensas ABL) se refieren a la última información recabada y deberán confirmarse Fotografías no vinculantes ni contractuales",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "150000",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2026-07-01"
+                },
+                "url": "https://paulamendez.com.ar/propiedad/departamento-en-venta-en-nunez-capital-federal-buenos-aires--4607044"
+            }
+        </script>
+            </div>
+</div>
+                        <div class="card property-item list" data-tags="" data-id="4606358" data-type="Casa">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-4 image-container">
+                <ul class="property-badges">
+                                                                                                </ul>
+                                <ul class="has-media">
+                                                        </ul>
+                <a target="_blank" href="/propiedad/casa-chalet-en-venta-en-general-pacheco-tigre-gba-zona-norte--4606358"><img width="100%" height="auto" alt="Casa Chalet  en Venta en General Pacheco, Tigre, G.B.A. Zona Norte" src="https://d1v2p1s05qqabi.cloudfront.net/22382809/conversions/1774615278-thumbnail.webp" /></a>
+            </div>
+            
+            
+
+
+            <div class="col-12 col-md-8 details show-responsible">
+                <h4 class="d-none"></h4>
+                                    <div class="price d-none d-md-block" data-price="190000" data-currency="1">
+                        <h5 class="d-none"></h5>
+                        <h6>
+                            <small>Precio de venta</small><br>USD 190.000                         </h6>
+                                            </div>
+                
+                 
+                                            <h5><a target="_blank" href="/propiedad/casa-chalet-en-venta-en-general-pacheco-tigre-gba-zona-norte--4606358">Casa Chalet  en Venta en General Pacheco, Tigre, G.B.A. Zona Norte</a></h5>
+                                                    
+                                                             <p class="address-to-show">Suiza 1237, El Talar de Pacheco, General Pacheco 500</p>
+                                    
+                                                                                                                        <p class="description"><small>Casa en excelente ubicación en El Talar
+
+Propiedad desarrollada en una planta con muy buena distribución y modificaciones estéticas realizadas. Ubicad...</small></p>
+                                                                                        
+                <ul>
+                                                                                                                                                                    
+                                    <li>2 Dormitorios</li>
+                                                                                                                                                                                                                                                                                                        <li>1 Baño</li>
+                                                                                                                                                                     
+                                                                                                <li>Sup. Total 400 m<sup>2</sup></li>
+                                                                                                                        </ul>
+                <div class="row">
+                                                                        <div class="col-12 col-md-6 responsible-info" data-type="property" data-id="4606358" data-responsible-type="branch" data-responsible="3338">
+                                <img alt="responsible" loading="lazy" class="responsible-placeholder" src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/images/people-thumb.svg?v=83" />
+                            </div>
+                                            
+                    <div class="col-6 col-md-6 d-none d-md-block text-right">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/casa-chalet-en-venta-en-general-pacheco-tigre-gba-zona-norte--4606358" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                        
+                        <a href="/propiedad/casa-chalet-en-venta-en-general-pacheco-tigre-gba-zona-norte--4606358" target="_blank" target="_blank" class="btn btn-primary btn-sm btn-more">Más detalles</a>
+                    </div>
+
+                    <div class="col-5 col-md-6 price d-block d-md-none" data-price="190000" data-currency="1">
+                        <h6>
+                            <small>Precio de venta</small><br>USD 190.000                         </h6>
+                                            </div>
+
+                    <div class="col-7 col-md-6 d-block d-md-none text-right text-md-left">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/casa-chalet-en-venta-en-general-pacheco-tigre-gba-zona-norte--4606358" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                                                <a href="/propiedad/casa-chalet-en-venta-en-general-pacheco-tigre-gba-zona-norte--4606358" target="_blank" class="btn btn-primary btn-sm btn-more">Ver más <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "name": "Casa Chalet  en Venta en General Pacheco, Tigre, G.B.A. Zona Norte",
+                "image": "https://d1v2p1s05qqabi.cloudfront.net/22382809/conversions/1774615278-thumbnail.webp",
+                "description": "Casa en excelente ubicación en El TalarPropiedad desarrollada en una planta con muy buena distribución y modificaciones estéticas realizadas Ubicada a solo una cuadra de Ruta 197 y con rápido acceso a Panamericana Características principales400 m totales 51 m cubiertos3 ambientes 2 dormitorios 1 baño Cochera descubierta Patio amplio Muy buena ubicación con todo cercaIdeal para quienes buscan comodidad accesos rápidos y espacio exteriorConsultame para más información o coordinar una visitaTodas las operaciones son a cargo del Martillero y Corredor responsable Paula Mendez CMCPSI 6263 CUCICBA 7579Toda la información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra empresa Los gastos expresados (expensas ABL) se refieren a la última información recabada y deberán confirmarse Fotografías no vinculantes ni contractuales",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "190000",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2026-07-01"
+                },
+                "url": "https://paulamendez.com.ar/propiedad/casa-chalet-en-venta-en-general-pacheco-tigre-gba-zona-norte--4606358"
+            }
+        </script>
+            </div>
+</div>
+                        <div class="card property-item list" data-tags="" data-id="4593470" data-type="Casa">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-4 image-container">
+                <ul class="property-badges">
+                                                                                                </ul>
+                                <ul class="has-media">
+                                                        </ul>
+                <a target="_blank" href="/propiedad/casa-chalet-en-venta-en-puertos-escobar-gba-zona-norte--4593470"><img width="100%" height="auto" alt="Casa Chalet  en Venta en Puertos, Escobar, G.B.A. Zona Norte" src="https://d1v2p1s05qqabi.cloudfront.net/22034250/conversions/1774357229-thumbnail.webp" /></a>
+            </div>
+            
+            
+
+
+            <div class="col-12 col-md-8 details show-responsible">
+                <h4 class="d-none"></h4>
+                                    <div class="price d-none d-md-block" data-price="305000" data-currency="1">
+                        <h5 class="d-none"></h5>
+                        <h6>
+                            <small>Precio de venta</small><br>USD 305.000                         </h6>
+                                                <p class="expenses"><small>Expensas: $ 550.000</small></p>
+                                            </div>
+                
+                 
+                                            <h5><a target="_blank" href="/propiedad/casa-chalet-en-venta-en-puertos-escobar-gba-zona-norte--4593470">Casa Chalet  en Venta en Puertos, Escobar, G.B.A. Zona Norte</a></h5>
+                                                    
+                                                             <p class="address-to-show">Ceibos / Puertos Lago Escobar 100</p>
+                                    
+                                                                                                                        <p class="description"><small>Sup. semicub 32,60m2
+Total constuido 248,71m2
+
+Planta baja:
+
+*Cocina integrada
+
+*Living comedor integrados con chimenea con bioetanol
+
+*Toilette de re...</small></p>
+                                                                                        
+                <ul>
+                                                                                                                                                                                                                                                                    
+                                    <li>2 Baños</li>
+                                                                                                                                                                     
+                                                                                                <li>Sup. Total 657 m<sup>2</sup></li>
+                                                                                                                        </ul>
+                <div class="row">
+                                                                        <div class="col-12 col-md-6 responsible-info" data-type="property" data-id="4593470" data-responsible-type="branch" data-responsible="3338">
+                                <img alt="responsible" loading="lazy" class="responsible-placeholder" src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/images/people-thumb.svg?v=83" />
+                            </div>
+                                            
+                    <div class="col-6 col-md-6 d-none d-md-block text-right">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/casa-chalet-en-venta-en-puertos-escobar-gba-zona-norte--4593470" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                        
+                        <a href="/propiedad/casa-chalet-en-venta-en-puertos-escobar-gba-zona-norte--4593470" target="_blank" target="_blank" class="btn btn-primary btn-sm btn-more">Más detalles</a>
+                    </div>
+
+                    <div class="col-5 col-md-6 price d-block d-md-none" data-price="305000" data-currency="1">
+                        <h6>
+                            <small>Precio de venta</small><br>USD 305.000                         </h6>
+                                                <p class="expenses"><small>Expensas: $ 550.000</small></p>
+                                            </div>
+
+                    <div class="col-7 col-md-6 d-block d-md-none text-right text-md-left">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/casa-chalet-en-venta-en-puertos-escobar-gba-zona-norte--4593470" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                                                <a href="/propiedad/casa-chalet-en-venta-en-puertos-escobar-gba-zona-norte--4593470" target="_blank" class="btn btn-primary btn-sm btn-more">Ver más <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "name": "Casa Chalet  en Venta en Puertos, Escobar, G.B.A. Zona Norte",
+                "image": "https://d1v2p1s05qqabi.cloudfront.net/22034250/conversions/1774357229-thumbnail.webp",
+                "description": "Sup semicub 3260m2Total constuido 24871m2Planta bajaCocina integradaLiving comedor integrados con chimenea con bioetanolToilette de recepción Planta altaPlayroomHabitación principal en suite con vestidorDos habitaciones secundariasBaño completo(Posibilidad de realizar un dormitorio extra en la zona del playroom)ExteriorGalería con parrillaPileta de natación de 8x4Lavadero en el exteriorBaño exterior de piletaCARACTERíSTICAS ADICIONALESAberturas de aluminio modelo Modena color Negro con DVH doble vidrioEntrada principal con puerta maciza de Pitibriri 90 kilosPuerta secundaria de aluminio con vidrio entero en la parte de atrás TermofusionadoRadiadores en todos los ambientesPre instalación de aire acondicionadoDoble cisternaCable de electricidad marca PRYSMIANLámparas led embutidasGriferia MonocomandoPisos de porcelanato rectificadoCaldera en el lavadero Ladrillos portante de 18 pulgadas en todas las paredesTerraza con membranaTanque en la terrazaTarquini en el exteriorEntrada peatonal con dados de hormigón superpuestos que llevan a una entrada principal de puerta maciza en Pitibiri toilette de recepción cocina con barra desayunadora integrado al living chimenea de bioetanol que hace de separación con el living en la misma tiene conexiones para tv tanto para el living como para el comedorAcceso secundario desde el estacionamiento amplia galería con parrilla y lugar para un freezer baño exterior para pileta y lavaderoPlanta alta escalera en cemento alisado que conecta la planta alta con un amplio playroom que puede utilizarse con una pequeña modificación como un dormitorio extra con salida al balcón posterior Tres habitaciones de los cuales hay 2 secundarias que comparten un baño completo una suite con vestidor y baño completo con ducha y salida al balcónEn el jardín pileta de natación de 8 x 4Puertos tiene más de 1400 hectáreas y un extenso lago central de 400 hectáreas Hasta la fecha lleva entregados diez barrios Vistas Marinas Ceibos Acacias Muelles Araucarias Costas Amarras Riberas y NativasEl proyecto cuenta con-Colegios- Atención médica-Locales comerciales- Club deportivo-Reserva natural-área comercialPuertos es una ciudad donde el cuidado del medioambiente es una prioridad Desde lo paisajístico se privilegiaron las especies autóctonas y se protegió una reserva natural de 60 hectáreas se promueve una cultura sustentable a través de la separación de residuos el control de fertilizantes y el incentivo de estándares para la construcciónTodas las operaciones son a cargo del Martillero y Corredor responsable Paula Mendez CMCPSI 6263 CUCICBA 7579Toda la información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra empresa Los gastos expresados (expensas ABL) se refieren a la última información recabada y deberán confirmarse Fotografías no vinculantes ni contractuales",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "305000",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2026-07-01"
+                },
+                "url": "https://paulamendez.com.ar/propiedad/casa-chalet-en-venta-en-puertos-escobar-gba-zona-norte--4593470"
+            }
+        </script>
+            </div>
+</div>
+                        <div class="card property-item list" data-tags="" data-id="4593440" data-type="PH">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-4 image-container">
+                <ul class="property-badges">
+                                                                                                </ul>
+                                <ul class="has-media">
+                                        <li title="Esta propiedad tiene video"><i class="fa fa-video-camera" aria-hidden="true"></i></li>
+                                                        </ul>
+                <a target="_blank" href="/propiedad/departamento-ph-en-venta-en-palermo-viejo-capital-federal-buenos-aires--4593440"><img width="100%" height="auto" alt="Departamento PH  en Venta en Palermo Viejo, Capital Federal, Buenos Aires" src="https://d1v2p1s05qqabi.cloudfront.net/22032775/conversions/1774346438-thumbnail.webp" /></a>
+            </div>
+            
+            
+
+
+            <div class="col-12 col-md-8 details show-responsible">
+                <h4 class="d-none"></h4>
+                                    <div class="price d-none d-md-block" data-price="220000" data-currency="1">
+                        <h5 class="d-none"></h5>
+                        <h6>
+                            <small>Precio de venta</small><br>USD 220.000                         </h6>
+                                            </div>
+                
+                 
+                                            <h5><a target="_blank" href="/propiedad/departamento-ph-en-venta-en-palermo-viejo-capital-federal-buenos-aires--4593440">Departamento PH  en Venta en Palermo Viejo, Capital Federal, Buenos Aires</a></h5>
+                                                    
+                                                             <p class="address-to-show">Honduras 4000</p>
+                                    
+                                                                                                                        <p class="description"><small>¡OPORTUNIDAD ÚNICA! Apto profesional - 
+
+PH de 120 mts a Reciclar 
+
+PH con terminaciones de calidad y amplias posibilidades de ampliar o remodelar seg...</small></p>
+                                                                                        
+                <ul>
+                                                                                                                                                                    
+                                    <li>2 Dormitorios</li>
+                                                                                                                                                                                                                                                                        
+                                    <li>2 Baños</li>
+                                                                                                                                                                     
+                                                                                                <li>Sup. Total 120 m<sup>2</sup></li>
+                                                                                                                        </ul>
+                <div class="row">
+                                                                        <div class="col-12 col-md-6 responsible-info" data-type="property" data-id="4593440" data-responsible-type="branch" data-responsible="3338">
+                                <img alt="responsible" loading="lazy" class="responsible-placeholder" src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/images/people-thumb.svg?v=83" />
+                            </div>
+                                            
+                    <div class="col-6 col-md-6 d-none d-md-block text-right">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/departamento-ph-en-venta-en-palermo-viejo-capital-federal-buenos-aires--4593440" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                        
+                        <a href="/propiedad/departamento-ph-en-venta-en-palermo-viejo-capital-federal-buenos-aires--4593440" target="_blank" target="_blank" class="btn btn-primary btn-sm btn-more">Más detalles</a>
+                    </div>
+
+                    <div class="col-5 col-md-6 price d-block d-md-none" data-price="220000" data-currency="1">
+                        <h6>
+                            <small>Precio de venta</small><br>USD 220.000                         </h6>
+                                            </div>
+
+                    <div class="col-7 col-md-6 d-block d-md-none text-right text-md-left">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/departamento-ph-en-venta-en-palermo-viejo-capital-federal-buenos-aires--4593440" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                                                <a href="/propiedad/departamento-ph-en-venta-en-palermo-viejo-capital-federal-buenos-aires--4593440" target="_blank" class="btn btn-primary btn-sm btn-more">Ver más <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "name": "Departamento PH  en Venta en Palermo Viejo, Capital Federal, Buenos Aires",
+                "image": "https://d1v2p1s05qqabi.cloudfront.net/22032775/conversions/1774346438-thumbnail.webp",
+                "description": "�OPORTUNIDAD ÚNICA Apto profesional - PH de 120 mts a Reciclar PH con terminaciones de calidad y amplias posibilidades de ampliar o remodelar segun las necesidades del comprador- inversor Ideal para vivienda PROPIA o INVERSIÓN para alquiler temporario (Airbnb)El estado actual de la propiedad es bueno listo para vivir o darle forma a tus sueños Ubicado entre avenidas CORONEL DIAZCÓRDOBASCALABRINI ORTIZSANTA FE CON TERRAZAUbicado en la mejor zona de PALERMO VIEJO(SIN EXPENSAS)Ubicación estratégica Honduras al 4000 entre Medrano y Acuña de Figueroa El Encanto y el Potencial de un PH ClásicoTe presentamos una oportunidad excepcional en una de las zonas más codiciadas y tranquilas de Palermo un PH de 4 ambientes y 120 m totales listo para habitar o darle forma a tus proyectos  esperando ser transformado en tu hogar soñado o en una inversión inteligenteUbicado en una cuadra con veredas anchas y añosa arboleda este inmueble combina la tranquilidad de un barrio residencial con la inmediatez de la vida de Palermo Viejo (cercano a Palermo Hollywood y Soho)zona de baresparrillas farmacias supermercados y todos los transprotes Características DestacadasSuperficie Total 120 mts Ambientes 4 (perfecto para familias profesionales o uso mixto)Apto profesionalApto crédito Baños 2 completos Exteriores Cuenta con lavadero y una terraza propia que ofrece infinitas posibilidades un jardín urbano quincho o un espacio de relax único en la ciudadMUY LUMINOSO Costo Fijo �SIN EXPENSAS Un gran diferencial en PalermoConectividad Excelente acceso a múltiples líneas de transporte y avenidas principalesEl Potencial en tus ManosEsta propiedad es un lienzo en blanco con una estructura sólida Sus 120 m ofrecen un diseño funcional con posibilidades de adaptación ilimitadasSueñas con una cocina integradaNecesitas un home office luminosoImaginas atardeceres en tu propia terrazaEste PH tiene el potencial de ser todo eso y más adaptándose perfectamente a tu estilo de vidaPLANTA BAJA  No Dejes Pasar Esta JoyaEste inmueble es ideal para quien buscaVivir en una ubicación privilegiada de PalermoTener un espacio exterior propio (Terraza)Personalizar su hogar sin atarse a las expensasAgenda tu visita hoy mismoNota para el comprador Si usted necesita vender su propiedad actual para adquirir esta podemos ayudarlo a coordinar y realizar ambas operaciones de manera simultánea quitandole ESTRÉS  Y bajando considerablemante los costos  ConsultánosLas medidas y superficies consignadas en este aviso son aproximadasTodas las operaciones son a cargo del Martillero y Corredor responsable Paula Mendez CMCPSI 6263 CUCICBA 7579Toda la información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra empresa Los gastos expresados (expensas ABL) se refieren a la última información recabada y deberán confirmarse Fotografías no vinculantes ni contractuales",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "220000",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2026-07-01"
+                },
+                "url": "https://paulamendez.com.ar/propiedad/departamento-ph-en-venta-en-palermo-viejo-capital-federal-buenos-aires--4593440"
+            }
+        </script>
+            </div>
+</div>
+                        <div class="card property-item list" data-tags="" data-id="4593248" data-type="Casa">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-4 image-container">
+                <ul class="property-badges">
+                                                                                                </ul>
+                                <ul class="has-media">
+                                                        </ul>
+                <a target="_blank" href="/propiedad/casa-en-venta-en-matisse-barrio-privado-campana-gba-zona-norte--4593248"><img width="100%" height="auto" alt="Casa  en Venta en Matisse Barrio Privado, Campana, G.B.A. Zona Norte" src="https://d1v2p1s05qqabi.cloudfront.net/22025282/conversions/1774276868-thumbnail.webp" /></a>
+            </div>
+            
+            
+
+
+            <div class="col-12 col-md-8 details show-responsible">
+                <h4 class="d-none"></h4>
+                                    <div class="price d-none d-md-block" data-price="145000" data-currency="1">
+                        <h5 class="d-none"></h5>
+                        <h6>
+                            <small>Precio de venta</small><br>USD 145.000                         </h6>
+                                            </div>
+                
+                 
+                                            <h5><a target="_blank" href="/propiedad/casa-en-venta-en-matisse-barrio-privado-campana-gba-zona-norte--4593248">Casa  en Venta en Matisse Barrio Privado, Campana, G.B.A. Zona Norte</a></h5>
+                                                    
+                                                             <p class="address-to-show">Ruta Provincial Nº 4 0</p>
+                                    
+                                                                                                                        <p class="description"><small>Se ofrece a la venta una excelente propiedad ubicada en Altos Cardales, Campana, Provincia de Buenos Aires, emplazada sobre un lote de 1.000 m², con u...</small></p>
+                                                                                        
+                <ul>
+                                                                                                                                                                                                                                                                 
+                                                                                        </ul>
+                <div class="row">
+                                                                        <div class="col-12 col-md-6 responsible-info" data-type="property" data-id="4593248" data-responsible-type="branch" data-responsible="3338">
+                                <img alt="responsible" loading="lazy" class="responsible-placeholder" src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/images/people-thumb.svg?v=83" />
+                            </div>
+                                            
+                    <div class="col-6 col-md-6 d-none d-md-block text-right">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/casa-en-venta-en-matisse-barrio-privado-campana-gba-zona-norte--4593248" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                        
+                        <a href="/propiedad/casa-en-venta-en-matisse-barrio-privado-campana-gba-zona-norte--4593248" target="_blank" target="_blank" class="btn btn-primary btn-sm btn-more">Más detalles</a>
+                    </div>
+
+                    <div class="col-5 col-md-6 price d-block d-md-none" data-price="145000" data-currency="1">
+                        <h6>
+                            <small>Precio de venta</small><br>USD 145.000                         </h6>
+                                            </div>
+
+                    <div class="col-7 col-md-6 d-block d-md-none text-right text-md-left">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/casa-en-venta-en-matisse-barrio-privado-campana-gba-zona-norte--4593248" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                                                <a href="/propiedad/casa-en-venta-en-matisse-barrio-privado-campana-gba-zona-norte--4593248" target="_blank" class="btn btn-primary btn-sm btn-more">Ver más <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "name": "Casa  en Venta en Matisse Barrio Privado, Campana, G.B.A. Zona Norte",
+                "image": "https://d1v2p1s05qqabi.cloudfront.net/22025282/conversions/1774276868-thumbnail.webp",
+                "description": "Se ofrece a la venta una excelente propiedad ubicada en Altos Cardales Campana Provincia de Buenos Aires emplazada sobre un lote de 1000 m con una superficie cubierta aproximada de 175 mLa vivienda se desarrolla en una sola planta y cuenta conTres (3) dormitorios de generosas dimensionesDos (2) baños el cual 1 es completoAmplio living-comedor con buena iluminación naturalCocina equipada funcional y bien distribuidaEspacio de guardado vehicular con capacidad para hasta cuatro (4) vehículosEl inmueble dispone de todos los servicios esencialesAgua corrienteElectricidadGas domiciliarioSe destaca por su entorno tranquilo y natural ideal para vivienda permanente o casa de fin de semanaEn cuanto a sus características exteriores la propiedad ofreceAmplio parquejardín con gran potencial para desarrollo paisajístico o instalación de piscinaÁrea social exterior ideal para reuniones familiares y recreaciónAdicionalmente la propiedad cuenta con sistema de seguridad brindando mayor tranquilidad y resguardoSe trata de una vivienda unifamiliar apta para quienes buscan confort amplitud y calidad de vida en un entorno residencial consolidado Se acepta Permuta por casa en la CostaTodas las operaciones son a cargo del Martillero y Corredor responsable Paula Mendez CMCPSI 6263 CUCICBA 7579Toda la información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra empresa Los gastos expresados (expensas ABL) se refieren a la última información recabada y deberán confirmarse Fotografías no vinculantes ni contractuales",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "145000",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2026-07-01"
+                },
+                "url": "https://paulamendez.com.ar/propiedad/casa-en-venta-en-matisse-barrio-privado-campana-gba-zona-norte--4593248"
+            }
+        </script>
+            </div>
+</div>
+                        <div class="card property-item list" data-tags="" data-id="4593218" data-type="Departamento">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-4 image-container">
+                <ul class="property-badges">
+                                                                                                </ul>
+                                <ul class="has-media">
+                                        <li title="Esta propiedad tiene video"><i class="fa fa-video-camera" aria-hidden="true"></i></li>
+                                                        </ul>
+                <a target="_blank" href="/propiedad/departamento-en-alquiler-en-martinez-san-isidro-gba-zona-norte--4593218"><img width="100%" height="auto" alt="Departamento  en Alquiler en Martínez, San Isidro, G.B.A. Zona Norte" src="https://d1v2p1s05qqabi.cloudfront.net/22033686/conversions/1774352462-thumbnail.webp" /></a>
+            </div>
+            
+            
+
+
+            <div class="col-12 col-md-8 details show-responsible">
+                <h4 class="d-none"></h4>
+                                    <div class="price d-none d-md-block" data-price="800000" data-currency="2">
+                        <h5 class="d-none"></h5>
+                        <h6>
+                            <small>Precio de alquiler</small><br>$ 800.000                         </h6>
+                                            </div>
+                
+                 
+                                            <h5><a target="_blank" href="/propiedad/departamento-en-alquiler-en-martinez-san-isidro-gba-zona-norte--4593218">Departamento  en Alquiler en Martínez, San Isidro, G.B.A. Zona Norte</a></h5>
+                                                    
+                                                             <p class="address-to-show">Rawson 2100</p>
+                                    
+                                                                                                                        <p class="description"><small>Hermoso departamento en al quiler en la mejor zona de Martinez 
+Frente a la estacion 
+A tres cuadrs de av. Santa Fé 
+A una cuadra de Avenida Alvear 
+e...</small></p>
+                                                                                        
+                <ul>
+                                                                                                                                                                    
+                                    <li>2 Dormitorios</li>
+                                                                                                                                                                                                                                                                                                        <li>1 Baño</li>
+                                                                                                                                                                     
+                                                                                                <li>Sup. Total 60 m<sup>2</sup></li>
+                                                                                                                        </ul>
+                <div class="row">
+                                                                        <div class="col-12 col-md-6 responsible-info" data-type="property" data-id="4593218" data-responsible-type="branch" data-responsible="3338">
+                                <img alt="responsible" loading="lazy" class="responsible-placeholder" src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/images/people-thumb.svg?v=83" />
+                            </div>
+                                            
+                    <div class="col-6 col-md-6 d-none d-md-block text-right">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/departamento-en-alquiler-en-martinez-san-isidro-gba-zona-norte--4593218" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                        
+                        <a href="/propiedad/departamento-en-alquiler-en-martinez-san-isidro-gba-zona-norte--4593218" target="_blank" target="_blank" class="btn btn-primary btn-sm btn-more">Más detalles</a>
+                    </div>
+
+                    <div class="col-5 col-md-6 price d-block d-md-none" data-price="800000" data-currency="2">
+                        <h6>
+                            <small>Precio de alquiler</small><br>$ 800.000                         </h6>
+                                            </div>
+
+                    <div class="col-7 col-md-6 d-block d-md-none text-right text-md-left">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/departamento-en-alquiler-en-martinez-san-isidro-gba-zona-norte--4593218" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                                                <a href="/propiedad/departamento-en-alquiler-en-martinez-san-isidro-gba-zona-norte--4593218" target="_blank" class="btn btn-primary btn-sm btn-more">Ver más <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "name": "Departamento  en Alquiler en Martínez, San Isidro, G.B.A. Zona Norte",
+                "image": "https://d1v2p1s05qqabi.cloudfront.net/22033686/conversions/1774352462-thumbnail.webp",
+                "description": "Hermoso departamento en al quiler en la mejor zona de Martinez Frente a la estacion A tres cuadrs de av Santa Fé A una cuadra de Avenida Alvear edificio de época con patio propio dos habitaciones 1 baño 1 cocina 1 lavedero1 livingy bajo escalera para zona de  guardado Edificio muy tranquilo No paga expensasTodas las operaciones son a cargo del Martillero y Corredor responsable Paula Mendez CMCPSI 6263 CUCICBA 7579Toda la información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra empresa Los gastos expresados (expensas ABL) se refieren a la última información recabada y deberán confirmarse Fotografías no vinculantes ni contractuales",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "800000",
+                    "priceCurrency": "ARS",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2026-07-01"
+                },
+                "url": "https://paulamendez.com.ar/propiedad/departamento-en-alquiler-en-martinez-san-isidro-gba-zona-norte--4593218"
+            }
+        </script>
+            </div>
+</div>
+                        <div class="card property-item list" data-tags="" data-id="4592774" data-type="Terreno o Lote">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-4 image-container">
+                <ul class="property-badges">
+                                                                                                </ul>
+                                <ul class="has-media">
+                                                        </ul>
+                <a target="_blank" href="/propiedad/terreno-lote-en-venta-en-escobar-gba-zona-norte-argentina--4592774"><img width="100%" height="auto" alt="Terreno Lote  en Venta en Escobar, G.B.A. Zona Norte, Argentina" src="https://d1v2p1s05qqabi.cloudfront.net/21999346/conversions/1774034423-thumbnail.webp" /></a>
+            </div>
+            
+            
+
+
+            <div class="col-12 col-md-8 details show-responsible">
+                <h4 class="d-none"></h4>
+                                    <div class="price d-none d-md-block" data-price="30000" data-currency="1">
+                        <h5 class="d-none"></h5>
+                        <h6>
+                            <small>Precio de venta</small><br>USD 30.000                         </h6>
+                                            </div>
+                
+                 
+                                            <h5><a target="_blank" href="/propiedad/terreno-lote-en-venta-en-escobar-gba-zona-norte-argentina--4592774">Terreno Lote  en Venta en Escobar, G.B.A. Zona Norte, Argentina</a></h5>
+                                                    
+                                                             <p class="address-to-show">Cam. A Dique Luján-rene Favaloro 1550, B1623 Ingeniero Maschwitz, Provincia de Buenos Aires 1100</p>
+                                    
+                                                                                                                        <p class="description"><small>Lote en venta en Barrio Santa Isabel 2 – Escobar
+
+Excelente oportunidad en zona en crecimiento 
+
+Terreno de 600 m² (20 m de frente x 30 m de fondo), u...</small></p>
+                                                                                        
+                <ul>
+                                                                                                                                                                                                                                                                 
+                                                                                                <li>Sup. Total 600 m<sup>2</sup></li>
+                                                                                                                        </ul>
+                <div class="row">
+                                                                        <div class="col-12 col-md-6 responsible-info" data-type="property" data-id="4592774" data-responsible-type="branch" data-responsible="3338">
+                                <img alt="responsible" loading="lazy" class="responsible-placeholder" src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/images/people-thumb.svg?v=83" />
+                            </div>
+                                            
+                    <div class="col-6 col-md-6 d-none d-md-block text-right">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/terreno-lote-en-venta-en-escobar-gba-zona-norte-argentina--4592774" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                        
+                        <a href="/propiedad/terreno-lote-en-venta-en-escobar-gba-zona-norte-argentina--4592774" target="_blank" target="_blank" class="btn btn-primary btn-sm btn-more">Más detalles</a>
+                    </div>
+
+                    <div class="col-5 col-md-6 price d-block d-md-none" data-price="30000" data-currency="1">
+                        <h6>
+                            <small>Precio de venta</small><br>USD 30.000                         </h6>
+                                            </div>
+
+                    <div class="col-7 col-md-6 d-block d-md-none text-right text-md-left">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/terreno-lote-en-venta-en-escobar-gba-zona-norte-argentina--4592774" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                                                <a href="/propiedad/terreno-lote-en-venta-en-escobar-gba-zona-norte-argentina--4592774" target="_blank" class="btn btn-primary btn-sm btn-more">Ver más <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "name": "Terreno Lote  en Venta en Escobar, G.B.A. Zona Norte, Argentina",
+                "image": "https://d1v2p1s05qqabi.cloudfront.net/21999346/conversions/1774034423-thumbnail.webp",
+                "description": "Lote en venta en Barrio Santa Isabel 2 � EscobarExcelente oportunidad en zona en crecimiento Terreno de 600 m (20 m de frente x 30 m de fondo) ubicado en Ingeniero Maschwitz partido de Escobar con acceso por calle asfaltadaPrecio USD 30000Se evalúan permutas CaracterísticasSuperficie total 600 mFrente 20 mFondo 30 mTerreno planoLote perimetralAcceso asfaltado ServiciosLuz eléctricaAgua corrienteCloacaForestaciónTodas las operaciones son a cargo del Martillero y Corredor responsable Paula Mendez CMCPSI 6263 CUCICBA 7579Toda la información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra empresa Los gastos expresados (expensas ABL) se refieren a la última información recabada y deberán confirmarse Fotografías no vinculantes ni contractuales",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "30000",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2026-07-01"
+                },
+                "url": "https://paulamendez.com.ar/propiedad/terreno-lote-en-venta-en-escobar-gba-zona-norte-argentina--4592774"
+            }
+        </script>
+            </div>
+</div>
+                        <div class="card property-item list" data-tags="" data-id="4591977" data-type="Casa">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-4 image-container">
+                <ul class="property-badges">
+                                                                                                </ul>
+                                <ul class="has-media">
+                                                        </ul>
+                <a target="_blank" href="/propiedad/casa-chalet-en-venta-en-escobar-de-la-ribera-loma-verde-escobar--4591977"><img width="100%" height="auto" alt="Casa Chalet  en Venta en Escobar De La Ribera, Loma Verde, Escobar" src="https://d1v2p1s05qqabi.cloudfront.net/21961903/conversions/1773939632-thumbnail.webp" /></a>
+            </div>
+            
+            
+
+
+            <div class="col-12 col-md-8 details show-responsible">
+                <h4 class="d-none"></h4>
+                                    <div class="price d-none d-md-block" data-price="305000" data-currency="1">
+                        <h5 class="d-none"></h5>
+                        <h6>
+                            <small>Precio de venta</small><br>USD 305.000                         </h6>
+                                                <p class="expenses"><small>Expensas: $ 550.000</small></p>
+                                            </div>
+                
+                 
+                                            <h5><a target="_blank" href="/propiedad/casa-chalet-en-venta-en-escobar-de-la-ribera-loma-verde-escobar--4591977">Casa Chalet  en Venta en Escobar De La Ribera, Loma Verde, Escobar</a></h5>
+                                                    
+                                                             <p class="address-to-show">Ceibos / Puertos Lago Escobar 100</p>
+                                    
+                                                                                                                        <p class="description"><small>CEIBOS/PUERTOS, casa en venta, lote interno, cerca de cul de sac (privacidad)
+
+Sup. cubierta 216m2
+Sup. semicub 32,60m2
+Total constuido 248,71m2
+
+Plan...</small></p>
+                                                                                        
+                <ul>
+                                                                                                                                                                    
+                                    <li>3 Dormitorios</li>
+                                                                                                                                                                                                                                                                        
+                                    <li>2 Baños</li>
+                                                                                                                                                                     
+                                                                                                <li>Sup. Total 657 m<sup>2</sup></li>
+                                                                                                                        </ul>
+                <div class="row">
+                                                                        <div class="col-12 col-md-6 responsible-info" data-type="property" data-id="4591977" data-responsible-type="branch" data-responsible="3338">
+                                <img alt="responsible" loading="lazy" class="responsible-placeholder" src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/images/people-thumb.svg?v=83" />
+                            </div>
+                                            
+                    <div class="col-6 col-md-6 d-none d-md-block text-right">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/casa-chalet-en-venta-en-escobar-de-la-ribera-loma-verde-escobar--4591977" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                        
+                        <a href="/propiedad/casa-chalet-en-venta-en-escobar-de-la-ribera-loma-verde-escobar--4591977" target="_blank" target="_blank" class="btn btn-primary btn-sm btn-more">Más detalles</a>
+                    </div>
+
+                    <div class="col-5 col-md-6 price d-block d-md-none" data-price="305000" data-currency="1">
+                        <h6>
+                            <small>Precio de venta</small><br>USD 305.000                         </h6>
+                                                <p class="expenses"><small>Expensas: $ 550.000</small></p>
+                                            </div>
+
+                    <div class="col-7 col-md-6 d-block d-md-none text-right text-md-left">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/casa-chalet-en-venta-en-escobar-de-la-ribera-loma-verde-escobar--4591977" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                                                <a href="/propiedad/casa-chalet-en-venta-en-escobar-de-la-ribera-loma-verde-escobar--4591977" target="_blank" class="btn btn-primary btn-sm btn-more">Ver más <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "name": "Casa Chalet  en Venta en Escobar De La Ribera, Loma Verde, Escobar",
+                "image": "https://d1v2p1s05qqabi.cloudfront.net/21961903/conversions/1773939632-thumbnail.webp",
+                "description": "CEIBOSPUERTOS casa en venta lote interno cerca de cul de sac (privacidad)Sup cubierta 216m2Sup semicub 3260m2Total constuido 24871m2Planta bajaCocina integradaLiving comedor integrados con chimenea con bioetanolToilette de recepción Planta altaPlayroomHabitación principal en suite con vestidorDos habitaciones secundariasBaño completo(Posibilidad de realizar un dormitorio extra en la zona del playroom)ExteriorGalería con parrillaPileta de natación de 8x4Lavadero en el exteriorBaño exterior de piletaCARACTERíSTICAS ADICIONALESAberturas de aluminio modelo Modena color Negro con DVH doble vidrioEntrada principal con puerta maciza de Pitibriri 90 kilosPuerta secundaria de aluminio con vidrio entero en la parte de atrás TermofusionadoRadiadores en todos los ambientesPre instalación de aire acondicionadoDoble cisternaCable de electricidad marca PRYSMIANLámparas led embutidasGriferia MonocomandoPisos de porcelanato rectificadoCaldera en el lavadero Ladrillos portante de 18 pulgadas en todas las paredesTerraza con membranaTanque en la terrazaTarquini en el exteriorEntrada peatonal con dados de hormigón superpuestos que llevan a una entrada principal de puerta maciza en Pitibiri toilette de recepción cocina con barra desayunadora integrado al living chimenea de bioetanol que hace de separación con el living en la misma tiene conexiones para tv tanto para el living como para el comedorAcceso secundario desde el estacionamiento amplia galería con parrilla y lugar para un freezer baño exterior para pileta y lavaderoPlanta alta escalera en cemento alisado que conecta la planta alta con un amplio playroom que puede utilizarse con una pequeña modificación como un dormitorio extra con salida al balcón posterior Tres habitaciones de los cuales hay 2 secundarias que comparten un baño completo una suite con vestidor y baño completo con ducha y salida al balcónEn el jardín pileta de natación de 8 x 4Puertos tiene más de 1400 hectáreas y un extenso lago central de 400 hectáreas Hasta la fecha lleva entregados diez barrios Vistas Marinas Ceibos Acacias Muelles Araucarias Costas Amarras Riberas y NativasEl proyecto cuenta con-Colegios- Atención médica-Locales comerciales- Club deportivo-Reserva natural-área comercialPuertos es una ciudad donde el cuidado del medioambiente es una prioridad Desde lo paisajístico se privilegiaron las especies autóctonas y se protegió una reserva natural de 60 hectáreas se promueve una cultura sustentable a través de la separación de residuos el control de fertilizantes y el incentivo de estándares para la construcciónTodas las operaciones son a cargo del Martillero y Corredor responsable Paula Mendez CMCPSI 6263 CUCICBA 7579Toda la información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra empresa Los gastos expresados (expensas ABL) se refieren a la última información recabada y deberán confirmarse Fotografías no vinculantes ni contractuales",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "305000",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2026-07-01"
+                },
+                "url": "https://paulamendez.com.ar/propiedad/casa-chalet-en-venta-en-escobar-de-la-ribera-loma-verde-escobar--4591977"
+            }
+        </script>
+            </div>
+</div>
+                        <div class="card property-item list" data-tags="" data-id="4591972" data-type="Departamento">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-4 image-container">
+                <ul class="property-badges">
+                                                                                                </ul>
+                                <ul class="has-media">
+                                                        </ul>
+                <a target="_blank" href="/propiedad/departamento-en-venta-en-milennia-las-vilas-nordelta--4591972"><img width="100%" height="auto" alt="Departamento  en Venta en Milennia, Las Vilas, Nordelta" src="https://d1v2p1s05qqabi.cloudfront.net/22063674/conversions/1774466413-thumbnail.webp" /></a>
+            </div>
+            
+            
+
+
+            <div class="col-12 col-md-8 details show-responsible">
+                <h4 class="d-none"></h4>
+                                    <div class="price d-none d-md-block" data-price="421749" data-currency="1">
+                        <h5 class="d-none"></h5>
+                        <h6>
+                            <small>Precio de venta</small><br>USD 421.749                         </h6>
+                                            </div>
+                
+                 
+                                            <h5><a target="_blank" href="/propiedad/departamento-en-venta-en-milennia-las-vilas-nordelta--4591972">Departamento  en Venta en Milennia, Las Vilas, Nordelta</a></h5>
+                                                    
+                                                             <p class="address-to-show">av de los lagos 3100</p>
+                                    
+                                                                                                                        <p class="description"><small>Viví en un entorno exclusivo y rodeado de naturaleza en este excelente departamento de 4 ambientes ubicado en el complejo Milennia, Nordelta.
+
+Uno de ...</small></p>
+                                                                                        
+                <ul>
+                                                                                                                                                                    
+                                    <li>3 Dormitorios</li>
+                                                                                                                                                                                                                                                                     
+                                                                                                <li>Sup. Total 259 m<sup>2</sup></li>
+                                                                                                                        </ul>
+                <div class="row">
+                                                                        <div class="col-12 col-md-6 responsible-info" data-type="property" data-id="4591972" data-responsible-type="branch" data-responsible="3338">
+                                <img alt="responsible" loading="lazy" class="responsible-placeholder" src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/images/people-thumb.svg?v=83" />
+                            </div>
+                                            
+                    <div class="col-6 col-md-6 d-none d-md-block text-right">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/departamento-en-venta-en-milennia-las-vilas-nordelta--4591972" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                        
+                        <a href="/propiedad/departamento-en-venta-en-milennia-las-vilas-nordelta--4591972" target="_blank" target="_blank" class="btn btn-primary btn-sm btn-more">Más detalles</a>
+                    </div>
+
+                    <div class="col-5 col-md-6 price d-block d-md-none" data-price="421749" data-currency="1">
+                        <h6>
+                            <small>Precio de venta</small><br>USD 421.749                         </h6>
+                                            </div>
+
+                    <div class="col-7 col-md-6 d-block d-md-none text-right text-md-left">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/departamento-en-venta-en-milennia-las-vilas-nordelta--4591972" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                                                <a href="/propiedad/departamento-en-venta-en-milennia-las-vilas-nordelta--4591972" target="_blank" class="btn btn-primary btn-sm btn-more">Ver más <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "name": "Departamento  en Venta en Milennia, Las Vilas, Nordelta",
+                "image": "https://d1v2p1s05qqabi.cloudfront.net/22063674/conversions/1774466413-thumbnail.webp",
+                "description": "Viví en un entorno exclusivo y rodeado de naturaleza en este excelente departamento de 4 ambientes ubicado en el complejo Milennia NordeltaUno de sus grandes diferenciales es la galería perfecta para disfrutar de momentos al aire libre que se extiende hacia un jardín propio creando un espacio verde único para relajarse compartir o desconectar del ritmo diarioDormitorio en suiteUbicado dentro de un complejo de categoría con excelente entorno y acceso a todos los servicios que ofrece Nordelta este departamento es ideal tanto para vivienda permanente como para inversiónTodas las operaciones son a cargo del Martillero y Corredor responsable Paula Mendez CMCPSI 6263 CUCICBA 7579Toda la información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra empresa Los gastos expresados (expensas ABL) se refieren a la última información recabada y deberán confirmarse Fotografías no vinculantes ni contractuales",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "421749",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2026-07-01"
+                },
+                "url": "https://paulamendez.com.ar/propiedad/departamento-en-venta-en-milennia-las-vilas-nordelta--4591972"
+            }
+        </script>
+            </div>
+</div>
+                        <div class="card property-item list" data-tags="" data-id="4591954" data-type="Duplex">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-4 image-container">
+                <ul class="property-badges">
+                                                                                                </ul>
+                                <ul class="has-media">
+                                                        </ul>
+                <a target="_blank" href="/propiedad/departamento-duplex-en-venta-en-milennia-las-vilas-nordelta--4591954"><img width="100%" height="auto" alt="Departamento Dúplex  en Venta en Milennia, Las Vilas, Nordelta" src="https://d1v2p1s05qqabi.cloudfront.net/21954636/conversions/1773933612-thumbnail.webp" /></a>
+            </div>
+            
+            
+
+
+            <div class="col-12 col-md-8 details show-responsible">
+                <h4 class="d-none"></h4>
+                                    <div class="price d-none d-md-block" data-price="342796" data-currency="1">
+                        <h5 class="d-none"></h5>
+                        <h6>
+                            <small>Precio de venta</small><br>USD 342.796                         </h6>
+                                            </div>
+                
+                 
+                                            <h5><a target="_blank" href="/propiedad/departamento-duplex-en-venta-en-milennia-las-vilas-nordelta--4591954">Departamento Dúplex  en Venta en Milennia, Las Vilas, Nordelta</a></h5>
+                                                    
+                                                             <p class="address-to-show">av de los lagos 3100</p>
+                                    
+                                                                                                                        <p class="description"><small>Viví en un entorno exclusivo y rodeado de naturaleza en este excelente departamento de 4 ambientes ubicado en el complejo Milennia, Nordelta.
+
+Uno de ...</small></p>
+                                                                                        
+                <ul>
+                                                                                                                                                                    
+                                    <li>3 Dormitorios</li>
+                                                                                                                                                                                                                                                                     
+                                                                                                <li>Sup. Total 139 m<sup>2</sup></li>
+                                                                                                                        </ul>
+                <div class="row">
+                                                                        <div class="col-12 col-md-6 responsible-info" data-type="property" data-id="4591954" data-responsible-type="branch" data-responsible="3338">
+                                <img alt="responsible" loading="lazy" class="responsible-placeholder" src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/images/people-thumb.svg?v=83" />
+                            </div>
+                                            
+                    <div class="col-6 col-md-6 d-none d-md-block text-right">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/departamento-duplex-en-venta-en-milennia-las-vilas-nordelta--4591954" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                        
+                        <a href="/propiedad/departamento-duplex-en-venta-en-milennia-las-vilas-nordelta--4591954" target="_blank" target="_blank" class="btn btn-primary btn-sm btn-more">Más detalles</a>
+                    </div>
+
+                    <div class="col-5 col-md-6 price d-block d-md-none" data-price="342796" data-currency="1">
+                        <h6>
+                            <small>Precio de venta</small><br>USD 342.796                         </h6>
+                                            </div>
+
+                    <div class="col-7 col-md-6 d-block d-md-none text-right text-md-left">
+                                                                        <a href="https://wa.me/+5491169635186?text=¡Hola! Quiero saber más información sobre https://paulamendez.com.ar/propiedad/departamento-duplex-en-venta-en-milennia-las-vilas-nordelta--4591954" target="_blank" class="btn btn-success btn-sm btn-whatsapp"><i class="fa-brands fa-whatsapp"></i><span style="display: none;">whatsapp</span></a>
+                                                <a href="/propiedad/departamento-duplex-en-venta-en-milennia-las-vilas-nordelta--4591954" target="_blank" class="btn btn-primary btn-sm btn-more">Ver más <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "name": "Departamento Dúplex  en Venta en Milennia, Las Vilas, Nordelta",
+                "image": "https://d1v2p1s05qqabi.cloudfront.net/21954636/conversions/1773933612-thumbnail.webp",
+                "description": "Viví en un entorno exclusivo y rodeado de naturaleza en este excelente departamento de 4 ambientes ubicado en el complejo Milennia NordeltaUno de sus grandes diferenciales es la galería perfecta para disfrutar de momentos al aire libre que se extiende hacia un jardín propio creando un espacio verde único para relajarse compartir o desconectar del ritmo diarioUbicado dentro de un complejo de categoría con excelente entorno y acceso a todos los servicios que ofrece Nordelta este departamento es ideal tanto para vivienda permanente como para inversiónTodas las operaciones son a cargo del Martillero y Corredor responsable Paula Mendez CMCPSI 6263 CUCICBA 7579Toda la información y medidas provistas son aproximadas y deberán ratificarse con la documentación pertinente y no compromete contractualmente a nuestra empresa Los gastos expresados (expensas ABL) se refieren a la última información recabada y deberán confirmarse Fotografías no vinculantes ni contractuales",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "342796",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2026-07-01"
+                },
+                "url": "https://paulamendez.com.ar/propiedad/departamento-duplex-en-venta-en-milennia-las-vilas-nordelta--4591954"
+            }
+        </script>
+            </div>
+</div>
+            
+    <nav>
+        <ul class="pagination">
+        
+        
+                    <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true" aria-label="Anterior">
+                    <span style="display: none;">Back</span>
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            </li>
+        
+                
+        
+                    
+            
+
+            
+                                                                                                    <li class="page-item active" aria-current="page">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                                                                                                                                    <li class="page-item"><a class="page-link" href="http://paulamendez.com.ar/propiedades?page=2">2</a></li>
+                                                                                                                                    <li class="page-item"><a class="page-link" href="http://paulamendez.com.ar/propiedades?page=3">3</a></li>
+                                                                                                                                                                                                                                                                                                                                                        
+            
+
+            
+                                
+            
+
+            
+                                                                                                                        
+                    <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="...">...</a>
+            </li>
+                            <li class="page-item">
+                <a class="page-link" href="http://paulamendez.com.ar/propiedades?page=41" aria-label="41">41</a>
+            </li>
+        
+        
+                    <li class="page-item">
+                <a class="page-link" href="http://paulamendez.com.ar/propiedades?page=2">
+                    <span style="display: none;">Next</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+            </ul>
+
+    </nav>
+
+
+
+            </div>
+            </div>
+</div>
+
+<div class="floating-footer">
+    <div class="row">
+        <div class="col-8">
+            <a href="#" id="btn-filters" class="btn btn-sm btn-outline-primary"><i class="fa fa-filter"></i> Filtros</a>
+        </div>
+    </div>
+</div>
+    
+<div class="modal" id="ownerModal" tabindex="-1" role="dialog" aria-labelledby="ownerModalLabel" data-responsible="branch">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Información de contacto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="loading-content">
+                    <i class="fa-solid fa-circle-notch fa-spin" aria-hidden="true"></i>
+                </div>
+                <div class="content-area d-none">
+                    <div class="owner-data">
+                        <div class="row">
+                            <div class="col-12 col-md-4 owner-picture">
+                                <img alt="" width="100%" height="auto" src="" />
+                            </div>
+                            <div class="col-12 col-md-8 owner-name">
+                                <h5></h5>
+                                <div class="owner-info">
+                                    <a href="#" class="btn btn-address" target="_blank"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span >map</span></a>
+                                    <a href="#" class="btn btn-time" target="_blank"><i class="fa-regular fa-clock-o" aria-hidden="true"></i> <span >clock</span></a>
+                                    <a href="#" target="_blank" class="btn btn-phone"><i class="fa fa-phone" aria-hidden="true"></i> <span >phone</span></a>
+                                    <a href="#" target="_blank" class="btn btn-phone-2"><i class="fa fa-phone" aria-hidden="true"></i> <span >phone 2</span></a>
+                                    <a href="#" target="_blank" class="btn btn-whatsapp-number"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <span >whatsapp</span></a>
+                                    <a href="#" target="_blank" class="btn btn-email"><i class="fa-regular fa-envelope" aria-hidden="true"></i> <span >mail</span></a>
+                                    <a href="#" target="_blank" class="btn btn-whatsapp btn-outline-success btn-sm" target="_blank"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <span>Escribir por whatsapp</span></a>
+    
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #/Modal -->
+
+
+
+</div>
+        
+                        
+         
+            <footer id="footer" style="background-color: #171717; color: #fff">
+    <div class="form-inline align-items-start container">
+        
+        
+                                                        <div class="col-md-4">
+                        <div class="footer-item">
+                                                                                        <div style="color: #fff;">
+    
+    <img style="width: 151px;" src="https://d1v2p1s05qqabi.cloudfront.net/sites/1324/media/1759935729748.svg"><br><br><br><span style="font-size: 14px;"><b>CMCPSI 6263 - CUCICBA 7579</b></span>
+</div>                                                                                                            </div>
+                    </div>
+                                                                <div class="col-md-3">
+                        <div class="footer-item">
+                                                            <h4 style="color: #fff;">Contactanos</h4>
+                                                                                                                                                <div class="footer_contact_widget">
+                                    <ul class="p-0">
+                                                                                                                                                                                <li><a href="#" class="text-transform-none" style="color: #fff"><i class="fa-solid fa-location-dot"></i> Av. del puerto 215 Estudios de la Bahía, Edificio Estudios de la Bahía Oficina 419, Nordelta, Provincia de Buenos Aires, Argentina</a></li>
+                                                                                                                                                                        <li><a href="#" class="text-transform-none" style="color: #fff"><i class="fa-solid fa-location-dot"></i> Almirante Brown 160, San Isidro, Provincia de Buenos Aires, Argentina</a></li>
+                                                                                                                                                                <li><a href="mailto:ventas@paulamendez.com.ar" class="lowercase" style="color: #fff"><i class="fa-regular fa-envelope"></i> ventas@paulamendez.com.ar</a></li>
+                                                                                                                                                                <li><a href="tel:+5491163995420" style="color: #fff"><i class="fa fa-phone"></i> +5491163995420</a></li>
+                                                                                                                                                                                                        <li><a href="https://wa.me/+5491169635186" target="_blank" style="color: #fff"><i class="fa-brands fa-whatsapp"></i> +5491169635186</a></li>
+                                                                            </ul>
+                                </div>
+                                                    </div>
+                    </div>
+                                                                <div class="col-md-2">
+                        <div class="footer-item">
+                                                            <h4 style="color: #fff;">Redes sociales</h4>
+                                                                                                                    <div class="footer_social_widget contact">
+                                    <ul class="p-0">
+                                        <li class="social"><a target="_blank" class="social-btn" style="background-color: #171717; color: #fff" href="https://www.facebook.com/paulamendez.inmobiliaria"><span style="display: none;">Facebook</span><i class="fa-brands fa-facebook"></i></a></li>
+    <li class="social"><a target="_blank" class="social-btn" style="background-color: #171717; color: #fff" href="https://www.instagram.com/paulamendez.inmobiliaria/"><span style="display: none;">Instagram</span><i class="fa-brands fa-instagram"></i></a></li>
+    <li class="social"><a target="_blank" class="social-btn" style="background-color: #171717; color: #fff" href="https://www.youtube.com/@paulamendeznegociosinmobil2996"><span style="display: none;">Youtube</span><i class="fa-brands fa-youtube"></i></a></li>
+    <li class="social"><a target="_blank" class="social-btn" style="background-color: #171717; color: #fff" href="https://www.linkedin.com/in/paula-mendez-negocios-inmobiliarios-609ab991/"><span style="display: none;">Linkedin</span><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <ul>
+                                </div>
+                                                                                </div>
+                    </div>
+                                                                <div class="col-md-3 quick-links">
+                        <div class="footer-item">
+                                                            <h4 style="color: #fff;">Accesos rapidos</h4>
+                                                                                        <ul class="p-0" style="list-style: none">
+            <li><a href="/propiedades" style="color: #fff">Propiedades</a></li>
+            <li><a href="/emprendimientos" style="color: #fff">Emprendimientos</a></li>
+            <li><a href="/nosotros" style="color: #fff">Nosotros</a></li>
+            <li><a href="/tasaciones" style="color: #fff">Tasaciones</a></li>
+            <li><a href="/contactanos" style="color: #fff">Contactanos</a></li>
+    </ul>
+                                                                                                            </div>
+                    </div>
+                                            <div class="copyright col-12">
+            © 2026 2021 Todos los derechos reservados. <small>Desarrollado por <a href="https://brokian.com/" target="_blank"> <img alt="Brokian" width="78" height="23" src="https://d1v2p1s05qqabi.cloudfront.net/editor/logo+brokian.svg" /></a></small>
+                    </div>
+        </div>
+</footer>    
+                            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+                        
+        
+        <script>
+            window.language = 'es';
+                            window.userLogged = false;
+                    </script>
+        <script type="text/javascript" src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/layout.js?v=83"></script>
+
+        <script>
+            function loadCssAndScripts() {
+                // addScript("https://d1v2p1s05qqabi.cloudfront.net/templates/101/fontawesome/css/all.css?v=83");
+                //addCss("https://d1v2p1s05qqabi.cloudfront.net/sites/296/css/laf.css?v=83");
+                                    addCss('https://unpkg.com/aos@2.3.1/dist/aos.css');
+                    // addScript('https://unpkg.com/aos@2.3.1/dist/aos.js', function() {
+                    //     setTimeout(function(){
+                    //         //AOS.init({ duration: 1500 });
+                    //     },2000);
+                    // });
+                                                
+            }
+            window.addEventListener('load', loadCssAndScripts);
+        </script>
+        
+                    <script defer src="https://d1v2p1s05qqabi.cloudfront.net/vendor/whatsappwidget/wwidget.js?v=83"></script>
+        
+        <script src="/admin/vendor/jquery-mask/jquery.mask.min.js"></script>
+        <script>
+        $(document).ready(function(e){
+            $.ajax({
+                type: "GET",
+                url: '/favourites/property',
+                success: function(data){
+                    $(data).each(function(i, el){
+                        $('.btn-favourite[data-entity="property"][data-id="'+el.id+'"]').addClass('active');
+                    });
+                }
+            });
+        });
+        
+                            </script>
+<script>
+    $('.responsible-info').click(function(e){
+        e.preventDefault();
+        $('#ownerModal .loading-content').removeClass('d-none');
+        $('#ownerModal .content-area').addClass('d-none');
+        $('#ownerModal .modal-footer').addClass('d-none');
+        $('#ownerModal').modal('show');
+
+        
+        var type = $(this).attr('data-type');
+        var id = $(this).attr('data-id');
+        var token = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+            type: "POST",
+            url: 'https://paulamendez.com.ar/property/owner-info',
+            data: {type: type, id: id, _token: token},
+            success: function(data){
+
+                if(data.picture) {
+                    $('#ownerModal .owner-picture img').attr('src', data.picture);
+                }
+                if(data.name) {
+                    $('#ownerModal .owner-name h5').html(data.name);
+                    $('#ownerModal .owner-name h5').removeClass('d-none');
+                } else {
+                    $('#ownerModal .owner-name h5').addClass('d-none');
+                }
+                if(data.phone) {
+                    $('#ownerModal .owner-name .btn-phone').find('span').html(data.phone);
+                    $('#ownerModal .owner-name .btn-phone').attr('href', 'tel:'+data.phone);
+                    $('#ownerModal .owner-name .btn-phone').removeClass('d-none');
+                } else {
+                    $('#ownerModal .owner-name .btn-phone').attr('href', '#');
+                    $('#ownerModal .owner-name .btn-phone').addClass('d-none');
+                }
+                if(data.phone_2) {
+                    $('#ownerModal .owner-name .btn-phone-2').find('span').html(data.phone_2);
+                    $('#ownerModal .owner-name .btn-phone-2').attr('href', 'tel:'+data.phone_2);
+                    $('#ownerModal .owner-name .btn-phone-2').removeClass('d-none');
+                } else {
+                    $('#ownerModal .owner-name .btn-phone-2').attr('href', '#');
+                    $('#ownerModal .owner-name .btn-phone-2').addClass('d-none');
+                }
+                
+                if(data.email) {
+                    $('#ownerModal .owner-name .btn-email').find('span').html(data.email);
+                    $('#ownerModal .owner-name .btn-email').attr('href', 'mailto:'+data.email);
+                    $('#ownerModal .owner-name .btn-email').removeClass('d-none');
+                } else {
+                    $('#ownerModal .owner-name .btn-email').attr('href', '#');
+                    $('#ownerModal .owner-name .btn-email').addClass('d-none');
+                }
+                if(data.whatsapp) {
+                    $('#ownerModal .owner-name .btn-whatsapp').attr('href', data.whatsapp);
+                    $('#ownerModal .owner-name .btn-whatsapp').removeClass('d-none');
+
+                    if(data.whatsapp_number) {
+                        $('#ownerModal .owner-name .btn-whatsapp-number').find('span').html(data.whatsapp_number);
+                        $('#ownerModal .owner-name .btn-whatsapp-number').attr('href', data.whatsapp);
+                        $('#ownerModal .owner-name .btn-whatsapp-number').removeClass('d-none');
+                    }
+                } else {
+                    $('#ownerModal .owner-name .btn-whatsapp').addClass('d-none');
+                    $('#ownerModal .owner-name .btn-whatsapp-number').attr('href', '#');
+                    $('#ownerModal .owner-name .btn-whatsapp-number').addClass('d-none');
+                }
+
+                if(data.address) {
+                    $('#ownerModal .owner-name .btn-address').find('span').html(data.address);
+                    $('#ownerModal .owner-name .btn-address').removeClass('d-none');
+                } else {
+                    $('#ownerModal .owner-name .btn-address').addClass('d-none');
+                }
+                if(data.contact_time) {
+                    $('#ownerModal .owner-name .btn-time').find('span').html(data.contact_time);
+                    $('#ownerModal .owner-name .btn-time').removeClass('d-none');
+                } else {
+                    $('#ownerModal .owner-name .btn-time').addClass('d-none');
+                }
+
+                $('#ownerModal .loading-content').addClass('d-none');
+                $('#ownerModal .content-area').removeClass('d-none');
+    
+
+    //             $('#ownerModal .owner-name h5 span').html(data.phone);
+    //             $('#ownerModal .agent-picture img').attr('src', data.picture);
+                
+    // //            $('#ownerModal .agent-form-container').removeClass('hidden');
+    // //            $('#ownerModal .data-preview').removeClass('hidden');
+    // //            $('#ownerModal .data-info').addClass('hidden');
+
+
+    //             if(data.cellphone != '') {
+    //                 $('#ownerModal .btn-cellphone').attr('href', 'tel:'+data.cellphone);
+    //                 $('#ownerModal .btn-cellphone span').html(data.cellphone);
+    //                 $('#ownerModal .btn-cellphone').removeClass('hidden');
+                    
+    //                 $('#ownerModal .btn-whatsapp').attr('href', 'https://api.whatsapp.com/send?phone='+data.cellphone);
+    //                 $('#ownerModal .btn-whatsapp').removeClass('hidden');
+                    
+    //             } else {
+    //                 $('#ownerModal .btn-cellphone').addClass('hidden');
+    //                 $('#ownerModal .btn-whatsapp').addClass('hidden');
+    //             }
+                
+    //             if(data.phone != '') {
+    //                 $('#ownerModal .btn-phone').attr('href', 'tel:'+data.phone);
+    //                 $('#ownerModal .btn-phone span').html(data.phone);
+    //                 $('#ownerModal .btn-phone').removeClass('hidden');
+    //             } else {
+    //                 $('#ownerModal .btn-phone').addClass('hidden');
+    //             }
+                
+    //             if(data.email != '') {
+    //                 $('#ownerModal .btn-email').attr('href', 'mailto:'+data.mail);
+    //                 $('#ownerModal .btn-email span').html(data.email);
+    //                 $('#ownerModal .btn-email').removeClass('hidden');
+    //             } else {
+    //                 $('#ownerModal .btn-email').addClass('hidden');
+    //             }
+                
+    //             $('#ownerModal .loading-content').addClass('hidden');
+    //             $('#ownerModal .content-area').removeClass('hidden');
+    // //            $('#ownerModal .modal-footer').removeClass('hidden');
+                
+            }
+        });
+
+    });
+    
+
+    
+    
+
+</script>
+
+<script src="/admin/vendor/jquery-mask/jquery.mask.min.js"></script>
+    
+            <script src="/js/filters.js"></script>
+    <script src="/js/orderbutton.js"></script>
+<script>
+    $('input[name="price_from"]').mask('000000000000000000', {
+        reverse: true
+    });
+    $('input[name="price_to"]').mask('000000000000000000', {
+        reverse: true
+    });
+</script>
+<script>
+    $('input[name="area_from"]').mask('000000000000000000', {
+        reverse: true
+    });
+    $('input[name="area_to"]').mask('000000000000000000', {
+        reverse: true
+    });
+</script>
+<script>
+    $('input[name="uncovered_area_from"]').mask('000000000000000000', {
+        reverse: true
+    });
+    $('input[name="uncovered_area_to"]').mask('000000000000000000', {
+        reverse: true
+    });
+</script>
+<script>
+    $('input[name="sc_area_from"]').mask('000000000000000000', {
+        reverse: true
+    });
+    $('input[name="sc_area_to"]').mask('000000000000000000', {
+        reverse: true
+    });
+</script>
+<script>
+    $('input[name="cov_area_from"]').mask('000000000000000000', {
+        reverse: true
+    });
+    $('input[name="cov_area_to"]').mask('000000000000000000', {
+        reverse: true
+    });
+</script>
+<script>
+    $('input[name="g_width_from"]').mask('000000000000000000', {
+        reverse: true
+    });
+    $('input[name="g_width_to"]').mask('000000000000000000', {
+        reverse: true
+    });
+</script>
+<script>
+    $('input[name="g_large_from"]').mask('000000000000000000', {
+        reverse: true
+    });
+    $('input[name="g_large_to"]').mask('000000000000000000', {
+        reverse: true
+    });
+</script>
+<script>
+    $('input[name="g_area_from"]').mask('000000000000000000', {
+        reverse: true
+    });
+    $('input[name="g_area_to"]').mask('000000000000000000', {
+        reverse: true
+    });
+</script>
+<script src="/js/orderbutton.js"></script>
+<script>
+    $('#btn-filters').click(function(e){
+        e.preventDefault();
+        $('body').toggleClass('showFilters');
+    });
+    $('#btn-close-filters').click(function(e){
+        e.preventDefault();
+        $('body').toggleClass('showFilters');
+    });
+</script>
+<script src="https://d1v2p1s05qqabi.cloudfront.net/templates/101/js/responsible.js?v=83"></script>
+<script>
+    if(window.dataLayer){
+        window.dataLayer.push({
+            event: 'search',
+            searchTerm: 'Propiedades',
+            path: 'https://paulamendez.com.ar/propiedades'
+        });
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                        {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                "@id": "https://paulamendez.com.ar/propiedades",
+                "name": "Propiedades"
+                }
+            }
+                    ]
+    }
+</script>
+
+        
+
+                    <script>
+              
+            </script>
+                
+        
+
+        
+        
+            </body>
+</html>

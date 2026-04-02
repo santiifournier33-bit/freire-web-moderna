@@ -1,0 +1,57 @@
+[
+  {
+    "id": 4933116,
+    "v": [
+      {
+        "description": "",
+        "id": 597020,
+        "order": 1,
+        "player_url": "https://kuula.co/share/collection/7Fmlh",
+        "provider": "Estudio 3R",
+        "provider_id": 48,
+        "title": "TOUR 360 - Barrio Los Mirasoles, Chillan 830 ",
+        "url": "https://kuula.co/share/collection/7Fmlh",
+        "video_id": "7Fmlh"
+      },
+      {
+        "description": "",
+        "id": 597021,
+        "order": 2,
+        "player_url": "https://www.youtube.com/embed/PuqHzGWjUXk",
+        "provider": "youtube",
+        "provider_id": 2,
+        "title": "Video de propiedad - Barrio Los Mirasoles",
+        "url": "https://www.youtube.com/watch?v=PuqHzGWjUXk",
+        "video_id": "PuqHzGWjUXk"
+      }
+    ]
+  },
+  {
+    "id": 4933275,
+    "v": []
+  },
+  {
+    "id": 4933312,
+    "v": []
+  },
+  {
+    "id": 5201435,
+    "v": []
+  },
+  {
+    "id": 5868417,
+    "v": [
+      {
+        "description": "",
+        "id": 987484,
+        "order": 1,
+        "player_url": "https://www.youtube.com/embed/QaEHRz_QnZo?si=fgo6i7QtT0WvOGH8",
+        "provider": "youtube",
+        "provider_id": 2,
+        "title": "Dos ambientes \"Premium\"",
+        "url": "https://www.youtube.com/watch?v=QaEHRz_QnZo?si=fgo6i7QtT0WvOGH8",
+        "video_id": "QaEHRz_QnZo?si=fgo6i7QtT0WvOGH8"
+      }
+    ]
+  }
+]
