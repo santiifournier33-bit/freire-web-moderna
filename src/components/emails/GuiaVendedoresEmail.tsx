@@ -32,7 +32,7 @@ export const GuiaVendedoresEmail = ({
           <Section style={header}>
             <Img
               src={`${baseUrl}/logo-blanco-oficial.png`}
-              width="150"
+              width="80"
               alt="Freire Propiedades"
               style={logo}
             />
