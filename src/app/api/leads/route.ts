@@ -55,7 +55,7 @@ export async function POST(req: Request) {
         from: "Freire Propiedades <contacto@freirepropiedades.com>", 
         to: [email],
         replyTo: "contacto@freirepropiedades.com",
-        subject: "Tu Guía Privada: Claves para Vender en el Mercado Actual",
+        subject: "🏡 Aquí tienes tu Guía del Vendedor",
         react: GuiaVendedoresEmail({ name }),
       });
 

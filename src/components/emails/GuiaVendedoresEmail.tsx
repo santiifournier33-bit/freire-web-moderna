@@ -21,9 +21,7 @@ export const GuiaVendedoresEmail = ({
   name,
 }: GuiaVendedoresEmailProps) => {
   // En Next.js el dominio de producción suele estar en VERCEL_URL o se define en producción
-  const baseUrl = process.env.VERCEL_URL 
-    ? `https://${process.env.VERCEL_URL}` 
-    : "https://freirepropiedades.com.ar";
+  const baseUrl = "https://www.freirepropiedades.com";
 
   return (
     <Html>
@@ -42,7 +40,7 @@ export const GuiaVendedoresEmail = ({
           
           <Section style={content}>
             <Heading style={heading}>
-              🏡 Aquí tienes tu Guía del Vendedor
+              Vender tu casa, paso a paso
             </Heading>
             <Text style={paragraph}>
               Hola <strong>{name}</strong>,
@@ -51,7 +49,7 @@ export const GuiaVendedoresEmail = ({
               Gracias por solicitar nuestra Guía del Vendedor, aquí encontrarás toda la información necesaria para vender tu casa con éxito.
             </Text>
             <Section style={buttonContainer}>
-              <Button style={button} href={`${baseUrl}/Guia%20de%20vendedores%20-%20Freire.pdf`}>
+              <Button style={button} href={`${baseUrl}/guia-vendedores.pdf`}>
                 Descargar Guía en PDF
               </Button>
             </Section>
