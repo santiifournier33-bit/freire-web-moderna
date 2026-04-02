@@ -52,7 +52,7 @@ export async function POST(req: Request) {
     // 4. Send Email via Resend
     try {
       const { data, error } = await resend.emails.send({
-        from: "Acme <onboarding@resend.dev>", // Temporary onboarding email until domain is verified
+        from: "Freire Propiedades <contacto@freirepropiedades.com>", 
         to: [email],
         replyTo: "contacto@freirepropiedades.com",
         subject: "Tu Guía Privada: Claves para Vender en el Mercado Actual",
