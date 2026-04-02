@@ -76,6 +76,11 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   category: "real estate",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
