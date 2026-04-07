@@ -535,7 +535,7 @@ export default function PropiedadesList({ initialProperties }: { initialProperti
                           )}
                         </div>
                         
-                        <Link href={`/propiedades/${prop.id}`} className="absolute inset-0">
+                        <Link href={`/p/${prop.id}-prop`} className="absolute inset-0">
                           {mainImage !== "/placeholder-home.jpg" ? (
                             <Image 
                               src={mainImage} 
@@ -573,7 +573,7 @@ export default function PropiedadesList({ initialProperties }: { initialProperti
                         <div>
                           <div className="flex flex-col md:flex-row md:justify-between items-start gap-4 mb-6">
                             <div className="flex-1">
-                              <Link href={`/propiedades/${prop.id}`} className="block group-hover:text-secondary transition-colors">
+                              <Link href={`/p/${prop.id}-prop`} className="block group-hover:text-secondary transition-colors">
                                 <h3 className="text-xl md:text-2xl font-bold text-primary tracking-tight leading-tight line-clamp-2 mb-2">
                                   {prop.publication_title}
                                 </h3>
@@ -628,14 +628,14 @@ export default function PropiedadesList({ initialProperties }: { initialProperti
                           
                           <div className="flex items-center gap-3 w-full lg:w-auto mt-4 lg:mt-0 pt-4 lg:pt-0 border-t lg:border-none border-primary/5">
                             <Link 
-                              href={`/propiedades/${prop.id}#seccion-contacto`}
+                              href={`/p/${prop.id}-prop#seccion-contacto`}
                               className="flex items-center justify-center w-11 h-11 rounded-xl bg-[#25D366] hover:bg-[#1DA851] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 shrink-0"
                               title="Consultar por WhatsApp"
                             >
                               <img src="/whatsapp-blanco.png" alt="WhatsApp" className="w-[20px] h-[20px] object-contain text-white" />
                             </Link>
                             <Link 
-                              href={`/propiedades/${prop.id}`}
+                              href={`/p/${prop.id}-prop`}
                               className="flex-1 lg:flex-none flex items-center justify-center gap-2 bg-primary hover:bg-secondary text-white py-3 px-6 rounded-xl font-bold uppercase tracking-widest text-[10px] transition-colors hover:shadow-lg whitespace-nowrap"
                             >
                               Más detalles

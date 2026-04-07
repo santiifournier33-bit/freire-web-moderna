@@ -1,0 +1,3 @@
+module.exports=[73058,a=>{"use strict";var b=a.i(7997);a.s(["default",0,function({children:a}){return(0,b.jsx)(b.Fragment,{children:a})},"metadata",0,{title:"Contacto | Freire Propiedades",description:"Contáctese con Freire Propiedades para recibir asesoramiento personalizado. Estamos en Pilar, Zona Norte.",alternates:{canonical:"https://www.freirepropiedades.com/contacto"}}])},37740,a=>{a.n(a.i(73058))}];
+
+//# sourceMappingURL=src_app_contacto_layout_tsx_0glphzl._.js.map

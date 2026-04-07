@@ -1,0 +1,3 @@
+module.exports=[42426,a=>{"use strict";var b=a.i(7997);a.s(["default",0,function({children:a}){return(0,b.jsx)(b.Fragment,{children:a})},"metadata",0,{title:"Tasar una Propiedad | Freire Propiedades",description:"Solicite una tasación profesional de su inmueble. Nuestro servicio técnico asegura el valor de mercado óptimo.",alternates:{canonical:"https://www.freirepropiedades.com/tasar-propiedad"}}])},23528,a=>{a.n(a.i(42426))}];
+
+//# sourceMappingURL=src_app_tasar-propiedad_layout_tsx_02x2ons._.js.map

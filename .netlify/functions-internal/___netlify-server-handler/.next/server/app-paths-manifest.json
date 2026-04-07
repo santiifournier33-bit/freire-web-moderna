@@ -1,0 +1,16 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/leads/route": "app/api/leads/route.js",
+  "/api/locations/route": "app/api/locations/route.js",
+  "/contacto/page": "app/contacto/page.js",
+  "/guia-vendedores/page": "app/guia-vendedores/page.js",
+  "/icon.png/route": "app/icon.png/route.js",
+  "/p/[slug]/page": "app/p/[slug]/page.js",
+  "/page": "app/page.js",
+  "/propiedades/[id]/page": "app/propiedades/[id]/page.js",
+  "/propiedades/page": "app/propiedades/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/tasar-propiedad/page": "app/tasar-propiedad/page.js"
+}

@@ -30,6 +30,15 @@ const nextConfig = {
   },
   // Permitimos el acceso desde dispositivos en tu red local (como tu celular)
   allowedDevOrigins: ['192.168.0.11'],
+  async redirects() {
+    return [
+      {
+        source: '/propiedades/:id',
+        destination: '/p/:id-prop',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

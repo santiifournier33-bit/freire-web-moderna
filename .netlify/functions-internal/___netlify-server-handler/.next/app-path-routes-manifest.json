@@ -1,0 +1,16 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/leads/route": "/api/leads",
+  "/api/locations/route": "/api/locations",
+  "/contacto/page": "/contacto",
+  "/guia-vendedores/page": "/guia-vendedores",
+  "/icon.png/route": "/icon.png",
+  "/p/[slug]/page": "/p/[slug]",
+  "/page": "/",
+  "/propiedades/[id]/page": "/propiedades/[id]",
+  "/propiedades/page": "/propiedades",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/tasar-propiedad/page": "/tasar-propiedad"
+}
