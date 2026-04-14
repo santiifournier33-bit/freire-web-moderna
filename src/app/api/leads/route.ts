@@ -3,6 +3,7 @@ import dns from "dns/promises";
 import GuiaVendedoresEmail from "@/components/emails/GuiaVendedoresEmail";
 import validator from "validator";
 import { render } from "@react-email/render";
+import { createWebContact } from "@/lib/tokkobroker";
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY || "";
 const GOOGLE_SHEET_WEBHOOK = process.env.GOOGLE_SHEET_WEBHOOK || "";
@@ -49,7 +50,23 @@ export async function POST(req: Request) {
       }
     }
 
-    // 4. Agregar a Brevo CRM (Lista ID 3 - Leads Tasación Web)
+    // 4. Sincronización con Tokko Broker (Solo si no viene de una página que ya lo hizo)
+    // El formulario de tasación lo hace desde el frontend para detallar más parámetros.
+    if (source !== "Web Tasacion") {
+      try {
+        await createWebContact({
+          name: name,
+          email: email,
+          phone: "", // No solemos pedir teléfono para guías en un inicio
+          text: `Contacto generado a través de campaña/formulario: ${source || "General"}`,
+          tags: ["web", "guia-vendedor"],
+        });
+      } catch (tokkoErr) {
+        console.error("Tokko API push error for Guia Vendedores:", tokkoErr);
+      }
+    }
+
+    // 5. Agregar a Brevo CRM (Lista ID 3 - Leads Tasación Web)
     if (BREVO_API_KEY) {
       try {
         await fetch("https://api.brevo.com/v3/contacts", {
@@ -73,7 +90,7 @@ export async function POST(req: Request) {
         console.error("Warning: Falló la sincronización con Brevo CRM", brevoCrmError);
       }
 
-      // 5. Enviar Email Transaccional (Guía del vendedor) vía Brevo
+      // 6. Enviar Email Transaccional (Guía del vendedor) vía Brevo
       try {
         // Renderizamos el componente de React a String HTML
         const htmlContent = await render(GuiaVendedoresEmail({ name }));

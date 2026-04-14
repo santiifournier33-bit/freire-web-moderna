@@ -86,6 +86,13 @@ Comentarios extras: ${formData.comments || "Ninguno"}
     });
 
     if (success) {
+      // 2. Ejecutar de fondo la ruta de Marketing para CRM (Brevo) + Email
+      fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: formData.name, email: formData.email, source: "Web Tasacion" })
+      }).catch(err => console.error("Error trigger Brevo:", err));
+
       setStatus("success");
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
