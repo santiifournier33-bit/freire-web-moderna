@@ -25,6 +25,7 @@ function buildGuiaVendedoresHtml(name: string): string {
     
     <!-- Content -->
     <div style="padding:40px 40px 20px;">
+      <p style="color:#D4AF37;font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;margin-top:0;">AQUÍ TIENES TU GUÍA</p>
       <h1 style="color:#0B1D3A;font-size:28px;font-weight:bold;line-height:1.2;margin:0 0 24px;">Vender tu casa, paso a paso</h1>
       <p style="color:#4a5568;font-size:16px;line-height:1.6;margin-bottom:24px;">Hola <strong>${name}</strong>,</p>
       <p style="color:#4a5568;font-size:16px;line-height:1.6;margin-bottom:24px;">Gracias por solicitar nuestra Guía del Vendedor, aquí encontrarás toda la información necesaria para vender tu casa con éxito.</p>

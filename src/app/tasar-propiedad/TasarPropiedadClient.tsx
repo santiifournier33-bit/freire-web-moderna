@@ -77,29 +77,43 @@ Piso/Depto: ${formData.floor || "-"} / ${formData.apartment || "-"}
 Comentarios extras: ${formData.comments || "Ninguno"}
     `.trim();
 
+    // Capture form data into local variables before any state mutations
+    const leadName = formData.name;
+    const leadEmail = formData.email;
+    const leadPhone = formData.phone;
+
     const success = await createWebContact({
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
+      name: leadName,
+      email: leadEmail,
+      phone: leadPhone,
       text: textData,
       tags: ["web", "tasacion"],
     });
 
-    if (success) {
-      // Sync to Brevo in parallel (non-blocking — Tokko is already saved)
-      fetch("/api/brevo-contact", {
+    // Sync to Brevo independently — runs regardless of Tokko result
+    // Awaited to prevent the browser from cancelling the request on re-render
+    try {
+      const brevoRes = await fetch("/api/brevo-contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
+          name: leadName,
+          email: leadEmail,
+          phone: leadPhone,
           source: "tasacion",
         }),
-      }).catch((err) => console.error("[Brevo] Sync error (tasacion):", err));
+      });
+      if (!brevoRes.ok) {
+        const errText = await brevoRes.text();
+        console.error("[Brevo] Tasacion sync failed:", brevoRes.status, errText);
+      }
+    } catch (brevoErr) {
+      console.error("[Brevo] Tasacion network error:", brevoErr);
+    }
 
+    if (success) {
       setStatus("success");
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       setStatus("error");
     }
