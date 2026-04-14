@@ -86,12 +86,17 @@ Comentarios extras: ${formData.comments || "Ninguno"}
     });
 
     if (success) {
-      // 2. Ejecutar de fondo la ruta de Marketing para CRM (Brevo) + Email
-      fetch("/api/leads", {
+      // Sync to Brevo in parallel (non-blocking — Tokko is already saved)
+      fetch("/api/brevo-contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: formData.name, email: formData.email, source: "Web Tasacion" })
-      }).catch(err => console.error("Error trigger Brevo:", err));
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          source: "tasacion",
+        }),
+      }).catch((err) => console.error("[Brevo] Sync error (tasacion):", err));
 
       setStatus("success");
       window.scrollTo({ top: 0, behavior: 'smooth' });

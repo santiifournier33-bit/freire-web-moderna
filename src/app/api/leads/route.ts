@@ -1,12 +1,67 @@
 import { NextResponse } from "next/server";
 import dns from "dns/promises";
-import GuiaVendedoresEmail from "@/components/emails/GuiaVendedoresEmail";
 import validator from "validator";
-import { render } from "@react-email/render";
-import { createWebContact } from "@/lib/tokkobroker";
+import { createBrevoContact, sendBrevoEmail, BREVO_LISTS } from "@/lib/brevo";
 
-const BREVO_API_KEY = process.env.BREVO_API_KEY || "";
 const GOOGLE_SHEET_WEBHOOK = process.env.GOOGLE_SHEET_WEBHOOK || "";
+const BASE_URL = "https://www.freirepropiedades.com";
+
+/**
+ * Generates the Seller Guide email HTML.
+ * Mirrors the design of GuiaVendedoresEmail.tsx but as a raw string
+ * to avoid react-dom/server imports (not allowed in App Router API routes).
+ */
+function buildGuiaVendedoresHtml(name: string): string {
+  return `<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" /></head>
+<body style="background-color:#f7f9fa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;margin:0;padding:0;">
+  <div style="margin:40px auto;width:600px;max-width:100%;background-color:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.05);border:1px solid #eaeaea;">
+    
+    <!-- Header -->
+    <div style="background-color:#0B1D3A;padding:40px 0;text-align:center;">
+      <img src="${BASE_URL}/logo-blanco-oficial.png" width="80" alt="Freire Propiedades" style="margin:0 auto;display:block;" />
+    </div>
+    
+    <!-- Content -->
+    <div style="padding:40px 40px 20px;">
+      <h1 style="color:#0B1D3A;font-size:28px;font-weight:bold;line-height:1.2;margin:0 0 24px;">Vender tu casa, paso a paso</h1>
+      <p style="color:#4a5568;font-size:16px;line-height:1.6;margin-bottom:24px;">Hola <strong>${name}</strong>,</p>
+      <p style="color:#4a5568;font-size:16px;line-height:1.6;margin-bottom:24px;">Gracias por solicitar nuestra Guía del Vendedor, aquí encontrarás toda la información necesaria para vender tu casa con éxito.</p>
+      
+      <!-- CTA Button -->
+      <div style="text-align:center;margin:32px 0 40px;">
+        <a href="${BASE_URL}/guia-vendedores.pdf" style="background-color:#0B1D3A;border-radius:4px;color:#fff;font-size:14px;font-weight:bold;text-decoration:none;text-align:center;display:inline-block;padding:16px 32px;text-transform:uppercase;letter-spacing:1px;">Descargar Guía en PDF</a>
+      </div>
+      
+      <p style="color:#4a5568;font-size:16px;line-height:1.6;margin-bottom:24px;">Si después de leer la guía consideras que tu propiedad necesita una evaluación profesional por parte de nuestro equipo, no dudes en responder directamente a este correo o agendar una tasación desde nuestra plataforma.</p>
+      
+      <!-- WhatsApp Button -->
+      <div style="text-align:center;margin:16px 0 32px;">
+        <a href="https://wa.me/5491151454915?text=Hola,%20vi%20la%20gu%C3%ADa%20y%20me%20gustar%C3%ADa%20generar%20una%20tasaci%C3%B3n%20profesional" style="background-color:#25D366;border-radius:4px;color:#fff;font-size:14px;font-weight:bold;text-decoration:none;text-align:center;display:inline-block;padding:16px 32px;text-transform:uppercase;letter-spacing:1px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png" width="20" height="20" alt="WhatsApp" style="display:inline-block;vertical-align:middle;margin-right:8px;" />
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div style="background-color:#f8f9fa;padding:32px 40px;border-top:1px solid #eaeaea;">
+      <p style="color:#718096;font-size:12px;line-height:1.5;margin:0 0 16px;text-align:center;">
+        FREIRE Negocios Inmobiliarios<br />
+        Edificio STUDIOS Work&amp;Live, Pilar<br />
+        contacto@freirepropiedades.com
+      </p>
+      <p style="text-align:center;margin:0;">
+        <a href="https://www.freirepropiedades.com" style="color:#0B1D3A;font-size:12px;text-decoration:underline;">Visitar Sitio Web</a> &bull;
+        <a href="https://www.freirepropiedades.com/contacto" style="color:#0B1D3A;font-size:12px;text-decoration:underline;">Contacto Directo</a>
+      </p>
+    </div>
+    
+  </div>
+</body>
+</html>`;
+}
 
 export async function POST(req: Request) {
   try {
@@ -50,79 +105,33 @@ export async function POST(req: Request) {
       }
     }
 
-    // 4. Sincronización con Tokko Broker (Solo si no viene de una página que ya lo hizo)
-    // El formulario de tasación lo hace desde el frontend para detallar más parámetros.
-    if (source !== "Web Tasacion") {
-      try {
-        await createWebContact({
-          name: name,
-          email: email,
-          phone: "", // No solemos pedir teléfono para guías en un inicio
-          text: `Contacto generado a través de campaña/formulario: ${source || "General"}`,
-          tags: ["web", "guia-vendedor"],
-        });
-      } catch (tokkoErr) {
-        console.error("Tokko API push error for Guia Vendedores:", tokkoErr);
+    // 4. Create contact in Brevo (List: Guía Vendedores)
+    await createBrevoContact({
+      email,
+      name,
+      listIds: [BREVO_LISTS.GUIA_VENDEDORES],
+      attributes: { SOURCE: "guia-vendedores" },
+    });
+
+    // 5. Send Email via Brevo (replaces Resend)
+    try {
+      const htmlContent = buildGuiaVendedoresHtml(name);
+      
+      const emailSent = await sendBrevoEmail({
+        to: { email, name },
+        subject: "🏡 Aquí tienes tu Guía del Vendedor",
+        htmlContent,
+      });
+
+      if (!emailSent) {
+        throw new Error("Brevo email delivery failed");
       }
-    }
-
-    // 5. Agregar a Brevo CRM (Lista ID 3 - Leads Tasación Web)
-    if (BREVO_API_KEY) {
-      try {
-        await fetch("https://api.brevo.com/v3/contacts", {
-          method: "POST",
-          headers: {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "api-key": BREVO_API_KEY,
-          },
-          body: JSON.stringify({
-            email: email,
-            attributes: {
-              NOMBRE: name,
-              SOURCE: source || "Web Tasacion"
-            },
-            listIds: [3],
-            updateEnabled: true // Actualiza si ya existe
-          }),
-        });
-      } catch (brevoCrmError) {
-        console.error("Warning: Falló la sincronización con Brevo CRM", brevoCrmError);
-      }
-
-      // 6. Enviar Email Transaccional (Guía del vendedor) vía Brevo
-      try {
-        // Renderizamos el componente de React a String HTML
-        const htmlContent = await render(GuiaVendedoresEmail({ name }));
-
-        const emailResponse = await fetch("https://api.brevo.com/v3/smtp/email", {
-          method: "POST",
-          headers: {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "api-key": BREVO_API_KEY,
-          },
-          body: JSON.stringify({
-            sender: { name: "Freire Propiedades", email: "contacto@freirepropiedades.com" },
-            to: [{ email: email, name: name }],
-            subject: "🏡 Aquí tienes tu Guía del Vendedor",
-            htmlContent: htmlContent
-          }),
-        });
-
-        if (!emailResponse.ok) {
-          const errData = await emailResponse.json();
-          throw new Error(`Brevo SMTP Error: ${JSON.stringify(errData)}`);
-        }
-      } catch (brevoEmailError: any) {
-        console.error("Error al enviar email transaccional con Brevo:", brevoEmailError);
-        return NextResponse.json(
-          { error: `Brevo Error: ${brevoEmailError.message}` },
-          { status: 500 }
-        );
-      }
-    } else {
-      console.warn("Falta BREVO_API_KEY en las variables de entorno.");
+    } catch (emailError: any) {
+      console.error("Error al enviar email:", emailError);
+      return NextResponse.json(
+        { error: `Error de envío: ${emailError.message}` },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json(

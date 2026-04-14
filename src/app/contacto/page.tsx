@@ -54,6 +54,18 @@ export default function ContactoPage() {
     });
 
     if (success) {
+      // Sync to Brevo in parallel (non-blocking — Tokko is already saved)
+      fetch("/api/brevo-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          source: "contacto",
+        }),
+      }).catch((err) => console.error("[Brevo] Sync error (contacto):", err));
+
       setStatus("success");
       setFormData({ name: "", email: "", phone: "", message: "" });
       setEmailError("");
