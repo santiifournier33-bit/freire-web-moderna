@@ -352,6 +352,9 @@ Comentarios extras: ${formData.comments || "Ninguno"}
                 </div>
 
                 <div className="pt-12 flex flex-col items-center gap-4">
+                  <p className="text-xs text-primary/50 flex items-center gap-1.5">
+                    <span>🔒</span> Tu información es 100% confidencial
+                  </p>
                   {status === "error" && (
                     <p className="text-[10px] text-red-500 uppercase tracking-widest font-bold">Error en el servidor. Reintente.</p>
                   )}

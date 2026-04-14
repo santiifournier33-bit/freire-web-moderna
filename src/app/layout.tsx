@@ -5,6 +5,9 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageLoader from "@/components/layout/PageLoader";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
+import MicrosoftClarity from "@/components/analytics/MicrosoftClarity";
+import MetaPixel from "@/components/analytics/MetaPixel";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -97,6 +100,11 @@ export default function RootLayout({
         <LocalBusinessSchema />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-surface text-on-surface selection:bg-primary/20">
+        {/* ── Marketing Analytics (solo se renderizan si las env vars están configuradas) ── */}
+        <MicrosoftClarity />
+        <MetaPixel />
+        <GoogleAnalytics />
+
         <PageLoader />
         <Navbar />
         <main className="flex-1 flex flex-col">{children}</main>
