@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 import dns from "dns/promises";
 import GuiaVendedoresEmail from "@/components/emails/GuiaVendedoresEmail";
 import validator from "validator";
+import { render } from "@react-email/render";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const BREVO_API_KEY = process.env.BREVO_API_KEY || "";
 const GOOGLE_SHEET_WEBHOOK = process.env.GOOGLE_SHEET_WEBHOOK || "";
 
 export async function POST(req: Request) {
@@ -49,25 +49,63 @@ export async function POST(req: Request) {
       }
     }
 
-    // 4. Send Email via Resend
-    try {
-      const { data, error } = await resend.emails.send({
-        from: "Freire Propiedades <contacto@freirepropiedades.com>", 
-        to: [email],
-        replyTo: "contacto@freirepropiedades.com",
-        subject: "🏡 Aquí tienes tu Guía del Vendedor",
-        react: GuiaVendedoresEmail({ name }),
-      });
-
-      if (error) {
-        throw new Error(error.name + ": " + error.message);
+    // 4. Agregar a Brevo CRM (Lista ID 3 - Leads Tasación Web)
+    if (BREVO_API_KEY) {
+      try {
+        await fetch("https://api.brevo.com/v3/contacts", {
+          method: "POST",
+          headers: {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "api-key": BREVO_API_KEY,
+          },
+          body: JSON.stringify({
+            email: email,
+            attributes: {
+              NOMBRE: name,
+              SOURCE: source || "Web Tasacion"
+            },
+            listIds: [3],
+            updateEnabled: true // Actualiza si ya existe
+          }),
+        });
+      } catch (brevoCrmError) {
+        console.error("Warning: Falló la sincronización con Brevo CRM", brevoCrmError);
       }
-    } catch (emailError: any) {
-      console.error("Error al enviar email:", emailError);
-      return NextResponse.json(
-        { error: `Resend Error: ${emailError.message}` },
-        { status: 500 }
-      );
+
+      // 5. Enviar Email Transaccional (Guía del vendedor) vía Brevo
+      try {
+        // Renderizamos el componente de React a String HTML
+        const htmlContent = await render(GuiaVendedoresEmail({ name }));
+
+        const emailResponse = await fetch("https://api.brevo.com/v3/smtp/email", {
+          method: "POST",
+          headers: {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "api-key": BREVO_API_KEY,
+          },
+          body: JSON.stringify({
+            sender: { name: "Freire Propiedades", email: "contacto@freirepropiedades.com" },
+            to: [{ email: email, name: name }],
+            subject: "🏡 Aquí tienes tu Guía del Vendedor",
+            htmlContent: htmlContent
+          }),
+        });
+
+        if (!emailResponse.ok) {
+          const errData = await emailResponse.json();
+          throw new Error(`Brevo SMTP Error: ${JSON.stringify(errData)}`);
+        }
+      } catch (brevoEmailError: any) {
+        console.error("Error al enviar email transaccional con Brevo:", brevoEmailError);
+        return NextResponse.json(
+          { error: `Brevo Error: ${brevoEmailError.message}` },
+          { status: 500 }
+        );
+      }
+    } else {
+      console.warn("Falta BREVO_API_KEY en las variables de entorno.");
     }
 
     return NextResponse.json(
