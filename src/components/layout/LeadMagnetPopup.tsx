@@ -227,22 +227,27 @@ export default function LeadMagnetPopup() {
               </span>
             </div>
 
-            {/* Title — Size increased +30% while retaining 2 perfect lines */}
+            {/* Title — Maximum size, strictly horizontally constrained to 2 lines */}
             <h2
               id="popup-title"
               style={{
                 color:        "#ffffff",
-                fontSize:     "clamp(28px, 7vw, 40px)",
                 fontWeight:   800,
-                lineHeight:   1.2,
+                lineHeight:   1.15,
                 margin:       0,
                 letterSpacing: "-0.5px",
                 textShadow:   "0 2px 8px rgba(0,0,0,0.2)",
+                display:      "flex",
+                flexDirection: "column",
+                alignItems:   "center",
               }}
             >
-              ¿Estás pensando en
-              <br />
-              vender tu propiedad?
+              <span style={{ fontSize: "clamp(24px, 8.5vw, 38px)", whiteSpace: "nowrap" }}>
+                ¿Estás pensando en
+              </span>
+              <span style={{ fontSize: "clamp(24px, 8.5vw, 38px)", whiteSpace: "nowrap" }}>
+                vender tu propiedad?
+              </span>
             </h2>
           </div>
 
