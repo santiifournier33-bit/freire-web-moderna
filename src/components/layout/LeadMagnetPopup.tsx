@@ -83,7 +83,6 @@ export default function LeadMagnetPopup() {
 
   return (
     <>
-      {/* ── Global styles injected while popup is mounted ───────────────── */}
       <style>{`
         /* CTA shimmer sweep */
         .fp-cta-btn {
@@ -114,35 +113,6 @@ export default function LeadMagnetPopup() {
           box-shadow: 0 12px 30px rgba(27,147,193,0.55) !important;
         }
         .fp-cta-btn:active { transform: scale(0.98); }
-
-        /* ── Floating mockup (desktop) ─────────────────────────────────── */
-        .fp-mockup-float {
-          position: absolute;
-          top: -48px;
-          right: -22px;
-          width: 148px;
-          z-index: 20;
-          transform: rotate(8deg);
-          filter:
-            drop-shadow(0 20px 40px rgba(0,0,0,0.50))
-            drop-shadow(0  4px 10px rgba(0,0,0,0.25));
-          pointer-events: none;
-          transition: transform 0.45s ease;
-        }
-
-        /* ── Inline mockup (mobile only) ───────────────────────────────── */
-        .fp-mockup-inline { display: none; }
-
-        /* ── Mobile breakpoint ─────────────────────────────────────────── */
-        @media (max-width: 520px) {
-          .fp-mockup-float   { display: none !important; }
-          .fp-mockup-inline  {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 14px;
-          }
-          .fp-header-pad { padding-right: 48px !important; }
-        }
       `}</style>
 
       {/* ── Backdrop ───────────────────────────────────────────────────── */}
@@ -158,209 +128,192 @@ export default function LeadMagnetPopup() {
           display:         "flex",
           alignItems:      "center",
           justifyContent:  "center",
-          padding:         "20px",
-          backgroundColor: `rgba(6, 14, 30, ${isAnimating ? 0.72 : 0})`,
-          backdropFilter:       isAnimating ? "blur(10px)" : "blur(0)",
-          WebkitBackdropFilter: isAnimating ? "blur(10px)" : "blur(0)",
+          padding:         "16px",
+          backgroundColor: `rgba(6, 14, 30, ${isAnimating ? 0.75 : 0})`,
+          backdropFilter:       isAnimating ? "blur(8px)" : "blur(0)",
+          WebkitBackdropFilter: isAnimating ? "blur(8px)" : "blur(0)",
           transition: "background-color 0.38s ease, backdrop-filter 0.38s ease",
         }}
       >
-        {/* ── Outer wrapper — allows mockup to float outside card ──────── */}
         <div
           onClick={(e) => e.stopPropagation()}
           style={{
             position:   "relative",
-            maxWidth:   "480px",
+            maxWidth:   "450px",
             width:      "100%",
-            transform:  isAnimating ? "translateY(0) scale(1)" : "translateY(34px) scale(0.94)",
+            transform:  isAnimating ? "translateY(0) scale(1)" : "translateY(24px) scale(0.96)",
             opacity:    isAnimating ? 1 : 0,
             transition: "transform 0.42s cubic-bezier(0.22,1.2,0.36,1), opacity 0.38s ease",
+            borderRadius: "18px",
+            overflow:     "hidden",
+            boxShadow:    "0 28px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.07)",
+            textAlign:    "center",
+            display:      "flex",
+            flexDirection: "column",
           }}
         >
-          {/* ── FLOATING MOCKUP (desktop only via CSS) ──────────────────── */}
-          <div className="fp-mockup-float">
+          {/* Top accent stripe */}
+          <div style={{
+            height:     "4px",
+            background: "linear-gradient(90deg, #1B93C1 0%, #091c40 100%)",
+          }} />
+
+          {/* ── HEADER ─────────────────────────────────────────────────── */}
+          <div
+            style={{
+              background: "linear-gradient(160deg, #1B93C1 0%, #0d2d5e 100%)",
+              padding:    "40px 24px 32px",
+              position:   "relative",
+              display:    "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            {/* Close button */}
+            <button
+              onClick={handleClose}
+              aria-label="Cerrar"
+              style={{
+                position:       "absolute",
+                top:            "12px",
+                right:          "12px",
+                width:          "30px",
+                height:         "30px",
+                borderRadius:   "50%",
+                background:     "rgba(255,255,255,0.15)",
+                border:         "none",
+                cursor:         "pointer",
+                color:          "rgba(255,255,255,0.9)",
+                fontSize:       "18px",
+                lineHeight:     1,
+                display:        "flex",
+                alignItems:     "center",
+                justifyContent: "center",
+                transition:     "background 0.2s",
+                zIndex:         5,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.3)")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.15)")}
+            >
+              ×
+            </button>
+
+            {/* Mockup Inside Banner */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/guia-mockup.png"
-              alt="Guía del Vendedor — Freire Propiedades"
-              style={{ width: "100%", height: "auto", display: "block" }}
-            />
-          </div>
-
-          {/* ── Inner card (overflow:hidden clips gradient + rounded corners) */}
-          <div
-            style={{
-              borderRadius: "18px",
-              overflow:     "hidden",
-              boxShadow:    "0 28px 80px rgba(0,0,0,0.40), 0 0 0 1px rgba(255,255,255,0.07)",
-            }}
-          >
-            {/* Top accent stripe */}
-            <div style={{
-              height:     "4px",
-              background: "linear-gradient(90deg, #1B93C1 0%, #091c40 100%)",
-            }} />
-
-            {/* ── HEADER ─────────────────────────────────────────────────── */}
-            <div
-              className="fp-header-pad"
+              alt="Guía del Vendedor"
               style={{
-                /* gradient: bright blue → deep navy */
-                background: "linear-gradient(160deg, #1B93C1 0%, #0d2d5e 100%)",
-                padding:    "28px 155px 28px 28px", /* right padding = mockup safe zone */
-                position:   "relative",
+                height:      "150px",
+                width:       "auto",
+                objectFit:   "contain",
+                filter:      "drop-shadow(0 12px 24px rgba(0,0,0,0.35))",
+                marginBottom: "24px",
+                transform:    "rotate(2deg)",
+              }}
+            />
+
+            {/* Pill badge */}
+            <div style={{
+              display:         "inline-flex",
+              alignItems:      "center",
+              background:      "rgba(255,255,255,0.15)",
+              border:          "1px solid rgba(255,255,255,0.25)",
+              borderRadius:    "100px",
+              padding:         "4px 14px",
+              marginBottom:    "16px",
+            }}>
+              <span style={{
+                color:          "rgba(255,255,255,0.95)",
+                fontSize:       "10.5px",
+                fontWeight:     700,
+                letterSpacing:  "1.5px",
+                textTransform:  "uppercase",
+              }}>
+                GUÍA EXCLUSIVA — GRATUITA
+              </span>
+            </div>
+
+            {/* Title — Perfect fit for 2 lines */}
+            <h2
+              id="popup-title"
+              style={{
+                color:        "#ffffff",
+                fontSize:     "clamp(22px, 6vw, 30px)",
+                fontWeight:   800,
+                lineHeight:   1.25,
+                margin:       0,
+                letterSpacing: "-0.5px",
+                textShadow:   "0 2px 8px rgba(0,0,0,0.2)",
               }}
             >
-              {/* Close button */}
-              <button
-                onClick={handleClose}
-                aria-label="Cerrar"
-                style={{
-                  position:       "absolute",
-                  top:            "13px",
-                  right:          "14px",
-                  width:          "28px",
-                  height:         "28px",
-                  borderRadius:   "50%",
-                  background:     "rgba(255,255,255,0.18)",
-                  border:         "none",
-                  cursor:         "pointer",
-                  color:          "rgba(255,255,255,0.85)",
-                  fontSize:       "18px",
-                  lineHeight:     1,
-                  display:        "flex",
-                  alignItems:     "center",
-                  justifyContent: "center",
-                  transition:     "background 0.2s",
-                  zIndex:         5,
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.32)")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
-              >
-                ×
-              </button>
-
-              {/* INLINE MOCKUP — shown on mobile instead of floating one */}
-              <div className="fp-mockup-inline">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/guia-mockup.png"
-                  alt="Guía del Vendedor"
-                  style={{
-                    width:      "80px",
-                    height:     "auto",
-                    objectFit:  "contain",
-                    filter:     "drop-shadow(0 8px 20px rgba(0,0,0,0.45))",
-                    transform:  "rotate(-4deg)",
-                  }}
-                />
-              </div>
-
-              {/* Pill badge */}
-              <div style={{
-                display:         "inline-flex",
-                alignItems:      "center",
-                background:      "rgba(255,255,255,0.14)",
-                border:          "1px solid rgba(255,255,255,0.28)",
-                borderRadius:    "100px",
-                padding:         "3px 12px",
-                marginBottom:    "14px",
-              }}>
-                <span style={{
-                  color:          "rgba(255,255,255,0.92)",
-                  fontSize:       "10px",
-                  fontWeight:     700,
-                  letterSpacing:  "1.8px",
-                  textTransform:  "uppercase",
-                }}>
-                  GUÍA EXCLUSIVA — GRATUITA
-                </span>
-              </div>
-
-              {/* Title — two deliberate lines */}
-              <h2
-                id="popup-title"
-                style={{
-                  color:        "#ffffff",
-                  fontSize:     "clamp(26px, 5.5vw, 34px)",
-                  fontWeight:   800,
-                  lineHeight:   1.2,
-                  margin:       0,
-                  letterSpacing: "-0.5px",
-                  textShadow:   "0 2px 10px rgba(0,0,0,0.22)",
-                }}
-              >
-                ¿Estás pensando..
-                <br />
-                en vender tu propiedad?
-              </h2>
-            </div>
-
-            {/* ── BODY ───────────────────────────────────────────────────── */}
-            <div style={{ padding: "22px 28px 26px", background: "#ffffff" }}>
-              <p style={{
-                color:      "#374151",
-                fontSize:   "15px",
-                lineHeight: 1.7,
-                margin:     "0 0 22px",
-              }}>
-                Descargá gratis nuestra guía del vendedor y conocé los pasos
-                para vender rápido y al mejor precio.
-              </p>
-
-              {/* CTA — shimmer handled via CSS class */}
-              <button
-                id="popup-cta-btn"
-                className="fp-cta-btn"
-                onClick={handleCTA}
-                style={{
-                  display:        "flex",
-                  alignItems:     "center",
-                  justifyContent: "center",
-                  gap:            "8px",
-                  width:          "100%",
-                  color:          "#ffffff",
-                  border:         "none",
-                  borderRadius:   "10px",
-                  padding:        "16px 24px",
-                  fontSize:       "13px",
-                  fontWeight:     700,
-                  letterSpacing:  "1.2px",
-                  textTransform:  "uppercase",
-                  cursor:         "pointer",
-                  boxShadow:      "0 4px 20px rgba(27,147,193,0.40)",
-                }}
-              >
-                QUIERO MI GUÍA GRATIS
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15" height="15"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
-
-              {/* Trust note */}
-              <p style={{
-                color:         "#9CA3AF",
-                fontSize:      "11px",
-                textAlign:     "center",
-                margin:        "12px 0 0",
-                letterSpacing: "0.2px",
-              }}>
-                Sin spam · Podés darte de baja cuando quieras
-              </p>
-            </div>
+              ¿Estás pensando en
+              <br />
+              vender tu propiedad?
+            </h2>
           </div>
-          {/* ── end inner card ─────────────────────────────────────────── */}
+
+          {/* ── BODY ───────────────────────────────────────────────────── */}
+          <div style={{ padding: "32px 28px", background: "#ffffff" }}>
+            <p style={{
+              color:      "#4b5563",
+              fontSize:   "15.5px",
+              lineHeight: 1.6,
+              margin:     "0 0 28px",
+            }}>
+              Descargá gratis nuestra guía del vendedor y conocé los pasos
+              para vender rápido y al mejor precio.
+            </p>
+
+            {/* CTA */}
+            <button
+              id="popup-cta-btn"
+              className="fp-cta-btn"
+              onClick={handleCTA}
+              style={{
+                display:        "flex",
+                alignItems:     "center",
+                justifyContent: "center",
+                gap:            "10px",
+                width:          "100%",
+                color:          "#ffffff",
+                border:         "none",
+                borderRadius:   "10px",
+                padding:        "18px 24px",
+                fontSize:       "13.5px",
+                fontWeight:     700,
+                letterSpacing:  "1px",
+                textTransform:  "uppercase",
+                cursor:         "pointer",
+                boxShadow:      "0 4px 16px rgba(27,147,193,0.30)",
+              }}
+            >
+              QUIERO MI GUÍA GRATIS
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16" height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Trust note */}
+            <p style={{
+              color:         "#9CA3AF",
+              fontSize:      "11.5px",
+              margin:        "16px 0 0",
+              letterSpacing: "0.2px",
+            }}>
+              Sin spam · Podés darte de baja cuando quieras
+            </p>
+          </div>
         </div>
-        {/* ── end outer wrapper ──────────────────────────────────────── */}
       </div>
     </>
   );
