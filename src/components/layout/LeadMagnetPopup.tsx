@@ -197,22 +197,6 @@ export default function LeadMagnetPopup() {
             >
               ×
             </button>
-
-            {/* Mockup Inside Banner */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/guia-mockup.png"
-              alt="Guía del Vendedor"
-              style={{
-                height:      "150px",
-                width:       "auto",
-                objectFit:   "contain",
-                filter:      "drop-shadow(0 12px 24px rgba(0,0,0,0.35))",
-                marginBottom: "24px",
-                transform:    "rotate(2deg)",
-              }}
-            />
-
             {/* Pill badge */}
             <div style={{
               display:         "inline-flex",
@@ -259,11 +243,26 @@ export default function LeadMagnetPopup() {
               color:      "#4b5563",
               fontSize:   "15.5px",
               lineHeight: 1.6,
-              margin:     "0 0 28px",
+              margin:     "0 0 24px",
             }}>
               Descargá gratis nuestra guía del vendedor y conocé los pasos
               para vender rápido y al mejor precio.
             </p>
+
+            {/* Mockup Inside Body */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/guia-mockup.png"
+              alt="Guía del Vendedor"
+              style={{
+                height:       "160px",
+                width:        "auto",
+                objectFit:    "contain",
+                filter:       "drop-shadow(0 12px 24px rgba(0,0,0,0.18))",
+                marginBottom: "28px",
+                transform:    "rotate(1deg)",
+              }}
+            />
 
             {/* CTA */}
             <button
