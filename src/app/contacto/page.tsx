@@ -17,6 +17,7 @@ export default function ContactoPage() {
     name: "",
     email: "",
     phone: "",
+    motivo: "", // Added motivo
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -24,9 +25,10 @@ export default function ContactoPage() {
   const [isPhoneValid, setIsPhoneValid] = useState(false);
 
   const isValidEmail = formData.email ? validator.isEmail(formData.email) : false;
-  const isFormValid = formData.name && isValidEmail && isPhoneValid && formData.message;
+  // Added formData.motivo to validation
+  const isFormValid = formData.name && isValidEmail && isPhoneValid && formData.motivo && formData.message;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     
@@ -49,7 +51,7 @@ export default function ContactoPage() {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      text: formData.message,
+      text: `Motivo: ${formData.motivo}\n\nMensaje: ${formData.message}`, // Include motivo in Tokko text
       tags: ["web", "contacto"],
     });
 
@@ -63,11 +65,12 @@ export default function ContactoPage() {
           email: formData.email,
           phone: formData.phone,
           source: "contacto",
+          motivo: formData.motivo, // Send motivo for segmentation
         }),
       }).catch((err) => console.error("[Brevo] Sync error (contacto):", err));
 
       setStatus("success");
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", motivo: "", message: "" });
       setEmailError("");
       setIsPhoneValid(false);
     } else {
@@ -209,6 +212,33 @@ export default function ContactoPage() {
                   {formData.phone && !isPhoneValid && (
                     <span className="text-[10px] text-red-500 font-bold uppercase tracking-widest mt-2 block">Número inválido o incompleto</span>
                   )}
+                </div>
+              </div>
+
+              {/* Added Motivo Selection */}
+              <div className="group">
+                <label className="text-xs font-bold uppercase tracking-[0.1em] mb-3 block text-primary/60">Motivo de Consulta</label>
+                <div className="relative flex flex-col">
+                  <select
+                    name="motivo"
+                    value={formData.motivo}
+                    onChange={handleChange}
+                    className="w-full py-3 bg-surface-container-low border-b-2 border-primary/15 focus:border-secondary focus:outline-none transition-all text-base font-semibold rounded-t-md appearance-none cursor-pointer"
+                    required
+                    disabled={status === "loading"}
+                  >
+                    <option value="" disabled>Seleccione una opción...</option>
+                    <option value="vender">Soy propietario, quiero vender</option>
+                    <option value="comprar">Quiero comprar</option>
+                    <option value="alquilar">Quiero alquilar mi propiedad</option>
+                    <option value="inquilino">Estoy buscando alquilar</option>
+                  </select>
+                  {/* Custom dropdown arrow */}
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                    <svg className="w-4 h-4 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
 
