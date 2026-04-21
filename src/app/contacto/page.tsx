@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { User, Mail, Phone, MessageSquare, Send, CheckCircle } from "lucide-react";
+import { User, Mail, Phone, MessageSquare, Send, CheckCircle, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { createWebContact } from "@/lib/tokkobroker";
 import dynamic from "next/dynamic";
 import "intl-tel-input/styles";
@@ -215,31 +221,29 @@ export default function ContactoPage() {
                 </div>
               </div>
 
-              {/* Added Motivo Selection */}
               <div className="group">
                 <label className="text-xs font-bold uppercase tracking-[0.1em] mb-3 block text-primary/60">Motivo de Consulta</label>
-                <div className="relative flex flex-col">
-                  <select
-                    name="motivo"
-                    value={formData.motivo}
-                    onChange={handleChange}
-                    className="w-full py-3 bg-surface-container-low border-b-2 border-primary/15 focus:border-secondary focus:outline-none transition-all text-base font-semibold rounded-t-md appearance-none cursor-pointer"
-                    required
-                    disabled={status === "loading"}
-                  >
-                    <option value="" disabled>Seleccione una opción...</option>
-                    <option value="vender">Soy propietario, quiero vender</option>
-                    <option value="comprar">Quiero comprar</option>
-                    <option value="alquilar">Quiero alquilar mi propiedad</option>
-                    <option value="inquilino">Estoy buscando alquilar</option>
-                  </select>
-                  {/* Custom dropdown arrow */}
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                    <svg className="w-4 h-4 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </div>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="w-full py-4 bg-surface-container-low border-b-2 border-primary/15 focus:border-secondary focus:outline-none transition-all cursor-pointer text-base font-semibold text-primary/70 rounded-t-md text-left flex items-center justify-between outline-none" disabled={status === "loading"}>
+                    <span>{formData.motivo || "Seleccione una opción..."}</span>
+                    <ChevronDown className="w-4 h-4 text-primary/40 group-data-[state=open]:rotate-180 transition-transform" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    {[
+                      { value: "vender", label: "Soy propietario, quiero vender" },
+                      { value: "comprar", label: "Quiero comprar" },
+                      { value: "alquilar", label: "Quiero alquilar mi propiedad" },
+                      { value: "inquilino", label: "Estoy buscando alquilar" },
+                    ].map((op) => (
+                      <DropdownMenuItem
+                        key={op.value}
+                        onClick={() => setFormData((prev) => ({ ...prev, motivo: op.label }))}
+                      >
+                        {op.label}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
 
               <div className="group">

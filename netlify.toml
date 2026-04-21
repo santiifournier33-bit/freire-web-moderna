@@ -9,7 +9,3 @@ external_node_modules = ["@netlify/plugin-nextjs"]
 [[plugins]]
 package = "@netlify/plugin-nextjs"
 
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
