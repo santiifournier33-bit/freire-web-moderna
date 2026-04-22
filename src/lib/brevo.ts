@@ -12,9 +12,18 @@ const BREVO_API_URL = "https://api.brevo.com/v3";
 
 // ── List IDs (configured in Brevo dashboard) ──
 export const BREVO_LISTS = {
-  TASACION: 3,        // Leads Tasación Web
-  GUIA_VENDEDORES: 4, // Leads - Guía Vendedores
-  CONTACTO: 5,        // Leads - Contacto Web
+  // Warm leads — web forms
+  TASACION:          3, // Leads Tasación Web
+  GUIA_VENDEDORES:   4, // Leads - Guía Vendedores
+
+  // Contacto General — segmentado por motivo de consulta
+  CONTACTO_VENDE:    5, // Dueño Venta - Contacto Web
+  CONTACTO_ALQUILA:  7, // Dueño Alquila - Contacto Web
+  CONTACTO_COMPRA:   8, // Comprador - Contacto Web
+  CONTACTO_INQUILINO:9, // Inquilino - Contacto Web
+
+  // Cold base
+  HISTORICOS:        6, // Base Fría - Contactos Histórico
 } as const;
 
 /**
