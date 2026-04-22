@@ -30,6 +30,8 @@ export async function POST(req: Request) {
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0] ?? undefined;
     const userAgent = req.headers.get("user-agent") ?? undefined;
 
+    console.log(`[Brevo] Received: source=${source} motivo=${motivo ?? "—"} email=${email}`);
+
     if (!email || !name || !source) {
       return NextResponse.json(
         { error: "Faltan campos requeridos (name, email, source)" },

@@ -87,7 +87,7 @@ Comentarios extras: ${formData.comments || "Ninguno"}
       email: leadEmail,
       phone: leadPhone,
       text: textData,
-      tags: ["web", "tasacion"],
+      tags: ["web", "tasacion", "vendedor"],
     });
 
     // Sync to Brevo independently — runs regardless of Tokko result
@@ -116,8 +116,8 @@ Comentarios extras: ${formData.comments || "Ninguno"}
       if (typeof fbq !== "undefined") fbq("track", "Lead");
       if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "tasacion" });
 
-      setStatus("success");
       window.scrollTo({ top: 0, behavior: "smooth" });
+      setStatus("success");
     } else {
       setStatus("error");
     }

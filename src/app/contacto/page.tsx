@@ -65,27 +65,36 @@ export default function ContactoPage() {
       email: formData.email,
       phone: formData.phone,
       text: `Motivo: ${MOTIVO_OPTIONS.find((o) => o.value === formData.motivo)?.label ?? formData.motivo}\n\nMensaje: ${formData.message}`,
-      tags: ["web", "contacto"],
+      tags: ["web", "contacto", formData.motivo],
     });
 
     if (success) {
-      // Sync to Brevo in parallel (non-blocking — Tokko is already saved)
-      fetch("/api/brevo-contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          source: "contacto",
-          motivo: formData.motivo, // Send motivo for segmentation
-        }),
-      }).catch((err) => console.error("[Brevo] Sync error (contacto):", err));
+      // Sync Brevo — awaited so errors surface in logs
+      try {
+        const brevoRes = await fetch("/api/brevo-contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            source: "contacto",
+            motivo: formData.motivo,
+          }),
+        });
+        if (!brevoRes.ok) {
+          const err = await brevoRes.text();
+          console.error("[Brevo] Contacto sync failed:", brevoRes.status, err);
+        }
+      } catch (err) {
+        console.error("[Brevo] Contacto network error:", err);
+      }
 
       // Conversion events (browser-side)
       if (typeof fbq !== "undefined") fbq("track", "Lead");
       if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "contacto" });
 
+      window.scrollTo({ top: 0, behavior: "smooth" });
       setStatus("success");
       setFormData({ name: "", email: "", phone: "", motivo: "", message: "" });
       setEmailError("");
