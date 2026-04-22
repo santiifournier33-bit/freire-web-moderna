@@ -18,6 +18,13 @@ const IntlTelInput = dynamic(() => import("intl-tel-input/reactWithUtils"), {
 });
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 
+const MOTIVO_OPTIONS = [
+  { value: "vender",   label: "Soy propietario, quiero vender" },
+  { value: "comprar",  label: "Quiero comprar" },
+  { value: "alquilar", label: "Quiero alquilar mi propiedad" },
+  { value: "inquilino",label: "Estoy buscando alquilar" },
+] as const;
+
 export default function ContactoPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -57,7 +64,7 @@ export default function ContactoPage() {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      text: `Motivo: ${formData.motivo}\n\nMensaje: ${formData.message}`, // Include motivo in Tokko text
+      text: `Motivo: ${MOTIVO_OPTIONS.find((o) => o.value === formData.motivo)?.label ?? formData.motivo}\n\nMensaje: ${formData.message}`,
       tags: ["web", "contacto"],
     });
 
@@ -225,19 +232,14 @@ export default function ContactoPage() {
                 <label className="text-xs font-bold uppercase tracking-[0.1em] mb-3 block text-primary/60">Motivo de Consulta</label>
                 <DropdownMenu>
                   <DropdownMenuTrigger className="w-full py-4 bg-surface-container-low border-b-2 border-primary/15 focus:border-secondary focus:outline-none transition-all cursor-pointer text-base font-semibold text-primary/70 rounded-t-md text-left flex items-center justify-between outline-none" disabled={status === "loading"}>
-                    <span>{formData.motivo || "Seleccione una opción..."}</span>
+                    <span>{MOTIVO_OPTIONS.find((o) => o.value === formData.motivo)?.label || "Seleccione una opción..."}</span>
                     <ChevronDown className="w-4 h-4 text-primary/40 group-data-[state=open]:rotate-180 transition-transform" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
-                    {[
-                      { value: "vender", label: "Soy propietario, quiero vender" },
-                      { value: "comprar", label: "Quiero comprar" },
-                      { value: "alquilar", label: "Quiero alquilar mi propiedad" },
-                      { value: "inquilino", label: "Estoy buscando alquilar" },
-                    ].map((op) => (
+                    {MOTIVO_OPTIONS.map((op) => (
                       <DropdownMenuItem
                         key={op.value}
-                        onClick={() => setFormData((prev) => ({ ...prev, motivo: op.label }))}
+                        onClick={() => setFormData((prev) => ({ ...prev, motivo: op.value }))}
                       >
                         {op.label}
                       </DropdownMenuItem>
