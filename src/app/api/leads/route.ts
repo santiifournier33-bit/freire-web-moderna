@@ -68,7 +68,7 @@ function buildGuiaVendedoresHtml(name: string): string {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, source } = body;
+    const { name, email, source, eventId } = body;
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0] ?? undefined;
     const userAgent = req.headers.get("user-agent") ?? undefined;
 
@@ -146,6 +146,7 @@ export async function POST(req: Request) {
       name,
       clientIpAddress: clientIp,
       clientUserAgent: userAgent,
+      eventId: eventId ?? undefined,
     }).catch((err) => console.error("[CAPI] Non-blocking error:", err));
 
     return NextResponse.json(

@@ -22,6 +22,7 @@ export interface CAPIEventParams {
   name?: string;
   clientIpAddress?: string;
   clientUserAgent?: string;
+  eventId?: string;
 }
 
 export async function sendCAPIEvent(params: CAPIEventParams): Promise<void> {
@@ -53,6 +54,7 @@ export async function sendCAPIEvent(params: CAPIEventParams): Promise<void> {
         event_source_url: params.sourceUrl,
         action_source: "website",
         user_data: userData,
+        ...(params.eventId ? { event_id: params.eventId } : {}),
       },
     ],
   };

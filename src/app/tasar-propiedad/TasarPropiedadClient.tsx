@@ -67,7 +67,8 @@ export default function TasarPropiedadPage() {
     if (!step2Valid) return;
     
     setStatus("loading");
-    
+    const eventId = crypto.randomUUID();
+
     const textData = `
 Operación: ${formData.operationType}
 Tipo de Propiedad: ${formData.propertyType}
@@ -101,6 +102,7 @@ Comentarios extras: ${formData.comments || "Ninguno"}
           email: leadEmail,
           phone: leadPhone,
           source: "tasacion",
+          eventId,
         }),
       });
       if (!brevoRes.ok) {
@@ -113,7 +115,7 @@ Comentarios extras: ${formData.comments || "Ninguno"}
 
     if (success) {
       // Conversion events (browser-side)
-      if (typeof fbq !== "undefined") fbq("track", "Lead");
+      if (typeof fbq !== "undefined") fbq("track", "Lead", {}, { eventID: eventId });
       if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "tasacion" });
 
       window.scrollTo({ top: 0, behavior: "smooth" });

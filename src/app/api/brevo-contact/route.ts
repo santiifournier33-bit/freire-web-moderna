@@ -26,7 +26,7 @@ const MOTIVO_TO_LIST: Record<string, number> = {
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, source, motivo } = await req.json();
+    const { name, email, phone, source, motivo, eventId } = await req.json();
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0] ?? undefined;
     const userAgent = req.headers.get("user-agent") ?? undefined;
 
@@ -89,6 +89,7 @@ export async function POST(req: Request) {
       name,
       clientIpAddress: clientIp,
       clientUserAgent: userAgent,
+      eventId: eventId ?? undefined,
     }).catch((err) => console.error("[CAPI] Non-blocking error:", err));
 
     console.log(`[Brevo API Route] Synced: ${email} → List ${listId} (${source}/${motivo ?? "—"})`);

@@ -38,12 +38,13 @@ export default function GuiaVendedoresPage() {
     if (!isFormValid) return;
 
     setStatus("loading");
+    const eventId = crypto.randomUUID();
 
     try {
       const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: formData.name, email: formData.email, source: "Guia Vendedores" }),
+        body: JSON.stringify({ name: formData.name, email: formData.email, source: "Guia Vendedores", eventId }),
       });
 
       if (!response.ok) {
@@ -52,7 +53,7 @@ export default function GuiaVendedoresPage() {
       }
       
       // Conversion events (browser-side)
-      if (typeof fbq !== "undefined") fbq("track", "Lead");
+      if (typeof fbq !== "undefined") fbq("track", "Lead", {}, { eventID: eventId });
       if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "guia-vendedores" });
 
       setStatus("success");

@@ -57,9 +57,10 @@ export default function ContactoPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isFormValid) return;
-    
+
     setStatus("loading");
-    
+    const eventId = crypto.randomUUID();
+
     const success = await createWebContact({
       name: formData.name,
       email: formData.email,
@@ -80,6 +81,7 @@ export default function ContactoPage() {
             phone: formData.phone,
             source: "contacto",
             motivo: formData.motivo,
+            eventId,
           }),
         });
         if (!brevoRes.ok) {
@@ -91,7 +93,7 @@ export default function ContactoPage() {
       }
 
       // Conversion events (browser-side)
-      if (typeof fbq !== "undefined") fbq("track", "Lead");
+      if (typeof fbq !== "undefined") fbq("track", "Lead", {}, { eventID: eventId });
       if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "contacto" });
 
       window.scrollTo({ top: 0, behavior: "smooth" });
