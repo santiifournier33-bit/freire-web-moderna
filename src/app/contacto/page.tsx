@@ -82,6 +82,10 @@ export default function ContactoPage() {
         }),
       }).catch((err) => console.error("[Brevo] Sync error (contacto):", err));
 
+      // Conversion events (browser-side)
+      if (typeof fbq !== "undefined") fbq("track", "Lead");
+      if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "contacto" });
+
       setStatus("success");
       setFormData({ name: "", email: "", phone: "", motivo: "", message: "" });
       setEmailError("");

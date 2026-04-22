@@ -51,6 +51,10 @@ export default function GuiaVendedoresPage() {
         throw new Error(errData.error || "Error en la solicitud");
       }
       
+      // Conversion events (browser-side)
+      if (typeof fbq !== "undefined") fbq("track", "Lead");
+      if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "guia-vendedores" });
+
       setStatus("success");
       setFormData({ name: "", email: "" });
       window.scrollTo({ top: 0, behavior: 'smooth' });

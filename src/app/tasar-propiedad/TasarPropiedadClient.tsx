@@ -112,6 +112,10 @@ Comentarios extras: ${formData.comments || "Ninguno"}
     }
 
     if (success) {
+      // Conversion events (browser-side)
+      if (typeof fbq !== "undefined") fbq("track", "Lead");
+      if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "tasacion" });
+
       setStatus("success");
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {

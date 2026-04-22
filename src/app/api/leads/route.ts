@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import dns from "dns/promises";
 import validator from "validator";
 import { createBrevoContact, sendBrevoEmail, BREVO_LISTS } from "@/lib/brevo";
+import { sendCAPIEvent } from "@/lib/meta-capi";
 
 const GOOGLE_SHEET_WEBHOOK = process.env.GOOGLE_SHEET_WEBHOOK || "";
 const BASE_URL = "https://www.freirepropiedades.com";
@@ -68,6 +69,8 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { name, email, source } = body;
+    const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0] ?? undefined;
+    const userAgent = req.headers.get("user-agent") ?? undefined;
 
     // 1. Basic validation
     if (!name || !email || !validator.isEmail(email)) {
@@ -134,6 +137,16 @@ export async function POST(req: Request) {
         { status: 500 }
       );
     }
+
+    // Fire CAPI Lead event (non-blocking)
+    sendCAPIEvent({
+      eventName: "Lead",
+      sourceUrl: "https://www.freirepropiedades.com/guia-vendedores",
+      email,
+      name,
+      clientIpAddress: clientIp,
+      clientUserAgent: userAgent,
+    }).catch((err) => console.error("[CAPI] Non-blocking error:", err));
 
     return NextResponse.json(
       { message: "Lead procesado correctamente" },
