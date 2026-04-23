@@ -68,7 +68,7 @@ function buildGuiaVendedoresHtml(name: string): string {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, source, eventId } = body;
+    const { name, email, source, eventId, turnstileToken } = body;
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0] ?? undefined;
     const userAgent = req.headers.get("user-agent") ?? undefined;
 
@@ -77,6 +77,54 @@ export async function POST(req: Request) {
       return NextResponse.json(
         { error: "Formato de correo o nombre inválido" },
         { status: 400 }
+      );
+    }
+
+    // 1.5 Cloudflare Turnstile verification
+    if (!turnstileToken) {
+      return NextResponse.json(
+        { error: "Verificación antibot requerida" },
+        { status: 400 }
+      );
+    }
+    const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+    if (!turnstileSecret) {
+      console.error("[Turnstile] TURNSTILE_SECRET_KEY no configurada");
+      return NextResponse.json(
+        { error: "Configuración antibot ausente" },
+        { status: 500 }
+      );
+    }
+    try {
+      const verifyRes = await fetch(
+        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            secret: turnstileSecret,
+            response: turnstileToken,
+            ...(clientIp ? { remoteip: clientIp } : {}),
+          }),
+        }
+      );
+      const verifyData = (await verifyRes.json()) as {
+        success: boolean;
+        "error-codes"?: string[];
+        hostname?: string;
+      };
+      if (!verifyData.success) {
+        console.warn("[Turnstile] Verification failed:", verifyData["error-codes"]);
+        return NextResponse.json(
+          { error: "Verificación antibot fallida" },
+          { status: 403 }
+        );
+      }
+    } catch (turnstileErr) {
+      console.error("[Turnstile] siteverify error:", turnstileErr);
+      return NextResponse.json(
+        { error: "Error verificando antibot" },
+        { status: 502 }
       );
     }
 

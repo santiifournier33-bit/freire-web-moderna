@@ -1,18 +1,71 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import Script from "next/script";
 import Image from "next/image";
 import { Download, CheckCircle, ShieldCheck } from "lucide-react";
 import validator from "validator";
 import { InfiniteGrid } from "@/components/ui/infinite-grid";
 
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        container: string | HTMLElement,
+        params: {
+          sitekey: string;
+          callback?: (token: string) => void;
+          "error-callback"?: () => void;
+          "expired-callback"?: () => void;
+          theme?: "light" | "dark" | "auto";
+          size?: "normal" | "flexible" | "compact";
+        }
+      ) => string;
+      reset: (widgetId?: string) => void;
+      remove: (widgetId?: string) => void;
+    };
+  }
+}
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
+
 export default function GuiaVendedoresPage() {
   const [formData, setFormData] = useState({ name: "", email: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [emailError, setEmailError] = useState("");
-  
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileReady, setTurnstileReady] = useState(false);
+  const turnstileContainerRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetIdRef = useRef<string | null>(null);
+
   const isValidEmail = formData.email ? validator.isEmail(formData.email) : false;
-  const isFormValid = formData.name && isValidEmail;
+  const isFormValid = Boolean(formData.name && isValidEmail && turnstileToken);
+
+  useEffect(() => {
+    if (!turnstileReady || !turnstileContainerRef.current || turnstileWidgetIdRef.current) return;
+    if (!window.turnstile || !TURNSTILE_SITE_KEY) return;
+    turnstileWidgetIdRef.current = window.turnstile.render(turnstileContainerRef.current, {
+      sitekey: TURNSTILE_SITE_KEY,
+      callback: (token: string) => setTurnstileToken(token),
+      "error-callback": () => setTurnstileToken(""),
+      "expired-callback": () => setTurnstileToken(""),
+      theme: "light",
+      size: "flexible",
+    });
+    return () => {
+      if (turnstileWidgetIdRef.current && window.turnstile) {
+        window.turnstile.remove(turnstileWidgetIdRef.current);
+        turnstileWidgetIdRef.current = null;
+      }
+    };
+  }, [turnstileReady]);
+
+  const resetTurnstile = () => {
+    setTurnstileToken("");
+    if (turnstileWidgetIdRef.current && window.turnstile) {
+      window.turnstile.reset(turnstileWidgetIdRef.current);
+    }
+  };
 
   const kitItems = [
     "Documentación requerida para la venta",
@@ -44,26 +97,28 @@ export default function GuiaVendedoresPage() {
       const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: formData.name, email: formData.email, source: "Guia Vendedores", eventId }),
+        body: JSON.stringify({ name: formData.name, email: formData.email, source: "Guia Vendedores", eventId, turnstileToken }),
       });
 
       if (!response.ok) {
         const errData = await response.json();
         throw new Error(errData.error || "Error en la solicitud");
       }
-      
+
       // Conversion events (browser-side)
       if (typeof fbq !== "undefined") fbq("track", "Lead", {}, { eventID: eventId });
       if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "guia-vendedores" });
 
       setStatus("success");
       setFormData({ name: "", email: "" });
+      resetTurnstile();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (error: any) {
       console.error("Error submitting lead:", error.message);
       setStatus("error");
       setEmailError(error.message); // Muestra el mensaje exacto
-      setTimeout(() => setStatus("idle"), 5000); 
+      resetTurnstile();
+      setTimeout(() => setStatus("idle"), 5000);
     }
   };
 
@@ -92,7 +147,12 @@ export default function GuiaVendedoresPage() {
 
   return (
     <InfiniteGrid className="flex flex-col flex-1 pt-32 pb-32 md:pt-40 md:pb-40 overflow-hidden">
-      
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+        strategy="afterInteractive"
+        onLoad={() => setTurnstileReady(true)}
+      />
+
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         
         {/* Superior headers - Forced Contrast on Light Background */}
@@ -168,6 +228,8 @@ export default function GuiaVendedoresPage() {
                </div>
 
                <div className="space-y-6 mt-8">
+                 <div ref={turnstileContainerRef} className="flex justify-center min-h-[65px]" />
+
                  {status === "error" && (
                    <p className="text-[10px] text-red-500 uppercase tracking-widest font-bold text-center">Falla en la sincronización. Reintente.</p>
                  )}
