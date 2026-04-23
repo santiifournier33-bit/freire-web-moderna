@@ -494,7 +494,7 @@ export default function PropertyDetailClient({ property }: { property: any }) {
             )}
 
             {/* Mapa: Embed con geo_lat y geo_long si existen */}
-            {property.geo_lat && property.geo_long && (
+            {property.geo_lat && property.geo_long && process.env.NEXT_PUBLIC_MAPS_API_KEY && (
               <section id="seccion-mapa" className="space-y-6 pt-8 border-t border-primary/10">
                 <h3 className="label-editorial text-primary uppercase tracking-[0.2em] border-b border-primary/10 pb-4">Ubicación Geo-Referenciada</h3>
                 <div className="w-full h-96 rounded-2xl overflow-hidden bg-surface-container shadow-ambient border border-primary/10 pb-0">
@@ -502,9 +502,9 @@ export default function PropertyDetailClient({ property }: { property: any }) {
                     loading="lazy"
                     width="100%"
                     height="100%"
-                    frameBorder="0" 
+                    frameBorder="0"
                     style={{ border: 0 }}
-                    src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_MAPS_API_KEY || "AIzaSyATEmX91sxHv63eOIoWLwSO27wZAHmXbdA"}&q=${property.geo_lat},${property.geo_long}`} 
+                    src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_MAPS_API_KEY}&q=${property.geo_lat},${property.geo_long}`}
                     allowFullScreen>
                   </iframe>
                 </div>
