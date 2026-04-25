@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { createWebContact } from "@/lib/tokkobroker";
+import { fireGoogleAdsConversion } from "@/lib/google-ads-conversions";
 import dynamic from "next/dynamic";
 import "intl-tel-input/styles";
 import validator from "validator";
@@ -95,6 +96,7 @@ export default function ContactoPage() {
       // Conversion events (browser-side)
       if (typeof fbq !== "undefined") fbq("track", "Lead", {}, { eventID: eventId });
       if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "contacto" });
+      fireGoogleAdsConversion("contacto", { transactionId: eventId });
 
       window.scrollTo({ top: 0, behavior: "smooth" });
       setStatus("success");

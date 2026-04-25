@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Download, CheckCircle, ShieldCheck } from "lucide-react";
 import validator from "validator";
 import { InfiniteGrid } from "@/components/ui/infinite-grid";
+import { fireGoogleAdsConversion } from "@/lib/google-ads-conversions";
 
 declare global {
   interface Window {
@@ -108,6 +109,7 @@ export default function GuiaVendedoresPage() {
       // Conversion events (browser-side)
       if (typeof fbq !== "undefined") fbq("track", "Lead", {}, { eventID: eventId });
       if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "guia-vendedores" });
+      fireGoogleAdsConversion("guia", { transactionId: eventId });
 
       setStatus("success");
       setFormData({ name: "", email: "" });

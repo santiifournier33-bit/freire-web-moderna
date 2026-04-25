@@ -8,6 +8,8 @@ import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import MicrosoftClarity from "@/components/analytics/MicrosoftClarity";
 import MetaPixel from "@/components/analytics/MetaPixel";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import GoogleAdsTag from "@/components/analytics/GoogleAdsTag";
+import GclidCapture from "@/components/analytics/GclidCapture";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -104,6 +106,8 @@ export default function RootLayout({
         <MicrosoftClarity />
         <MetaPixel />
         <GoogleAnalytics />
+        <GoogleAdsTag />
+        <GclidCapture />
 
         <PageLoader />
         <Navbar />

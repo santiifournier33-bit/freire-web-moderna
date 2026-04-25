@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronRight, ChevronLeft, MapPin, Building, Home, CheckCircle, ChevronDown } from "lucide-react";
 import { createWebContact } from "@/lib/tokkobroker";
+import { fireGoogleAdsConversion } from "@/lib/google-ads-conversions";
 import dynamic from "next/dynamic";
 import "intl-tel-input/styles";
 import validator from "validator";
@@ -117,6 +118,7 @@ Comentarios extras: ${formData.comments || "Ninguno"}
       // Conversion events (browser-side)
       if (typeof fbq !== "undefined") fbq("track", "Lead", {}, { eventID: eventId });
       if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "tasacion" });
+      fireGoogleAdsConversion("tasacion", { transactionId: eventId });
 
       window.scrollTo({ top: 0, behavior: "smooth" });
       setStatus("success");
