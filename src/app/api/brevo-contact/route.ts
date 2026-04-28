@@ -104,7 +104,7 @@ export async function POST(req: Request) {
       ? "https://www.freirepropiedades.com/tasar-propiedad"
       : "https://www.freirepropiedades.com/contacto";
     const sourceUrl = pageUrl || fallbackUrl;
-    sendCAPIEvent({
+    await sendCAPIEvent({
       eventName: "Lead",
       sourceUrl,
       email,

@@ -206,7 +206,7 @@ export async function POST(req: Request) {
     }
 
     // Fire CAPI Lead event (non-blocking)
-    sendCAPIEvent({
+    await sendCAPIEvent({
       eventName: "Lead",
       sourceUrl: pageUrl || "https://www.freirepropiedades.com/guia-vendedores",
       email,
