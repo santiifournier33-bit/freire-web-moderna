@@ -6,7 +6,8 @@ import Image from "next/image";
 import { Download, CheckCircle, ShieldCheck } from "lucide-react";
 import validator from "validator";
 import { InfiniteGrid } from "@/components/ui/infinite-grid";
-import { fireGoogleAdsConversion } from "@/lib/google-ads-conversions";
+import { fireGoogleAdsConversion, readGclidCookie } from "@/lib/google-ads-conversions";
+import { getUTMs } from "@/lib/utm";
 
 declare global {
   interface Window {
@@ -95,10 +96,13 @@ export default function GuiaVendedoresPage() {
     const eventId = crypto.randomUUID();
 
     try {
+      const utms = getUTMs();
+      const gclid = readGclidCookie();
+      const pageUrl = typeof window !== "undefined" ? window.location.href : undefined;
       const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: formData.name, email: formData.email, source: "Guia Vendedores", eventId, turnstileToken }),
+        body: JSON.stringify({ name: formData.name, email: formData.email, source: "Guia Vendedores", eventId, turnstileToken, utms, pageUrl, gclid }),
       });
 
       if (!response.ok) {

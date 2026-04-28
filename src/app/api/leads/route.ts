@@ -2,7 +2,9 @@ import { NextResponse } from "next/server";
 import dns from "dns/promises";
 import validator from "validator";
 import { createBrevoContact, sendBrevoEmail, BREVO_LISTS } from "@/lib/brevo";
-import { sendCAPIEvent } from "@/lib/meta-capi";
+import { sendCAPIEvent, buildFbcFromClickId } from "@/lib/meta-capi";
+import { utmsToBrevoAttributes, utmsToCAPICustomData, type UtmRecord } from "@/lib/utm";
+import { getCookie } from "@/lib/request-cookies";
 
 const GOOGLE_SHEET_WEBHOOK = process.env.GOOGLE_SHEET_WEBHOOK || "";
 const BASE_URL = "https://www.freirepropiedades.com";
@@ -68,7 +70,20 @@ function buildGuiaVendedoresHtml(name: string): string {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, source, eventId, turnstileToken } = body;
+    const { name, email, source, eventId, turnstileToken, utms, pageUrl, gclid } = body as {
+      name?: string;
+      email?: string;
+      source?: string;
+      eventId?: string;
+      turnstileToken?: string;
+      utms?: UtmRecord;
+      pageUrl?: string;
+      gclid?: string;
+    };
+    const utmRecord: UtmRecord = utms ?? {};
+    const fbp = getCookie(req, "_fbp");
+    const fbcCookie = getCookie(req, "_fbc");
+    const fbc = fbcCookie ?? (utmRecord.fbclid ? buildFbcFromClickId(utmRecord.fbclid) : undefined);
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0] ?? undefined;
     const userAgent = req.headers.get("user-agent") ?? undefined;
 
@@ -162,7 +177,11 @@ export async function POST(req: Request) {
       email,
       name,
       listIds: [BREVO_LISTS.GUIA_VENDEDORES],
-      attributes: { SOURCE: "guia-vendedores" },
+      attributes: {
+        SOURCE: "guia-vendedores",
+        ...utmsToBrevoAttributes(utmRecord),
+        ...(gclid ? { GCLID: gclid } : {}),
+      },
     });
 
     // 5. Send Email via Brevo (replaces Resend)
@@ -189,12 +208,15 @@ export async function POST(req: Request) {
     // Fire CAPI Lead event (non-blocking)
     sendCAPIEvent({
       eventName: "Lead",
-      sourceUrl: "https://www.freirepropiedades.com/guia-vendedores",
+      sourceUrl: pageUrl || "https://www.freirepropiedades.com/guia-vendedores",
       email,
       name,
       clientIpAddress: clientIp,
       clientUserAgent: userAgent,
       eventId: eventId ?? undefined,
+      customData: utmsToCAPICustomData(utmRecord),
+      fbp,
+      fbc,
     }).catch((err) => console.error("[CAPI] Non-blocking error:", err));
 
     return NextResponse.json(

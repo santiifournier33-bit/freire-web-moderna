@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { createBrevoContact, BREVO_LISTS } from "@/lib/brevo";
-import { sendCAPIEvent } from "@/lib/meta-capi";
+import { sendCAPIEvent, buildFbcFromClickId } from "@/lib/meta-capi";
+import { utmsToBrevoAttributes, utmsToCAPICustomData, type UtmRecord } from "@/lib/utm";
+import { getCookie } from "@/lib/request-cookies";
 
 /**
  * POST /api/brevo-contact
@@ -26,9 +28,23 @@ const MOTIVO_TO_LIST: Record<string, number> = {
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, source, motivo, eventId } = await req.json();
+    const { name, email, phone, source, motivo, eventId, utms, pageUrl, gclid } = (await req.json()) as {
+      name?: string;
+      email?: string;
+      phone?: string;
+      source?: string;
+      motivo?: string;
+      eventId?: string;
+      utms?: UtmRecord;
+      pageUrl?: string;
+      gclid?: string;
+    };
+    const utmRecord: UtmRecord = utms ?? {};
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0] ?? undefined;
     const userAgent = req.headers.get("user-agent") ?? undefined;
+    const fbp = getCookie(req, "_fbp");
+    const fbcCookie = getCookie(req, "_fbc");
+    const fbc = fbcCookie ?? (utmRecord.fbclid ? buildFbcFromClickId(utmRecord.fbclid) : undefined);
 
     console.log(`[Brevo] Received: source=${source} motivo=${motivo ?? "—"} email=${email}`);
 
@@ -41,7 +57,11 @@ export async function POST(req: Request) {
 
     // Determine target list
     let listId: number;
-    let attributes: Record<string, string> = { SOURCE: source };
+    const attributes: Record<string, string> = {
+      SOURCE: source,
+      ...utmsToBrevoAttributes(utmRecord),
+      ...(gclid ? { GCLID: gclid } : {}),
+    };
 
     if (source === "tasacion") {
       listId = BREVO_LISTS.TASACION;
@@ -77,10 +97,13 @@ export async function POST(req: Request) {
       );
     }
 
-    // Fire CAPI Lead event (non-blocking)
-    const sourceUrl = source === "tasacion"
+    // Fire CAPI Lead event (non-blocking).
+    // event_source_url uses the actual page URL (with UTMs) so Meta can attribute
+    // server-side events to specific campaigns/creatives.
+    const fallbackUrl = source === "tasacion"
       ? "https://www.freirepropiedades.com/tasar-propiedad"
       : "https://www.freirepropiedades.com/contacto";
+    const sourceUrl = pageUrl || fallbackUrl;
     sendCAPIEvent({
       eventName: "Lead",
       sourceUrl,
@@ -90,6 +113,9 @@ export async function POST(req: Request) {
       clientIpAddress: clientIp,
       clientUserAgent: userAgent,
       eventId: eventId ?? undefined,
+      customData: utmsToCAPICustomData(utmRecord),
+      fbp,
+      fbc,
     }).catch((err) => console.error("[CAPI] Non-blocking error:", err));
 
     console.log(`[Brevo API Route] Synced: ${email} → List ${listId} (${source}/${motivo ?? "—"})`);

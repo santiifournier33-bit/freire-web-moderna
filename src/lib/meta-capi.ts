@@ -23,6 +23,20 @@ export interface CAPIEventParams {
   clientIpAddress?: string;
   clientUserAgent?: string;
   eventId?: string;
+  customData?: Record<string, string | number | boolean>;
+  /** Meta browser ID — `_fbp` cookie value, format `fb.1.{ts_ms}.{rand}`. */
+  fbp?: string;
+  /** Meta click ID — `_fbc` cookie value or constructed `fb.1.{ts_ms}.{fbclid}`. */
+  fbc?: string;
+}
+
+/**
+ * Builds Meta's `_fbc` value when only the raw fbclid is available.
+ * Format: `fb.{subdomain_index}.{creation_time_ms}.{fbclid}` — subdomain_index 1
+ * for one subdomain (eg `www`).
+ */
+export function buildFbcFromClickId(fbclid: string, timestampMs: number = Date.now()): string {
+  return `fb.1.${timestampMs}.${fbclid}`;
 }
 
 export async function sendCAPIEvent(params: CAPIEventParams): Promise<void> {
@@ -45,6 +59,10 @@ export async function sendCAPIEvent(params: CAPIEventParams): Promise<void> {
   }
   if (params.clientIpAddress) userData.client_ip_address = params.clientIpAddress;
   if (params.clientUserAgent) userData.client_user_agent = params.clientUserAgent;
+  if (params.fbp) userData.fbp = params.fbp;
+  if (params.fbc) userData.fbc = params.fbc;
+
+  const testEventCode = process.env.META_TEST_EVENT_CODE;
 
   const payload = {
     data: [
@@ -55,8 +73,12 @@ export async function sendCAPIEvent(params: CAPIEventParams): Promise<void> {
         action_source: "website",
         user_data: userData,
         ...(params.eventId ? { event_id: params.eventId } : {}),
+        ...(params.customData && Object.keys(params.customData).length > 0
+          ? { custom_data: params.customData }
+          : {}),
       },
     ],
+    ...(testEventCode ? { test_event_code: testEventCode } : {}),
   };
 
   try {

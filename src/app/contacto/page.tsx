@@ -9,7 +9,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { createWebContact } from "@/lib/tokkobroker";
-import { fireGoogleAdsConversion } from "@/lib/google-ads-conversions";
+import { fireGoogleAdsConversion, readGclidCookie } from "@/lib/google-ads-conversions";
+import { getUTMs, utmsToTokkoSummary } from "@/lib/utm";
 import dynamic from "next/dynamic";
 import "intl-tel-input/styles";
 import validator from "validator";
@@ -62,12 +63,19 @@ export default function ContactoPage() {
     setStatus("loading");
     const eventId = crypto.randomUUID();
 
+    const utms = getUTMs();
+    const gclid = readGclidCookie();
+    const pageUrl = typeof window !== "undefined" ? window.location.href : undefined;
+    const utmTokko = utmsToTokkoSummary(utms);
+    const gclidLine = gclid ? `gclid=${gclid}` : "";
+    const attributionBlock = [utmTokko.text, gclidLine].filter(Boolean).join(" | ");
+
     const success = await createWebContact({
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      text: `Motivo: ${MOTIVO_OPTIONS.find((o) => o.value === formData.motivo)?.label ?? formData.motivo}\n\nMensaje: ${formData.message}`,
-      tags: ["web", "contacto", formData.motivo],
+      text: `Motivo: ${MOTIVO_OPTIONS.find((o) => o.value === formData.motivo)?.label ?? formData.motivo}\n\nMensaje: ${formData.message}${attributionBlock ? `\n\n${attributionBlock}` : ""}`,
+      tags: ["web", "contacto", formData.motivo, ...utmTokko.tags],
     });
 
     if (success) {
@@ -83,6 +91,9 @@ export default function ContactoPage() {
             source: "contacto",
             motivo: formData.motivo,
             eventId,
+            utms,
+            pageUrl,
+            gclid,
           }),
         });
         if (!brevoRes.ok) {

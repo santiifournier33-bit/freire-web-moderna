@@ -10,6 +10,7 @@ import MetaPixel from "@/components/analytics/MetaPixel";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import GoogleAdsTag from "@/components/analytics/GoogleAdsTag";
 import GclidCapture from "@/components/analytics/GclidCapture";
+import UtmCapture from "@/components/analytics/UtmCapture";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -108,6 +109,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <GoogleAdsTag />
         <GclidCapture />
+        <UtmCapture />
 
         <PageLoader />
         <Navbar />

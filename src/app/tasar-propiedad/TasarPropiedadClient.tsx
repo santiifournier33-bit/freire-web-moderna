@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { ChevronRight, ChevronLeft, MapPin, Building, Home, CheckCircle, ChevronDown } from "lucide-react";
 import { createWebContact } from "@/lib/tokkobroker";
-import { fireGoogleAdsConversion } from "@/lib/google-ads-conversions";
+import { fireGoogleAdsConversion, readGclidCookie } from "@/lib/google-ads-conversions";
+import { getUTMs, utmsToTokkoSummary } from "@/lib/utm";
 import dynamic from "next/dynamic";
 import "intl-tel-input/styles";
 import validator from "validator";
@@ -70,13 +71,20 @@ export default function TasarPropiedadPage() {
     setStatus("loading");
     const eventId = crypto.randomUUID();
 
+    const utms = getUTMs();
+    const gclid = readGclidCookie();
+    const pageUrl = typeof window !== "undefined" ? window.location.href : undefined;
+    const utmTokko = utmsToTokkoSummary(utms);
+    const gclidLine = gclid ? `gclid=${gclid}` : "";
+    const attributionBlock = [utmTokko.text, gclidLine].filter(Boolean).join(" | ");
+
     const textData = `
 Operación: ${formData.operationType}
 Tipo de Propiedad: ${formData.propertyType}
 Dirección: ${formData.address}
 Localidad: ${formData.locality}
 Piso/Depto: ${formData.floor || "-"} / ${formData.apartment || "-"}
-Comentarios extras: ${formData.comments || "Ninguno"}
+Comentarios extras: ${formData.comments || "Ninguno"}${attributionBlock ? `\n\n${attributionBlock}` : ""}
     `.trim();
 
     // Capture form data into local variables before any state mutations
@@ -89,7 +97,7 @@ Comentarios extras: ${formData.comments || "Ninguno"}
       email: leadEmail,
       phone: leadPhone,
       text: textData,
-      tags: ["web", "tasacion", "vendedor"],
+      tags: ["web", "tasacion", "vendedor", ...utmTokko.tags],
     });
 
     // Sync to Brevo independently — runs regardless of Tokko result
@@ -104,6 +112,9 @@ Comentarios extras: ${formData.comments || "Ninguno"}
           phone: leadPhone,
           source: "tasacion",
           eventId,
+          utms,
+          pageUrl,
+          gclid,
         }),
       });
       if (!brevoRes.ok) {
