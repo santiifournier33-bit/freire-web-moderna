@@ -127,7 +127,7 @@ export default function PropertyShowcase() {
         </div>
 
         {/* Mobile: Horizontal scroll-snap carousel */}
-        <div className="md:hidden -mx-6">
+        <div className="md:hidden overflow-hidden">
           <div 
             ref={scrollRef}
             onScroll={handleScroll}

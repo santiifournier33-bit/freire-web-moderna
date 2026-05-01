@@ -37,6 +37,11 @@
   --font-heading: "Inter", sans-serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--color-surface);
   color: var(--color-primary);

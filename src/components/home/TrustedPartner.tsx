@@ -1,9 +1,13 @@
 "use client";
 import Image from "next/image";
-import { Clock, Users, ArrowRight } from "lucide-react";
+import { Clock, Users, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState, useRef } from "react";
 
 export default function TrustedPartner() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+
   const cards = [
     {
       id: "crs",
@@ -38,6 +42,24 @@ export default function TrustedPartner() {
       label: "Respaldo Absoluto",
     },
   ];
+
+  const scrollToSlide = (index: number) => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const cardWidth = container.children[0]?.getBoundingClientRect().width || 0;
+    const gap = 16;
+    container.scrollTo({ left: index * (cardWidth + gap), behavior: "smooth" });
+    setActiveSlide(index);
+  };
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const cardWidth = container.children[0]?.getBoundingClientRect().width || 0;
+    const gap = 16;
+    const index = Math.round(container.scrollLeft / (cardWidth + gap));
+    setActiveSlide(index);
+  };
 
   return (
     <section className="py-12 md:py-20 lg:py-28 bg-surface-lowest overflow-hidden">
@@ -101,9 +123,14 @@ export default function TrustedPartner() {
           ))}
         </div>
 
-        {/* Mobile: Horizontal scroll snap */}
-        <div className="md:hidden -mx-6">
-          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-6 pb-4 scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch' }}>
+        {/* Mobile: Horizontal scroll snap with arrows + dots (same as PropertyShowcase) */}
+        <div className="md:hidden overflow-hidden">
+          <div 
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-6 pb-4 scrollbar-hide"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
             {cards.map((card, index) => (
               <motion.div 
                 key={card.id}
@@ -111,7 +138,7 @@ export default function TrustedPartner() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="flex-shrink-0 w-[85vw] snap-center group flex flex-col justify-between bg-surface-container-low p-6 border border-primary/5 relative overflow-hidden"
+                className="flex-shrink-0 w-[80vw] snap-center group flex flex-col justify-between bg-surface-container-low p-6 border border-primary/5 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-[40px]"></div>
                 
@@ -140,11 +167,35 @@ export default function TrustedPartner() {
               </motion.div>
             ))}
           </div>
-          {/* Scroll hint dots */}
-          <div className="flex justify-center gap-1.5 mt-3">
-            {cards.map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary/20" />
-            ))}
+
+          {/* Navigation dots + arrows (same pattern as PropertyShowcase) */}
+          <div className="flex items-center justify-center gap-4 mt-3 px-6">
+            <button 
+              onClick={() => scrollToSlide(Math.max(0, activeSlide - 1))}
+              className="w-8 h-8 flex items-center justify-center text-primary/40 hover:text-primary transition-colors"
+              aria-label="Anterior"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <div className="flex gap-1.5">
+              {cards.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => scrollToSlide(i)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i === activeSlide ? 'bg-secondary w-5' : 'bg-primary/20 w-2'
+                  }`}
+                  aria-label={`Slide ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button 
+              onClick={() => scrollToSlide(Math.min(cards.length - 1, activeSlide + 1))}
+              className="w-8 h-8 flex items-center justify-center text-primary/40 hover:text-primary transition-colors"
+              aria-label="Siguiente"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
 

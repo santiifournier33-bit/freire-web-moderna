@@ -104,7 +104,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 max-w-7xl pt-28 pb-4 md:pt-56 md:pb-32 flex-1 flex flex-col items-center justify-center">
+      <div className="relative z-10 container mx-auto px-6 max-w-7xl pt-40 pb-4 md:pt-56 md:pb-32 flex-1 flex flex-col items-center justify-center">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -113,8 +113,8 @@ export default function Hero() {
         >
 
           <h1 className="font-bold leading-[1.05] tracking-[-0.03em] mb-4 md:mb-8 text-[1.6rem] sm:text-4xl md:text-6xl lg:text-7xl">
-            <span className="text-white block whitespace-nowrap">ESPECIALISTAS EN VENTA</span>
-            <span className="text-blue-500 brightness-110 drop-shadow-md block whitespace-nowrap">DE PROPIEDADES</span>
+            <span className="text-white block">ESPECIALISTAS EN VENTA</span>
+            <span className="text-blue-500 brightness-110 drop-shadow-md block">DE PROPIEDADES</span>
           </h1>
 
           <div className="flex flex-col items-center gap-1 md:gap-2 mb-6 md:mb-12 w-full px-4">
