@@ -1,8 +1,14 @@
+"use client";
+
 import Image from "next/image";
-import { Play, Eye, Maximize } from "lucide-react";
+import { Play, Eye, Maximize, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { useState, useRef } from "react";
 
 export default function PropertyShowcase() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+
   const items = [
     {
       title: "Tour 360°",
@@ -10,6 +16,7 @@ export default function PropertyShowcase() {
       href: "https://kuula.co/share/collection/7FgPs",
       image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
       Icon: Eye,
+      badge: "VER TOUR",
     },
     {
       title: "Video Inmersivo",
@@ -17,6 +24,7 @@ export default function PropertyShowcase() {
       href: "https://www.youtube.com/watch?v=PuqHzGWjUXk",
       image: "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
       Icon: Play,
+      badge: "VER VIDEO",
     },
     {
       title: "Fotografía Pro",
@@ -24,6 +32,7 @@ export default function PropertyShowcase() {
       href: null,
       image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/vLeAYUiyvUMIhRMyjWtd/media/6800f7978ceb991b16c4ceae.jpeg",
       Icon: null,
+      badge: null,
     },
     {
       title: "Plano Comercial",
@@ -31,15 +40,34 @@ export default function PropertyShowcase() {
       href: null,
       image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/vLeAYUiyvUMIhRMyjWtd/media/6800f7e351be4a1040119071.jpeg",
       Icon: null,
+      badge: null,
     },
   ];
 
+  const scrollToSlide = (index: number) => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const cardWidth = container.children[0]?.getBoundingClientRect().width || 0;
+    const gap = 16;
+    container.scrollTo({ left: index * (cardWidth + gap), behavior: "smooth" });
+    setActiveSlide(index);
+  };
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const cardWidth = container.children[0]?.getBoundingClientRect().width || 0;
+    const gap = 16;
+    const index = Math.round(container.scrollLeft / (cardWidth + gap));
+    setActiveSlide(index);
+  };
+
   return (
-    <section className="py-20 md:py-28 bg-surface-container-low overflow-hidden">
+    <section className="py-12 md:py-20 lg:py-28 bg-surface-container-low overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         
         {/* Header */}
-        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-primary/10 pb-12">
+        <div className="mb-8 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 border-b border-primary/10 pb-8 md:pb-12">
           <div className="max-w-2xl">
             <span className="label-editorial mb-4 block underline decoration-secondary decoration-2 underline-offset-8">Excelencia Visual</span>
             <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-[-0.03em] leading-[1.05]">
@@ -52,8 +80,8 @@ export default function PropertyShowcase() {
           </p>
         </div>
 
-        {/* Minimalist Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* Desktop: Original 4-col grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {items.map((item, index) => (
             <div key={index} className="group relative bg-surface-lowest h-full border border-primary/5 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:border-transparent flex flex-col">
               
@@ -97,6 +125,87 @@ export default function PropertyShowcase() {
             </div>
           ))}
         </div>
+
+        {/* Mobile: Horizontal scroll-snap carousel */}
+        <div className="md:hidden -mx-6">
+          <div 
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-6 pb-4 scrollbar-hide"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
+            {items.map((item, index) => (
+              <div key={index} className="flex-shrink-0 w-[80vw] snap-center bg-surface-lowest border border-primary/5 flex flex-col overflow-hidden">
+                
+                {/* Image with always-visible badge on mobile */}
+                <div className="relative h-[180px] w-full overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="80vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+                  
+                  {/* Mobile: Badge always visible */}
+                  {item.href && item.Icon && item.badge && (
+                    <Link 
+                      href={item.href} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-primary px-3 py-1.5 rounded-full shadow-lg"
+                    >
+                      <item.Icon className="w-3.5 h-3.5" />
+                      <span className="text-[10px] font-bold uppercase tracking-wider">{item.badge}</span>
+                    </Link>
+                  )}
+                </div>
+                
+                {/* Text Area — compact */}
+                <div className="p-5 flex-1 flex flex-col justify-start bg-white">
+                   <h3 className="text-xs font-bold text-primary mb-2 uppercase tracking-widest leading-relaxed">
+                     {item.title}
+                   </h3>
+                   <p className="text-on-surface-variant font-sans text-sm leading-relaxed">
+                     {item.copy}
+                   </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation dots + arrows */}
+          <div className="flex items-center justify-center gap-4 mt-3 px-6">
+            <button 
+              onClick={() => scrollToSlide(Math.max(0, activeSlide - 1))}
+              className="w-8 h-8 flex items-center justify-center text-primary/40 hover:text-primary transition-colors"
+              aria-label="Anterior"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <div className="flex gap-1.5">
+              {items.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => scrollToSlide(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    i === activeSlide ? 'bg-secondary w-5' : 'bg-primary/20'
+                  }`}
+                  aria-label={`Slide ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button 
+              onClick={() => scrollToSlide(Math.min(items.length - 1, activeSlide + 1))}
+              className="w-8 h-8 flex items-center justify-center text-primary/40 hover:text-primary transition-colors"
+              aria-label="Siguiente"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
       </div>
     </section>
   );

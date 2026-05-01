@@ -10,6 +10,7 @@ import FAQ from "@/components/home/FAQ";
 import LeadMagnetPromo from "@/components/home/LeadMagnetPromo";
 import WhatsAppWidget from "@/components/ui/WhatsAppWidget";
 import LeadMagnetPopup from "@/components/layout/LeadMagnetPopup";
+import StickyCTA from "@/components/layout/StickyCTA";
 
 export const metadata: Metadata = {
   title: "Venta y Alquiler de Propiedades en Pilar | Freire Propiedades",
@@ -32,6 +33,9 @@ export default function Home() {
 
       {/* Floating WhatsApp Widget */}
       <WhatsAppWidget />
+
+      {/* Sticky CTA bar — mobile only */}
+      <StickyCTA />
 
       {/* Lead Magnet Popup — exit-intent (desktop) + scroll 30% (all) */}
       <LeadMagnetPopup />

@@ -14,7 +14,7 @@ export default function WhatsAppWidget() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => fireGoogleAdsConversion("whatsapp")}
-      className="fixed bottom-6 right-6 z-[100] w-14 h-14 bg-[#25D366] hover:bg-[#1DA851] rounded-full shadow-lg hover:shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group cursor-pointer"
+      className="fixed bottom-20 md:bottom-6 right-6 z-[100] w-14 h-14 bg-[#25D366] hover:bg-[#1DA851] rounded-full shadow-lg hover:shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group cursor-pointer"
       title="Contactar por WhatsApp"
       aria-label="Contactar por WhatsApp"
     >

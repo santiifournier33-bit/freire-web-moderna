@@ -42,9 +42,9 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 bg-surface-container-low">
+    <section className="py-12 md:py-16 bg-surface-container-low">
       <div className="container mx-auto px-6 max-w-4xl">
-        <div className="mb-10 text-center">
+        <div className="mb-6 md:mb-10 text-center">
           <span className="label-editorial mb-4 block">Asesoramiento Directo</span>
           <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-[-0.03em]">
             Preguntas <br />
@@ -60,10 +60,10 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-8 py-7 text-left flex items-center justify-between transition-colors duration-500 hover:bg-surface-container"
+                className="w-full px-5 py-4 md:px-8 md:py-7 text-left flex items-center justify-between transition-colors duration-500 hover:bg-surface-container"
                 aria-expanded={openIndex === index}
               >
-                <h3 className="text-sm font-bold uppercase tracking-widest text-primary pr-8 leading-relaxed">
+                <h3 className="text-sm font-bold normal-case tracking-normal md:uppercase md:tracking-widest text-primary pr-8 leading-relaxed">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0 text-primary">
@@ -80,7 +80,7 @@ export default function FAQ() {
                   openIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="px-8 pb-10 pt-4">
+                <div className="px-5 pb-6 pt-2 md:px-8 md:pb-10 md:pt-4">
                   <p className="text-base text-on-surface-variant leading-relaxed font-sans whitespace-pre-line border-t border-primary/5 pt-8">
                     {faq.answer}
                   </p>

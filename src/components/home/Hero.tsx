@@ -87,7 +87,7 @@ export default function Hero() {
     operationTypes.find((o) => o.value === searchData.tipoOperacion)?.label || "Todas";
 
   return (
-    <section className="relative min-h-[110vh] flex flex-col justify-center overflow-visible bg-primary pt-10">
+    <section className="relative min-h-[100svh] md:min-h-[110vh] flex flex-col justify-center overflow-visible bg-primary pt-10">
       {/* Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
@@ -104,7 +104,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 max-w-7xl pt-56 pb-32 flex-1 flex flex-col items-center justify-center">
+      <div className="relative z-10 container mx-auto px-6 max-w-7xl pt-28 pb-4 md:pt-56 md:pb-32 flex-1 flex flex-col items-center justify-center">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -112,31 +112,31 @@ export default function Hero() {
           className="max-w-4xl flex flex-col items-center text-center"
         >
 
-          <h1 className="font-bold leading-[1.05] tracking-[-0.03em] mb-8 text-3xl sm:text-4xl md:text-6xl lg:text-7xl">
+          <h1 className="font-bold leading-[1.05] tracking-[-0.03em] mb-4 md:mb-8 text-[1.6rem] sm:text-4xl md:text-6xl lg:text-7xl">
             <span className="text-white block whitespace-nowrap">ESPECIALISTAS EN VENTA</span>
             <span className="text-blue-500 brightness-110 drop-shadow-md block whitespace-nowrap">DE PROPIEDADES</span>
           </h1>
 
-          <div className="flex flex-col items-center gap-2 mb-12 w-full px-4">
-            <p className="text-xs sm:text-sm md:text-lg lg:text-xl font-sans text-white font-medium leading-relaxed drop-shadow-md text-center max-w-[90vw]">
+          <div className="flex flex-col items-center gap-1 md:gap-2 mb-6 md:mb-12 w-full px-4">
+            <p className="text-sm sm:text-sm md:text-lg lg:text-xl font-sans text-white font-medium leading-relaxed drop-shadow-md text-center max-w-[90vw]">
               Asesoramiento Inmobiliario con Certificación Internacional CRS
             </p>
-            <p className="text-xs sm:text-sm md:text-lg lg:text-xl font-sans text-white font-medium leading-relaxed drop-shadow-md text-center max-w-[90vw]">
+            <p className="text-sm sm:text-sm md:text-lg lg:text-xl font-sans text-white font-medium leading-relaxed drop-shadow-md text-center max-w-[90vw]">
               Elevamos el estándar en zona norte.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-20 justify-center w-full">
+          <div className="flex flex-row gap-3 md:gap-4 mb-8 md:mb-20 justify-center w-full">
             <Link
               href="/contacto"
-              className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-md text-[11px] font-bold uppercase tracking-[0.12em] transition-all duration-300 hover:bg-secondary hover:text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary px-5 py-3 md:px-8 md:py-4 rounded-md text-[10px] md:text-[11px] font-bold uppercase tracking-[0.12em] transition-all duration-300 hover:bg-secondary hover:text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Contáctanos
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href="/propiedades"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-md text-[11px] font-bold uppercase tracking-[0.12em] border border-white/20 transition-all duration-300 hover:bg-white/20 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-5 py-3 md:px-8 md:py-4 rounded-md text-[10px] md:text-[11px] font-bold uppercase tracking-[0.12em] border border-white/20 transition-all duration-300 hover:bg-white/20 hover:-translate-y-0.5"
             >
               Ver propiedades
             </Link>

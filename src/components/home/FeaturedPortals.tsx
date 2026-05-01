@@ -8,20 +8,20 @@ export default function FeaturedPortals() {
   ];
 
   return (
-    <section className="py-32 bg-surface-container-low">
+    <section className="py-10 md:py-32 bg-surface-container-low">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <span className="label-editorial mb-4 block">Máxima visibilidad</span>
           <h2 className="text-2xl md:text-4xl font-bold text-primary mb-4 tracking-[-0.02em]">
             Presencia en <span className="text-secondary italic font-normal">Plataformas Líderes</span>
           </h2>
         </div>
         
-        <div className="flex flex-wrap items-center justify-center gap-16 md:gap-32">
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-32">
           {logos.map((logo, index) => (
             <div
               key={index}
-              className="relative h-12 md:h-16 w-32 md:w-48 opacity-40 hover:opacity-100 transition-all duration-700 filter grayscale hover:grayscale-0 hover:scale-110"
+              className="relative h-12 md:h-16 w-32 md:w-48 opacity-60 hover:opacity-100 transition-all duration-700 filter grayscale hover:grayscale-0 hover:scale-110"
             >
               <Image
                 src={logo.src}

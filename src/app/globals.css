@@ -193,13 +193,29 @@ h6 {
 /* Utilities that can't easily be defined in @layer components */
 @layer utilities {
   .section-container {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     margin-left: auto;
     margin-right: auto;
     max-width: 80rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-container {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+
+  /* Hide scrollbar for horizontal carousels */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 

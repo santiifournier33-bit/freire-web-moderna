@@ -75,7 +75,7 @@ const thirdColumn = testimonials.slice(6, 9);
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
   return (
-    <div className="p-8 rounded-2xl bg-surface-container-lowest shadow-sm border border-primary/5 max-w-xs w-full transition-all duration-500 hover:shadow-ambient hover:-translate-y-1">
+    <div className="p-5 md:p-8 rounded-2xl bg-surface-container-lowest shadow-sm border border-primary/5 max-w-[calc(100vw-3rem)] md:max-w-xs w-full transition-all duration-500 hover:shadow-ambient hover:-translate-y-1">
       <p className="text-sm text-primary/80 leading-relaxed font-sans mb-6">
         &quot;{testimonial.quote}&quot;
       </p>
@@ -130,9 +130,9 @@ function TestimonialsColumn({
 
 export default function Testimonials() {
   return (
-    <section className="py-16 bg-surface overflow-hidden relative">
+    <section className="py-12 md:py-16 bg-surface overflow-hidden relative">
       <div className="container mx-auto px-6 max-w-5xl relative z-10">
-        <div className="mb-10 text-center">
+        <div className="mb-6 md:mb-10 text-center">
           <span className="label-editorial mb-4 block">Experiencias Reales</span>
           <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-[-0.03em]">
             La voz de nuestros <br />

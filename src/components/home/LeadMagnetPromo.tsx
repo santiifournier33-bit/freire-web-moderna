@@ -23,8 +23,8 @@ export default function LeadMagnetPromo() {
         className="w-full relative overflow-visible"
         style={{
           background: "linear-gradient(135deg, #071828 0%, #0f3060 50%, #071828 100%)",
-          paddingTop: "3.5rem",
-          paddingBottom: "3.5rem",
+          paddingTop: "2.5rem",
+          paddingBottom: "2.5rem",
         }}
       >
         {/* Subtle glow orbs */}
@@ -79,7 +79,7 @@ export default function LeadMagnetPromo() {
               <div>
                 <Link
                   href="/guia-vendedores"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-primary px-12 py-5 text-[12px] md:text-[13px] font-bold uppercase tracking-[0.15em] shadow-2xl transition-all duration-300 hover:bg-[#2196f3] hover:text-white hover:-translate-y-0.5 hover:shadow-blue-500/30"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 md:px-12 md:py-5 text-[12px] md:text-[13px] font-bold uppercase tracking-[0.15em] shadow-2xl transition-all duration-300 hover:bg-[#2196f3] hover:text-white hover:-translate-y-0.5 hover:shadow-blue-500/30"
                 >
                   Obtener mi guía gratuita
                 </Link>
@@ -92,7 +92,7 @@ export default function LeadMagnetPromo() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="relative flex items-end justify-center lg:justify-end pointer-events-none mt-[-40px] lg:mt-[-80px]"
+              className="relative flex items-end justify-center lg:justify-end pointer-events-none mt-0 lg:mt-[-80px]"
             >
               <div
                 className="relative transition-all duration-700 hover:scale-105 hover:-rotate-1"
