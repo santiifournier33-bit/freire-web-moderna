@@ -1,5 +1,6 @@
-import { getPropertyById } from "@/lib/tokkobroker";
+import { getPropertyById, getProperties } from "@/lib/tokkobroker";
 import PropertyDetailClient from "./PropertyDetailClient";
+import RelatedProperties from "@/components/property/RelatedProperties";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import type { Metadata } from "next";
@@ -34,10 +35,20 @@ export async function generateMetadata(
   const type = property.type?.name || "Propiedad";
   const opType = operation?.operation_type || "Venta";
 
+  // ─── SEO-optimized title & description ─────────────────────────────
   const title = `${type} en ${opType} en ${location}`;
-  const description = price
-    ? `${title}. Precio: ${price}. ${(property.description || "").replace(/<[^>]*>/gm, "").slice(0, 120)}...`
-    : `${title}. ${(property.description || "").replace(/<[^>]*>/gm, "").slice(0, 150)}...`;
+
+  // Build rich description with beds, surface, amenities
+  const beds = property.suite_amount > 0 ? `${property.suite_amount} dormitorios` : null;
+  const surface = property.surface || property.total_surface;
+  const surfaceStr = surface ? `${Math.floor(surface)}m²` : null;
+  const specs = [beds, surfaceStr].filter(Boolean).join(", ");
+  const specsBlock = specs ? ` ${specs}.` : "";
+  const priceBlock = price ? ` ${price}.` : "";
+  const cleanDesc = (property.description || "").replace(/<[^>]*>/gm, "").replace(/\s+/g, " ").trim();
+  const descTruncated = cleanDesc.slice(0, 100);
+
+  const description = `${title}.${specsBlock}${priceBlock} ${descTruncated}... — Freire Propiedades.`;
 
   const mainImage = property.photos?.[0]?.original || `${BASE_URL}/logo-freire-azul.png`;
   const canonicalUrl = `${BASE_URL}/p/${slug}`;
@@ -83,9 +94,10 @@ function PropertySchema({ property, slug }: { property: any; slug: string }) {
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
     name: property.publication_title,
-    description: (property.description || "").replace(/<[^>]*>/gm, ""),
+    description: (property.description || "").replace(/<[^>]*>/gm, "").replace(/\s+/g, " ").trim(),
     url: `${BASE_URL}/p/${slug}`,
     ...(mainImage && { image: mainImage }),
+    ...(property.created_at && { datePosted: new Date(property.created_at).toISOString() }),
     ...(price && {
       offers: {
         "@type": "Offer",
@@ -127,6 +139,31 @@ function PropertySchema({ property, slug }: { property: any; slug: string }) {
   );
 }
 
+// ─── BreadcrumbList JSON-LD ──────────────────────────────────────────────────
+function BreadcrumbSchema({ property, slug }: { property: any; slug: string }) {
+  const type = property.type?.name || "Propiedad";
+  const opType = property.operations?.[0]?.operation_type || "Venta";
+  const location = property.location?.name || "Pilar";
+  const breadcrumbName = `${type} en ${opType} en ${location}`;
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Propiedades", item: `${BASE_URL}/propiedades` },
+      { "@type": "ListItem", position: 3, name: breadcrumbName },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 // ─── Page Component ─────────────────────────────────────────────────────────
 export default async function PropertyDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -148,18 +185,53 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
     );
   }
 
+  const propertyType = property.type?.name || "Propiedad";
+  const opType = property.operations?.[0]?.operation_type || "Venta";
+  const locationName = property.location?.name || "Pilar";
+
+  // Fetch related properties (same location or type)
+  const allProperties = await getProperties(200);
+  const related = allProperties
+    .filter((p: any) => p.id !== property.id)
+    .filter((p: any) => {
+      const sameLocation = p.location?.name === property.location?.name;
+      const sameType = p.type?.name === property.type?.name;
+      const sameOp = p.operations?.[0]?.operation_type === property.operations?.[0]?.operation_type;
+      return sameLocation || (sameType && sameOp);
+    })
+    .slice(0, 8); // Fetch 8, component will pick 4
+
   return (
     <div className="flex flex-col min-h-screen pt-32 md:pt-40 pb-32 bg-surface">
       <PropertySchema property={property} slug={slug} />
+      <BreadcrumbSchema property={property} slug={slug} />
       <div className="container mx-auto px-6 max-w-7xl">
         
-        {/* Editorial Back Link */}
-        <Link href="/propiedades" className="inline-flex items-center text-primary/40 mb-8 hover:text-secondary transition-all group">
-          <ChevronLeft size={20} className="mr-4 group-hover:-translate-x-2 transition-transform duration-500" strokeWidth={1} />
-          <span className="text-xs font-bold uppercase tracking-[0.2em]">Regresar al Catálogo</span>
-        </Link>
+        {/* Breadcrumbs — SEO + navigation */}
+        <nav aria-label="Breadcrumb" className="mb-8">
+          <ol className="flex items-center gap-2 text-xs font-semibold text-primary/40">
+            <li>
+              <Link href="/" className="hover:text-secondary transition-colors">Inicio</Link>
+            </li>
+            <li aria-hidden="true">
+              <ChevronLeft size={12} className="rotate-180" strokeWidth={2} />
+            </li>
+            <li>
+              <Link href="/propiedades" className="hover:text-secondary transition-colors">Propiedades</Link>
+            </li>
+            <li aria-hidden="true">
+              <ChevronLeft size={12} className="rotate-180" strokeWidth={2} />
+            </li>
+            <li className="text-primary/60 truncate max-w-[200px] md:max-w-none">
+              {propertyType} en {opType} en {locationName}
+            </li>
+          </ol>
+        </nav>
         
         <PropertyDetailClient property={property} />
+
+        {/* Related Properties — SEO internal linking */}
+        <RelatedProperties properties={related} currentId={property.id} />
 
       </div>
     </div>

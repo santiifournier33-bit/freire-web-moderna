@@ -2,12 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 const socialLinks = [
-  { icon: FaFacebook, label: 'Facebook', href: '#' },
-  { icon: FaInstagram, label: 'Instagram', href: '#' },
-  { icon: FaLinkedin, label: 'LinkedIn', href: '#' },
+  { icon: FaFacebook, label: 'Facebook', href: 'https://www.facebook.com/Freirenegociosinmobiliarios' },
+  { icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/freire.propiedades/' },
 ];
 
 const quickLinks = [
@@ -100,14 +99,6 @@ export default function Footer() {
           <p className="text-[11px] font-medium text-white/40 uppercase tracking-widest text-center">
             © {new Date().getFullYear()} Freire Propiedades. Engineered for Excellence.
           </p>
-          <div className="flex space-x-8 text-[11px] font-bold uppercase tracking-widest">
-            <Link href="/" className="text-white/40 hover:text-white transition-colors">
-              Privacidad
-            </Link>
-            <Link href="/" className="text-white/40 hover:text-white transition-colors">
-              Términos
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

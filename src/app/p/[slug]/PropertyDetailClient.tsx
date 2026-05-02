@@ -111,6 +111,7 @@ export default function PropertyDetailClient({ property }: { property: any }) {
   // Data helpers
   const propertyType = property.type?.name || "Propiedad";
   const propertyLocation = property.location?.name || property.address || "Consultar Ubicación";
+  const altBase = `${propertyType} en ${operation} en ${propertyLocation}`;
   
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -213,7 +214,7 @@ export default function PropertyDetailClient({ property }: { property: any }) {
                   className="relative col-span-2 row-span-2 cursor-pointer group"
                   onClick={() => openGalleryModal(0)}
                 >
-                  <Image src={images[0]} alt="Principal" fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" sizes="(max-width: 768px) 100vw, 50vw" priority />
+                  <Image src={images[0]} alt={`${altBase} - Foto principal`} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" sizes="(max-width: 768px) 100vw, 50vw" priority />
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500"></div>
                   
                   {/* Píldora de Navegación Multimedia */}
@@ -247,7 +248,7 @@ export default function PropertyDetailClient({ property }: { property: any }) {
                   className="relative col-span-1 row-span-1 cursor-pointer group"
                   onClick={() => openGalleryModal(1)}
                 >
-                  <Image src={images[1]} alt="Foto 1" fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" sizes="25vw" />
+                  <Image src={images[1]} alt={`${altBase} - Foto 2 de ${images.length}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" sizes="25vw" />
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500"></div>
                 </div>
                 {/* Img 3 */}
@@ -255,7 +256,7 @@ export default function PropertyDetailClient({ property }: { property: any }) {
                   className="relative col-span-1 row-span-1 cursor-pointer group"
                   onClick={() => openGalleryModal(2)}
                 >
-                   <Image src={images[2]} alt="Foto 2" fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" sizes="25vw" />
+                   <Image src={images[2]} alt={`${altBase} - Foto 3 de ${images.length}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" sizes="25vw" />
                    <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500"></div>
                 </div>
                 {/* Img 4 */}
@@ -263,7 +264,7 @@ export default function PropertyDetailClient({ property }: { property: any }) {
                   className="relative col-span-1 row-span-1 cursor-pointer group"
                   onClick={() => openGalleryModal(3)}
                 >
-                   <Image src={images[3]} alt="Foto 3" fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" sizes="25vw" />
+                   <Image src={images[3]} alt={`${altBase} - Foto 4 de ${images.length}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" sizes="25vw" />
                    <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500"></div>
                 </div>
                 {/* Img 5 */}
@@ -271,7 +272,7 @@ export default function PropertyDetailClient({ property }: { property: any }) {
                   className="relative col-span-1 row-span-1 cursor-pointer group"
                   onClick={() => openGalleryModal(4)}
                 >
-                   <Image src={images[4]} alt="Foto 4" fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" sizes="25vw" />
+                   <Image src={images[4]} alt={`${altBase} - Foto 5 de ${images.length}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" sizes="25vw" />
                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/40 transition-colors duration-500"></div>
                    <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                      <Grid className="w-8 h-8 text-white drop-shadow-lg mb-2" />
@@ -284,7 +285,7 @@ export default function PropertyDetailClient({ property }: { property: any }) {
                 className="relative w-full h-full cursor-pointer group col-span-1"
                 onClick={() => openGalleryModal(0)}
               >
-                <Image src={images[0]} alt="Principal" fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" priority sizes="100vw" />
+                <Image src={images[0]} alt={`${altBase} - Foto principal`} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" priority sizes="100vw" />
                 <div className="absolute inset-0 bg-primary/20 hover:bg-transparent transition-colors duration-500"></div>
                 
                 {/* Píldora de Navegación Multimedia */}
@@ -759,7 +760,7 @@ export default function PropertyDetailClient({ property }: { property: any }) {
              <div className="relative w-full h-full max-w-7xl mx-auto flex items-center justify-center">
                 <Image
                    src={images[currentGalleryImage]}
-                   alt={`Imagen ${currentGalleryImage + 1}`}
+                   alt={`${altBase} - Foto ${currentGalleryImage + 1} de ${images.length}`}
                    fill
                    className="object-contain"
                    quality={100}

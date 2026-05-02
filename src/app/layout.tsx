@@ -64,10 +64,10 @@ export const metadata: Metadata = {
       "Inmobiliaria con certificación CRS internacional en Pilar y Zona Norte. Compra, venta, alquiler y tasaciones de propiedades.",
     images: [
       {
-        url: "/logo-freire-azul.png",
-        width: 240,
-        height: 100,
-        alt: "FREIRE Negocios Inmobiliarios",
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Freire Propiedades — Inmobiliaria en Pilar y Zona Norte",
       },
     ],
   },
