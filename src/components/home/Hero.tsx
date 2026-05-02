@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Search, MapPin, Home, RefreshCw, ChevronDown } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
@@ -12,6 +12,112 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+/* ───────────────────────────────────────────────────────
+   MobileSelect: custom dropdown that only opens on TAP,
+   not on scroll-through touch. Tracks touch delta — if
+   the finger moves > 8px vertically, it was a scroll
+   and the menu stays closed.
+   ─────────────────────────────────────────────────────── */
+function MobileSelect({
+  icon: Icon,
+  label,
+  value,
+  options,
+  onSelect,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  value: string;
+  options: { value: string; label: string }[];
+  onSelect: (val: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const touchStartY = useRef(0);
+  const didMove = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartY.current = e.touches[0].clientY;
+    didMove.current = false;
+  }, []);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    const delta = Math.abs(e.touches[0].clientY - touchStartY.current);
+    if (delta > 8) didMove.current = true;
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    if (!didMove.current) {
+      setOpen((prev) => !prev);
+    }
+    // if didMove → was a scroll, do nothing
+  }, []);
+
+  // Close on outside tap
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent | TouchEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("touchstart", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("touchstart", handler);
+    };
+  }, [open]);
+
+  const selectedLabel = options.find((o) => o.value === value)?.label || options[0]?.label || "";
+
+  return (
+    <div ref={containerRef} className="relative">
+      <div
+        className="flex items-center justify-between gap-3 px-4 py-3 rounded-lg bg-surface-container-low text-left cursor-pointer select-none"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onClick={() => setOpen((prev) => !prev)}
+      >
+        <div className="flex items-center gap-3">
+          <Icon className={`w-4 h-4 shrink-0 ${open ? "text-primary" : "text-secondary"} transition-colors`} />
+          <div>
+            <label className="text-[9px] uppercase tracking-[0.15em] font-bold text-primary/40 block mb-0.5 cursor-pointer">
+              {label}
+            </label>
+            <span className="block w-full bg-transparent text-sm font-semibold text-primary cursor-pointer">
+              {selectedLabel}
+            </span>
+          </div>
+        </div>
+        <ChevronDown className={`w-4 h-4 text-primary/40 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+      </div>
+
+      {open && (
+        <div className="absolute top-full left-0 right-0 mt-1 bg-surface border border-primary/10 rounded-lg shadow-xl overflow-hidden z-50">
+          {options.map((opt) => (
+            <div
+              key={opt.value}
+              onClick={() => {
+                onSelect(opt.value);
+                setOpen(false);
+              }}
+              className={`px-4 py-3 text-sm font-semibold cursor-pointer transition-colors ${
+                opt.value === value
+                  ? "bg-primary/5 text-primary"
+                  : "text-primary hover:bg-primary/5"
+              }`}
+            >
+              {opt.label}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Hero() {
   const router = useRouter();
@@ -195,61 +301,84 @@ export default function Hero() {
                 </div>
               </div>
 
+              {/* ── MOBILE: Custom touch-aware selects ── */}
+              <div className="md:hidden flex flex-col gap-3">
+                <MobileSelect
+                  icon={Home}
+                  label="Tipo de propiedad"
+                  value={searchData.tipoPropiedad}
+                  options={propertyTypes}
+                  onSelect={(v) => setSearchData({ ...searchData, tipoPropiedad: v })}
+                />
+                <MobileSelect
+                  icon={RefreshCw}
+                  label="Operación"
+                  value={searchData.tipoOperacion}
+                  options={operationTypes}
+                  onSelect={(v) => setSearchData({ ...searchData, tipoOperacion: v })}
+                />
+              </div>
+
+              {/* ── DESKTOP: Radix DropdownMenu (unchanged) ── */}
               {/* Tipo de Propiedad Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger className="flex-1 flex items-center justify-between gap-3 px-4 py-3 md:py-2 md:border-r border-primary/10 rounded-lg md:rounded-none bg-surface-container-low md:bg-transparent text-left outline-none group">
-                  <div className="flex items-center gap-3">
-                    <Home className="w-4 h-4 text-secondary shrink-0 group-data-[state=open]:text-primary transition-colors" />
-                    <div>
-                      <label className="text-[9px] uppercase tracking-[0.15em] font-bold text-primary/40 block mb-0.5 cursor-pointer">
-                        Tipo de propiedad
-                      </label>
-                      <span className="block w-full bg-transparent text-sm font-semibold text-primary focus:outline-none cursor-pointer">
-                        {selectedPropertyLabel}
-                      </span>
+              <div className="hidden md:flex">
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex-1 flex items-center justify-between gap-3 px-4 py-2 border-r border-primary/10 bg-transparent text-left outline-none group">
+                    <div className="flex items-center gap-3">
+                      <Home className="w-4 h-4 text-secondary shrink-0 group-data-[state=open]:text-primary transition-colors" />
+                      <div>
+                        <label className="text-[9px] uppercase tracking-[0.15em] font-bold text-primary/40 block mb-0.5 cursor-pointer">
+                          Tipo de propiedad
+                        </label>
+                        <span className="block w-full bg-transparent text-sm font-semibold text-primary focus:outline-none cursor-pointer">
+                          {selectedPropertyLabel}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <ChevronDown className="w-4 h-4 text-primary/40 group-data-[state=open]:rotate-180 transition-transform" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start">
-                  {propertyTypes.map((type) => (
-                    <DropdownMenuItem
-                      key={type.value}
-                      onClick={() => setSearchData({ ...searchData, tipoPropiedad: type.value })}
-                    >
-                      {type.label}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                    <ChevronDown className="w-4 h-4 text-primary/40 group-data-[state=open]:rotate-180 transition-transform" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start">
+                    {propertyTypes.map((type) => (
+                      <DropdownMenuItem
+                        key={type.value}
+                        onClick={() => setSearchData({ ...searchData, tipoPropiedad: type.value })}
+                      >
+                        {type.label}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
 
               {/* Tipo de Operación Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger className="flex-1 flex items-center justify-between gap-3 px-4 py-3 md:py-2 rounded-lg md:rounded-none bg-surface-container-low md:bg-transparent text-left outline-none group">
-                  <div className="flex items-center gap-3">
-                    <RefreshCw className="w-4 h-4 text-secondary shrink-0 group-data-[state=open]:text-primary transition-colors" />
-                    <div>
-                      <label className="text-[9px] uppercase tracking-[0.15em] font-bold text-primary/40 block mb-0.5 cursor-pointer">
-                        Operación
-                      </label>
-                      <span className="block w-full bg-transparent text-sm font-semibold text-primary focus:outline-none cursor-pointer">
-                        {selectedOperationLabel}
-                      </span>
+              <div className="hidden md:flex">
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex-1 flex items-center justify-between gap-3 px-4 py-2 bg-transparent text-left outline-none group">
+                    <div className="flex items-center gap-3">
+                      <RefreshCw className="w-4 h-4 text-secondary shrink-0 group-data-[state=open]:text-primary transition-colors" />
+                      <div>
+                        <label className="text-[9px] uppercase tracking-[0.15em] font-bold text-primary/40 block mb-0.5 cursor-pointer">
+                          Operación
+                        </label>
+                        <span className="block w-full bg-transparent text-sm font-semibold text-primary focus:outline-none cursor-pointer">
+                          {selectedOperationLabel}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <ChevronDown className="w-4 h-4 text-primary/40 group-data-[state=open]:rotate-180 transition-transform" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start">
-                  {operationTypes.map((op) => (
-                    <DropdownMenuItem
-                      key={op.value}
-                      onClick={() => setSearchData({ ...searchData, tipoOperacion: op.value })}
-                    >
-                      {op.label}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                    <ChevronDown className="w-4 h-4 text-primary/40 group-data-[state=open]:rotate-180 transition-transform" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start">
+                    {operationTypes.map((op) => (
+                      <DropdownMenuItem
+                        key={op.value}
+                        onClick={() => setSearchData({ ...searchData, tipoOperacion: op.value })}
+                      >
+                        {op.label}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
 
               {/* Search Button */}
               <button

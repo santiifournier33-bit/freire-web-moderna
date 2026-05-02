@@ -2,11 +2,13 @@
 import Image from "next/image";
 import { Clock, Users, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 export default function TrustedPartner() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const autoScrollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const touchActiveRef = useRef(false);
 
   const cards = [
     {
@@ -43,14 +45,14 @@ export default function TrustedPartner() {
     },
   ];
 
-  const scrollToSlide = (index: number) => {
+  const scrollToSlide = useCallback((index: number) => {
     if (!scrollRef.current) return;
     const container = scrollRef.current;
     const cardWidth = container.children[0]?.getBoundingClientRect().width || 0;
     const gap = 16;
     container.scrollTo({ left: index * (cardWidth + gap), behavior: "smooth" });
     setActiveSlide(index);
-  };
+  }, []);
 
   const handleScroll = () => {
     if (!scrollRef.current) return;
@@ -60,6 +62,56 @@ export default function TrustedPartner() {
     const index = Math.round(container.scrollLeft / (cardWidth + gap));
     setActiveSlide(index);
   };
+
+  // Auto-scroll every 4.5s — pauses on touch, resumes 3s after release
+  useEffect(() => {
+    const startAutoScroll = () => {
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      autoScrollRef.current = setInterval(() => {
+        if (touchActiveRef.current) return;
+        setActiveSlide((prev) => {
+          const next = prev >= cards.length - 1 ? 0 : prev + 1;
+          if (scrollRef.current) {
+            const container = scrollRef.current;
+            const cardWidth = container.children[0]?.getBoundingClientRect().width || 0;
+            const gap = 16;
+            container.scrollTo({ left: next * (cardWidth + gap), behavior: "smooth" });
+          }
+          return next;
+        });
+      }, 4500);
+    };
+
+    startAutoScroll();
+
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let resumeTimeout: ReturnType<typeof setTimeout>;
+
+    const onTouchStart = () => {
+      touchActiveRef.current = true;
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      clearTimeout(resumeTimeout);
+    };
+
+    const onTouchEnd = () => {
+      resumeTimeout = setTimeout(() => {
+        touchActiveRef.current = false;
+        startAutoScroll();
+      }, 3000);
+    };
+
+    container.addEventListener("touchstart", onTouchStart, { passive: true });
+    container.addEventListener("touchend", onTouchEnd, { passive: true });
+
+    return () => {
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      clearTimeout(resumeTimeout);
+      container.removeEventListener("touchstart", onTouchStart);
+      container.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [cards.length]);
 
   return (
     <section className="py-12 md:py-20 lg:py-28 bg-surface-lowest overflow-hidden">
@@ -123,12 +175,12 @@ export default function TrustedPartner() {
           ))}
         </div>
 
-        {/* Mobile: Horizontal scroll snap with arrows + dots (same as PropertyShowcase) */}
+        {/* Mobile: Horizontal scroll snap with peek + auto-scroll */}
         <div className="md:hidden overflow-hidden">
           <div 
             ref={scrollRef}
             onScroll={handleScroll}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-6 pb-4 scrollbar-hide"
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pl-6 pr-[20vw] pb-4 scrollbar-hide"
             style={{ WebkitOverflowScrolling: 'touch' }}
           >
             {cards.map((card, index) => (
@@ -138,7 +190,7 @@ export default function TrustedPartner() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="flex-shrink-0 w-[80vw] snap-center group flex flex-col justify-between bg-surface-container-low p-6 border border-primary/5 relative overflow-hidden"
+                className="flex-shrink-0 w-[75vw] snap-start group flex flex-col justify-between bg-surface-container-low p-6 border border-primary/5 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-[40px]"></div>
                 

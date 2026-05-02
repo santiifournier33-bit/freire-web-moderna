@@ -3,11 +3,13 @@
 import Image from "next/image";
 import { Play, Eye, Maximize, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 export default function PropertyShowcase() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const autoScrollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const touchActiveRef = useRef(false);
 
   const items = [
     {
@@ -44,14 +46,14 @@ export default function PropertyShowcase() {
     },
   ];
 
-  const scrollToSlide = (index: number) => {
+  const scrollToSlide = useCallback((index: number) => {
     if (!scrollRef.current) return;
     const container = scrollRef.current;
     const cardWidth = container.children[0]?.getBoundingClientRect().width || 0;
     const gap = 16;
     container.scrollTo({ left: index * (cardWidth + gap), behavior: "smooth" });
     setActiveSlide(index);
-  };
+  }, []);
 
   const handleScroll = () => {
     if (!scrollRef.current) return;
@@ -61,6 +63,57 @@ export default function PropertyShowcase() {
     const index = Math.round(container.scrollLeft / (cardWidth + gap));
     setActiveSlide(index);
   };
+
+  // Auto-scroll every 4.5s — pauses on touch, resumes 3s after release
+  useEffect(() => {
+    const startAutoScroll = () => {
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      autoScrollRef.current = setInterval(() => {
+        if (touchActiveRef.current) return;
+        setActiveSlide((prev) => {
+          const next = prev >= items.length - 1 ? 0 : prev + 1;
+          // Direct scroll without re-triggering state via scrollToSlide
+          if (scrollRef.current) {
+            const container = scrollRef.current;
+            const cardWidth = container.children[0]?.getBoundingClientRect().width || 0;
+            const gap = 16;
+            container.scrollTo({ left: next * (cardWidth + gap), behavior: "smooth" });
+          }
+          return next;
+        });
+      }, 4500);
+    };
+
+    startAutoScroll();
+
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let resumeTimeout: ReturnType<typeof setTimeout>;
+
+    const onTouchStart = () => {
+      touchActiveRef.current = true;
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      clearTimeout(resumeTimeout);
+    };
+
+    const onTouchEnd = () => {
+      resumeTimeout = setTimeout(() => {
+        touchActiveRef.current = false;
+        startAutoScroll();
+      }, 3000);
+    };
+
+    container.addEventListener("touchstart", onTouchStart, { passive: true });
+    container.addEventListener("touchend", onTouchEnd, { passive: true });
+
+    return () => {
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      clearTimeout(resumeTimeout);
+      container.removeEventListener("touchstart", onTouchStart);
+      container.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [items.length]);
 
   return (
     <section className="py-12 md:py-20 lg:py-28 bg-surface-container-low overflow-hidden">
@@ -126,16 +179,16 @@ export default function PropertyShowcase() {
           ))}
         </div>
 
-        {/* Mobile: Horizontal scroll-snap carousel */}
+        {/* Mobile: Horizontal scroll-snap carousel with peek */}
         <div className="md:hidden overflow-hidden">
           <div 
             ref={scrollRef}
             onScroll={handleScroll}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-6 pb-4 scrollbar-hide"
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pl-6 pr-[20vw] pb-4 scrollbar-hide"
             style={{ WebkitOverflowScrolling: 'touch' }}
           >
             {items.map((item, index) => (
-              <div key={index} className="flex-shrink-0 w-[80vw] snap-center bg-surface-lowest border border-primary/5 flex flex-col overflow-hidden">
+              <div key={index} className="flex-shrink-0 w-[75vw] snap-start bg-surface-lowest border border-primary/5 flex flex-col overflow-hidden">
                 
                 {/* Image with always-visible badge on mobile */}
                 <div className="relative h-[180px] w-full overflow-hidden">

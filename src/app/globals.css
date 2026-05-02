@@ -238,6 +238,20 @@ h6 {
   animation: scroll-up linear infinite;
 }
 
+/* Subtle CTA button glow pulse */
+@keyframes cta-glow {
+  0%, 100% {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 20px rgba(33, 150, 243, 0.3);
+  }
+}
+
+.animate-cta-glow {
+  animation: cta-glow 2.5s ease-in-out infinite;
+}
+
 /* IntlTelInput Custom overrides for Architectural UI */
 .iti {
   width: 100%;

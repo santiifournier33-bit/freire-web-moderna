@@ -75,11 +75,11 @@ export default function LeadMagnetPromo() {
                 </div>
               </div>
 
-              {/* CTA */}
+              {/* CTA with subtle pulse animation */}
               <div>
                 <Link
                   href="/guia-vendedores"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 md:px-12 md:py-5 text-[12px] md:text-[13px] font-bold uppercase tracking-[0.15em] shadow-2xl transition-all duration-300 hover:bg-[#2196f3] hover:text-white hover:-translate-y-0.5 hover:shadow-blue-500/30"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 md:px-12 md:py-5 text-[12px] md:text-[13px] font-bold uppercase tracking-[0.15em] shadow-2xl transition-all duration-300 hover:bg-[#2196f3] hover:text-white hover:-translate-y-0.5 hover:shadow-blue-500/30 animate-cta-glow"
                 >
                   Obtener mi guía gratuita
                 </Link>
