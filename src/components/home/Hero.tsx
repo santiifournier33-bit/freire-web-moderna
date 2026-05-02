@@ -35,6 +35,7 @@ function MobileSelect({
   const [open, setOpen] = useState(false);
   const touchStartY = useRef(0);
   const didMove = useRef(false);
+  const handledByTouch = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
@@ -49,9 +50,17 @@ function MobileSelect({
 
   const handleTouchEnd = useCallback(() => {
     if (!didMove.current) {
+      handledByTouch.current = true;
       setOpen((prev) => !prev);
+      // Reset flag after synthetic click would have fired
+      setTimeout(() => { handledByTouch.current = false; }, 300);
     }
-    // if didMove → was a scroll, do nothing
+  }, []);
+
+  const handleClick = useCallback(() => {
+    // Skip if touch already handled this interaction
+    if (handledByTouch.current) return;
+    setOpen((prev) => !prev);
   }, []);
 
   // Close on outside tap
@@ -79,7 +88,7 @@ function MobileSelect({
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        onClick={() => setOpen((prev) => !prev)}
+        onClick={handleClick}
       >
         <div className="flex items-center gap-3">
           <Icon className={`w-4 h-4 shrink-0 ${open ? "text-primary" : "text-secondary"} transition-colors`} />

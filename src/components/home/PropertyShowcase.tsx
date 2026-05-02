@@ -7,9 +7,11 @@ import { useState, useRef, useEffect, useCallback } from "react";
 
 export default function PropertyShowcase() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const autoScrollRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchActiveRef = useRef(false);
+  const isFirstTick = useRef(true);
 
   const items = [
     {
@@ -64,36 +66,64 @@ export default function PropertyShowcase() {
     setActiveSlide(index);
   };
 
-  // Auto-scroll every 4.5s — pauses on touch, resumes 3s after release
+  // Auto-scroll — only runs while section is visible in viewport
   useEffect(() => {
-    const startAutoScroll = () => {
-      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
-      autoScrollRef.current = setInterval(() => {
-        if (touchActiveRef.current) return;
-        setActiveSlide((prev) => {
-          const next = prev >= items.length - 1 ? 0 : prev + 1;
-          // Direct scroll without re-triggering state via scrollToSlide
-          if (scrollRef.current) {
-            const container = scrollRef.current;
-            const cardWidth = container.children[0]?.getBoundingClientRect().width || 0;
-            const gap = 16;
-            container.scrollTo({ left: next * (cardWidth + gap), behavior: "smooth" });
-          }
-          return next;
-        });
-      }, 4500);
-    };
-
-    startAutoScroll();
-
+    const section = sectionRef.current;
     const container = scrollRef.current;
-    if (!container) return;
+    if (!section || !container) return;
 
     let resumeTimeout: ReturnType<typeof setTimeout>;
 
+    const doTick = () => {
+      if (touchActiveRef.current) return;
+      setActiveSlide((prev) => {
+        const next = prev >= items.length - 1 ? 0 : prev + 1;
+        if (scrollRef.current) {
+          const c = scrollRef.current;
+          const cardWidth = c.children[0]?.getBoundingClientRect().width || 0;
+          c.scrollTo({ left: next * (cardWidth + 16), behavior: "smooth" });
+        }
+        return next;
+      });
+    };
+
+    const startAutoScroll = () => {
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      // First tick faster (2s) so user sees movement quickly, then 4.5s
+      if (isFirstTick.current) {
+        autoScrollRef.current = setTimeout(() => {
+          doTick();
+          isFirstTick.current = false;
+          autoScrollRef.current = setInterval(doTick, 4500);
+        }, 2000) as unknown as ReturnType<typeof setInterval>;
+      } else {
+        autoScrollRef.current = setInterval(doTick, 4500);
+      }
+    };
+
+    const stopAutoScroll = () => {
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      autoScrollRef.current = null;
+    };
+
+    // IntersectionObserver: start only when section is visible
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          isFirstTick.current = true;
+          startAutoScroll();
+        } else {
+          stopAutoScroll();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(section);
+
+    // Touch pause/resume
     const onTouchStart = () => {
       touchActiveRef.current = true;
-      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      stopAutoScroll();
       clearTimeout(resumeTimeout);
     };
 
@@ -108,15 +138,16 @@ export default function PropertyShowcase() {
     container.addEventListener("touchend", onTouchEnd, { passive: true });
 
     return () => {
-      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      stopAutoScroll();
       clearTimeout(resumeTimeout);
+      observer.disconnect();
       container.removeEventListener("touchstart", onTouchStart);
       container.removeEventListener("touchend", onTouchEnd);
     };
   }, [items.length]);
 
   return (
-    <section className="py-12 md:py-20 lg:py-28 bg-surface-container-low overflow-hidden">
+    <section ref={sectionRef} className="py-12 md:py-20 lg:py-28 bg-surface-container-low overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         
         {/* Header */}
