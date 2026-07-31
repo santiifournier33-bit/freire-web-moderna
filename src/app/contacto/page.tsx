@@ -78,32 +78,37 @@ export default function ContactoPage() {
       tags: ["web", "contacto", formData.motivo, ...utmTokko.tags],
     });
 
-    if (success) {
-      // Sync Brevo — awaited so errors surface in logs
-      try {
-        const brevoRes = await fetch("/api/brevo-contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            source: "contacto",
-            motivo: formData.motivo,
-            eventId,
-            utms,
-            pageUrl,
-            gclid,
-          }),
-        });
-        if (!brevoRes.ok) {
-          const err = await brevoRes.text();
-          console.error("[Brevo] Contacto sync failed:", brevoRes.status, err);
-        }
-      } catch (err) {
-        console.error("[Brevo] Contacto network error:", err);
+    // Sync to Brevo independently — runs regardless of Tokko result.
+    // This endpoint also fans the lead out to Meta CAPI and to the n8n
+    // WhatsApp automation, so a Tokko outage must not silence those three.
+    // Awaited to prevent the browser from cancelling the request on re-render.
+    try {
+      const brevoRes = await fetch("/api/brevo-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          source: "contacto",
+          motivo: formData.motivo,
+          // Consumed server-side by the n8n WhatsApp automation
+          message: formData.message,
+          eventId,
+          utms,
+          pageUrl,
+          gclid,
+        }),
+      });
+      if (!brevoRes.ok) {
+        const err = await brevoRes.text();
+        console.error("[Brevo] Contacto sync failed:", brevoRes.status, err);
       }
+    } catch (err) {
+      console.error("[Brevo] Contacto network error:", err);
+    }
 
+    if (success) {
       // Conversion events (browser-side)
       if (typeof fbq !== "undefined") fbq("track", "Lead", {}, { eventID: eventId });
       if (typeof gtag !== "undefined") gtag("event", "generate_lead", { event_category: "contacto" });

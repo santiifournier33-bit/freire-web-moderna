@@ -1,6 +1,7 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { createBrevoContact, BREVO_LISTS } from "@/lib/brevo";
 import { sendCAPIEvent, buildFbcFromClickId } from "@/lib/meta-capi";
+import { sendLeadToN8n } from "@/lib/n8n";
 import { utmsToBrevoAttributes, utmsToCAPICustomData, type UtmRecord } from "@/lib/utm";
 import { getCookie } from "@/lib/request-cookies";
 
@@ -9,6 +10,7 @@ import { getCookie } from "@/lib/request-cookies";
  *
  * Server-side endpoint for client components to sync contacts to Brevo.
  * Called in parallel with Tokko (non-blocking from the user's perspective).
+ * Also fans the lead out to the n8n WhatsApp automation (see sendLeadToN8n).
  *
  * Body:
  *   - source: "tasacion" → Lista 3 (Leads Tasación Web)
@@ -16,6 +18,11 @@ import { getCookie } from "@/lib/request-cookies";
  *   - source: "contacto" + motivo: "alquilar"  → Lista 7 (Dueño Alquila)
  *   - source: "contacto" + motivo: "comprar"   → Lista 8 (Comprador)
  *   - source: "contacto" + motivo: "inquilino" → Lista 9 (Inquilino)
+ *
+ * Fields consumed only by the n8n payload (Brevo ignores them):
+ *   - contacto: message
+ *   - tasacion: locality, address, floor, apartment, operationType,
+ *               propertyType, comments
  */
 
 // Motivo de consulta → Brevo list ID mapping
@@ -28,7 +35,10 @@ const MOTIVO_TO_LIST: Record<string, number> = {
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, source, motivo, eventId, utms, pageUrl, gclid } = (await req.json()) as {
+    const {
+      name, email, phone, source, motivo, eventId, utms, pageUrl, gclid,
+      message, locality, address, floor, apartment, operationType, propertyType, comments,
+    } = (await req.json()) as {
       name?: string;
       email?: string;
       phone?: string;
@@ -38,6 +48,15 @@ export async function POST(req: Request) {
       utms?: UtmRecord;
       pageUrl?: string;
       gclid?: string;
+      // n8n-only fields
+      message?: string;
+      locality?: string;
+      address?: string;
+      floor?: string;
+      apartment?: string;
+      operationType?: string;
+      propertyType?: string;
+      comments?: string;
     };
     const utmRecord: UtmRecord = utms ?? {};
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0] ?? undefined;
@@ -80,6 +99,24 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+
+    // Notify the n8n automation (WhatsApp welcome + internal alert).
+    // `after` runs this once the response is already sent, so it never delays
+    // the person who submitted the form. Scheduled *before* the Brevo call on
+    // purpose: a Brevo outage returns 500 below, and `after` still runs, so the
+    // WhatsApp message goes out either way.
+    after(() =>
+      sendLeadToN8n(
+        source === "tasacion"
+          ? {
+              formulario: "tasacion",
+              name, email, phone,
+              locality, address, floor, apartment,
+              operationType, propertyType, comments,
+            }
+          : { formulario: "contacto", name, email, phone, motivo, message }
+      )
+    );
 
     const success = await createBrevoContact({
       email,
