@@ -17,6 +17,7 @@ import {
   BrightnessIcon 
 } from "@/components/ui/PropertyIcons";
 import { StreetViewIcon } from "@/components/ui/StreetViewIcon";
+import InnovaFinancingCard from "@/components/property/InnovaFinancingCard";
 import { createWebContact } from "@/lib/tokkobroker";
 import dynamic from "next/dynamic";
 import "intl-tel-input/styles";
@@ -26,7 +27,7 @@ const IntlTelInput = dynamic(() => import("intl-tel-input/reactWithUtils"), {
   ssr: false,
 });
 
-export default function PropertyDetailClient({ property }: { property: any }) {
+export default function PropertyDetailClient({ property, innovaPriceUsd = null }: { property: any; innovaPriceUsd?: number | null }) {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: `Hola, quiero recibir más información sobre esta propiedad.` });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
@@ -603,6 +604,9 @@ export default function PropertyDetailClient({ property }: { property: any }) {
                 </div>
 
               </div>
+
+              {/* Financiación Innova Hipotecaria — solo venta con escritura, CABA/AMBA, >= USD 20.000 */}
+              {innovaPriceUsd !== null && <InnovaFinancingCard priceUsd={innovaPriceUsd} />}
 
               {/* Consultation Form Block */}
               <div id="seccion-contacto" className="bg-surface-container-lowest shadow-ambient border border-primary/10 p-8 rounded-2xl scroll-mt-32">
