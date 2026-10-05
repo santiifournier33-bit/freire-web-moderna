@@ -1,6 +1,7 @@
 import { getPropertyById, getProperties } from "@/lib/tokkobroker";
 import PropertyDetailClient from "./PropertyDetailClient";
 import RelatedProperties from "@/components/property/RelatedProperties";
+import { getInnovaEligibility } from "@/lib/innova";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import type { Metadata } from "next";
@@ -185,6 +186,8 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
     );
   }
 
+  const innovaPriceUsd = getInnovaEligibility(property).priceUsd;
+
   const propertyType = property.type?.name || "Propiedad";
   const opType = property.operations?.[0]?.operation_type || "Venta";
   const locationName = property.location?.name || "Pilar";
@@ -228,7 +231,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
           </ol>
         </nav>
         
-        <PropertyDetailClient property={property} />
+        <PropertyDetailClient property={property} innovaPriceUsd={innovaPriceUsd} />
 
         {/* Related Properties — SEO internal linking */}
         <RelatedProperties properties={related} currentId={property.id} />
