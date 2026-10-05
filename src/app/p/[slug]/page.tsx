@@ -7,6 +7,15 @@ import type { Metadata } from "next";
 
 const BASE_URL = "https://www.freirepropiedades.com";
 
+// Cache ISR: la ficha se sirve desde el CDN de Netlify y se regenera como maximo cada 5 min,
+// en vez de invocar una Function por cada visita (ahorra cuota de Functions de Netlify).
+// generateStaticParams vacio = no prerenderiza en build; cachea cada ficha la primera vez que se visita.
+export const revalidate = 300;
+
+export function generateStaticParams() {
+  return [];
+}
+
 // ─── Extract ID from slug (e.g., "7909570-prop" -> "7909570") ───────────────
 function getIdFromSlug(slug: string): string {
   return slug.replace("-prop", "");
