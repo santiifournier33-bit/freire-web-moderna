@@ -1,11 +1,21 @@
 import { getPropertyById, getProperties } from "@/lib/tokkobroker";
 import PropertyDetailClient from "./PropertyDetailClient";
 import RelatedProperties from "@/components/property/RelatedProperties";
+import { getInnovaEligibility } from "@/lib/innova";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import type { Metadata } from "next";
 
 const BASE_URL = "https://www.freirepropiedades.com";
+
+// Cache ISR: la ficha se sirve desde el CDN de Netlify y se regenera como maximo cada 5 min,
+// en vez de invocar una Function por cada visita (ahorra cuota de Functions de Netlify).
+// generateStaticParams vacio = no prerenderiza en build; cachea cada ficha la primera vez que se visita.
+export const revalidate = 300;
+
+export function generateStaticParams() {
+  return [];
+}
 
 // ─── Extract ID from slug (e.g., "7909570-prop" -> "7909570") ───────────────
 function getIdFromSlug(slug: string): string {
@@ -185,6 +195,8 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
     );
   }
 
+  const innovaPriceUsd = getInnovaEligibility(property).priceUsd;
+
   const propertyType = property.type?.name || "Propiedad";
   const opType = property.operations?.[0]?.operation_type || "Venta";
   const locationName = property.location?.name || "Pilar";
@@ -228,7 +240,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
           </ol>
         </nav>
         
-        <PropertyDetailClient property={property} />
+        <PropertyDetailClient property={property} innovaPriceUsd={innovaPriceUsd} />
 
         {/* Related Properties — SEO internal linking */}
         <RelatedProperties properties={related} currentId={property.id} />

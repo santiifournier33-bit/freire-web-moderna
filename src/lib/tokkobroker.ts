@@ -18,7 +18,7 @@ export async function getProperties(limit: number = 2000) {
       
       console.log(`[Tokko] Fetching properties (offset: ${offset}, limit: ${currentLimit})...`);
       
-      const res = await fetch(url, { next: { revalidate: 60 } });
+      const res = await fetch(url, { next: { revalidate: 300 } });
       if (!res.ok) throw new Error(`Tokko API error: ${res.status}`);
       
       const data = await res.json();
@@ -51,7 +51,7 @@ export async function getPropertyById(id: string) {
     const url = `${TOKKO_BASE_URL}/property/${id}/?key=${TOKKO_API_KEY}&lang=es_ar`;
     console.log(`[Tokko] Fetching detail for ID ${id}...`);
     
-    const res = await fetch(url, { next: { revalidate: 60 } });
+    const res = await fetch(url, { next: { revalidate: 300 } });
     
     if (!res.ok) {
       const errorText = await res.text();
